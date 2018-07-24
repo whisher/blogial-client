@@ -1,4 +1,4 @@
-import { AdminRoutingModule } from './Admin-routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
 
 describe('AdminRoutingModule', () => {
   let adminRoutingModule: AdminRoutingModule;
