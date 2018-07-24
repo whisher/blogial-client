@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-const routes: Routes = [];
+import { AppPreloadingStrategy } from './app-preloading';
+
+const routes: Routes = [
+  { path: '', loadChildren: './features/showcase/showcase.module#ShowcaseModule', data: { preload: false } },
+  { path: 'admin', loadChildren: './features/admin/admin.module#AdminModule', data: { preload: false } },
+  { path: 'auth', loadChildren: './features/authentication/authentication.module#AuthenticationModule', data: { preload: false } },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  providers: [ AppPreloadingStrategy ],
+  imports: [ RouterModule.forRoot(routes, { preloadingStrategy: AppPreloadingStrategy }) ],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

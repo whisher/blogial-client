@@ -14,8 +14,7 @@ export class PlatformService {
 
   }
 
-  isBrowser(): boolean{
-    console.log(`Running ${this.platformId} with appId=${this.appId}`);
+  isBrowser():boolean {
     return isPlatformBrowser(this.platformId)
   }
 }

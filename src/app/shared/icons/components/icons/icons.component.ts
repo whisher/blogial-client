@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'iwdf-icon-far-user',
+  selector: 'iwdf-icon-fa-user',
   template: `<fa-icon [icon]="faUser"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
   }`]
 })
-export class IconFarUserComponent{
+export class IconFaUserComponent{
   faUser = faUser;
 }

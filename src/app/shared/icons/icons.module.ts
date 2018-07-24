@@ -8,4 +8,4 @@ import * as fromComponents from './components';
   declarations:[...fromComponents.components],
   exports: [...fromComponents.components]
 })
-export class IconsFortawesomeModule { }
+export class IconsModule { }

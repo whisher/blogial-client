@@ -1,8 +1,8 @@
 import {
-  IconFarUserComponent
+  IconFaUserComponent
 }
 from './icons/icons.component';
 
 export const components: any[] = [
-   IconFarUserComponent
+   IconFaUserComponent
 ];

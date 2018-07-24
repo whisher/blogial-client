@@ -6,12 +6,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 /* Externals */
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+/* Env */
+import { environment } from '../environments/environment';
+
 /* App */
 import { AppRoutingModule } from './app-routing.module';
-import { IconsFortawesomeModule } from './shared/fortawesome/fortawesome.module';
-
+import { IconsModule } from './shared/icons/icons.module';
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { environment } from '../environments/environment';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     NgbModule.forRoot(),
     AppRoutingModule,
-    IconsFortawesomeModule
+    IconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

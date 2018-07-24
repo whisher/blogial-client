@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PlatformService } from './app-platform.service';
+import { PlatformService } from './platform.service';
 
 describe('PlatformService', () => {
   beforeEach(() => {
