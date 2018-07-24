@@ -10,8 +10,6 @@ export class PlatformService {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(APP_ID) private appId: string) {
-
-
   }
 
   isBrowser():boolean {

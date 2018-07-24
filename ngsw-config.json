@@ -20,5 +20,16 @@
         "/assets/**"
       ]
     }
+  }, {
+    "name": "externals",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": {
+      "urls": [
+        "https://ajax.googleapis.com/**",
+        "https://fonts.googleapis.com/**",
+        "https://fonts.gstatic.com/**"
+      ]
+    }
   }]
 }
