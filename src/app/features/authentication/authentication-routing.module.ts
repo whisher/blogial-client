@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthenticationMainComponent } from './layout/containers';
-
-
+import { AuthenticationLoginPageComponent } from './containers';
 
 export const ROUTES: Routes = [
   {
     path: '', component: AuthenticationMainComponent,
-    children: []
-  }
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'login' },
+      { path: 'login', component: AuthenticationLoginPageComponent },
+    ]
+  },
+  //{ path: 'logout', component: AuthenticationLogoutComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,25 @@
+:host{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fef;
+}
+.authentication {
+  height: 100%;
+  &__row {
+    height: 100%;
+  }
+  &__col {
+    height: 100%;
+  }
+  &__col:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: linear-gradient(rgba(142, 36, 170, .25), rgba(142, 36, 170, .25)), url("/assets/images/authentication-bck.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0 0;
+    background-size: contain;
+  }
+}

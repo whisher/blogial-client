@@ -12,9 +12,9 @@ export class PwaService {
   constructor(private swUpdate: SwUpdate, platform: PlatformService) {
     if(platform.isBrowser()){
       swUpdate.available.subscribe(event =>  {
-        /*if (askUserToUpdate()) {
+        if (window.confirm('Want to update?')) {
           window.location.reload();
-        }*/
+        }
       });
       window.addEventListener('beforeinstallprompt', event => {
         this.promptEvent = event;
