@@ -1,5 +1,5 @@
 // Theme variables, must be included before the libraries to allow overriding defaults
-@import "theme/theme-variables";
+@import "theme-variables";
 
 // 3rd party libraries
 
@@ -40,4 +40,4 @@
 @import "print";
 */
 // Theme customization
-@import "theme/theme";
+@import "theme";

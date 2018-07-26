@@ -31,6 +31,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+		          "includePaths": [
+			          "src/theme"
+		          ]
+	          },
             "scripts": []
           },
           "configurations": {
@@ -86,7 +91,12 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+		          "includePaths": [
+			          "src/theme"
+		          ]
+	          }
           }
         },
         "lint": {
@@ -106,7 +116,12 @@
           "options": {
             "outputPath": "dist/server",
             "main": "src/main.server.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "tsConfig": "src/tsconfig.server.json",
+            "stylePreprocessorOptions": {
+		          "includePaths": [
+			          "src/theme"
+		          ]
+	          }
           }
         }
       }

@@ -1,8 +1,10 @@
 import {
-  IconFaUserComponent
+  IconEnvelopeComponent,
+  IconKeyComponent
 }
 from './icons/icons.component';
 
 export const components: any[] = [
-   IconFaUserComponent
+   IconEnvelopeComponent,
+   IconKeyComponent
 ];

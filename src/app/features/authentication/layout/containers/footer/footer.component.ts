@@ -1,8 +1,17 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'iwdf-authentication-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  template: `<footer><p class="text-muted text-center">&#169;Blogial - 2018</p></footer>`,
+  styles: [`
+    :host {
+      display: block;
+    }
+    p{
+      margin-bottom: 0;
+      line-height: 2.5;
+    }
+  `]
 })
 export class AuthenticationFooterComponent {}

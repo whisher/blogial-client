@@ -1,0 +1,18 @@
+@import "theme-variables";
+
+:host {
+  display: block;
+}
+.layout-header {
+  h1 {
+    small{
+      font-size: $font-size-base;
+    }
+  }
+  &__logo {
+    display: block;
+    img {
+      max-width: 10rem;
+    }
+  }
+}

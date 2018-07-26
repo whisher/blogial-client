@@ -3,5 +3,3 @@ import { AuthenticationLoginFormComponent } from './login-form/login-form.compon
 export const components: any[] = [
   AuthenticationLoginFormComponent
 ];
-
-export * from './login-form/login-form.component';

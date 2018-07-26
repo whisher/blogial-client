@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthenticationMainComponent } from './layout/containers';
-import { AuthenticationLoginPageComponent } from './containers';
+import {
+  AuthenticationLoginPageComponent,
+  AuthenticationLogoutComponent
+} from './containers';
 
 export const ROUTES: Routes = [
   {
@@ -12,7 +15,7 @@ export const ROUTES: Routes = [
       { path: 'login', component: AuthenticationLoginPageComponent },
     ]
   },
-  //{ path: 'logout', component: AuthenticationLogoutComponent }
+  { path: 'logout', component: AuthenticationLogoutComponent }
 ];
 
 @NgModule({

@@ -3,12 +3,14 @@ import { SwUpdate } from '@angular/service-worker';
 
 import { PlatformService } from '../platform/platform.service';
 
+type ServiceWorkerEvent = any;
+
 @Injectable({
   providedIn: 'root'
 })
 export class PwaService {
   //promptEvent: BeforeInstallPromptEvent;
-  promptEvent;
+  promptEvent: ServiceWorkerEvent;
   constructor(private swUpdate: SwUpdate, platform: PlatformService) {
     if(platform.isBrowser()){
       swUpdate.available.subscribe(event =>  {

@@ -1,9 +1,27 @@
-<div class="authentication">
-  <div class="row no-gutters authentication__row">
-    <div class="col-lg-6 d-none d-lg-flex authentication__col">
+<div class="layout-main">
+  <div class="row no-gutters layout-main__row">
+    <div class="col-lg-6 d-none d-lg-flex layout-main__col">
+      <div class="layout-main__hint">
+        <h2 class="h1 text-white">Plan your blogial</h2>
+        <p class="text-white">Un mélange of something que tu aimes</p>
+      </div>
     </div>
-    <div class="col-lg-6 authentication__col">
-      <router-outlet></router-outlet>
+    <div class="col-lg-6 layout-main__col">
+      <div class="layout-main__header">
+        <iwdf-authentication-header></iwdf-authentication-header>
+      </div>
+      <div class="d-flex flex-column layout-main__content">
+        <div class="flex-fill">
+          <div class="row no-gutters justify-content-center">
+            <div class="col-sm-10 col-md-8 col-lg-6">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+        <div>
+          <iwdf-authentication-footer></iwdf-authentication-footer>
+        </div>
+      </div>
     </div>
   </div>
 </div>
