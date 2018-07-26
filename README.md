@@ -2,26 +2,48 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
+# Getting started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Go to project folder and install dependencies:
+ ```sh
+ npm install
+ ```
 
-## Code scaffolding
+2. Launch development server, and open `localhost:4200` in your browser:
+ ```sh
+ npm start
+ ```
+3. Build universal:
+  ```sh
+  npm run build:ssr
+  ```
+4. Launch universal server, and open `localhost:4000` in your browser:
+  ```sh
+  npm run serve:ssr
+  ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Project structure
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+dist/                        web app production build
+e2e/                         end-to-end tests
+src/                         project source code
+|- app/                      app components
+|  |- features/              features modules
+|  |- shared/                shared module
+|  |- store/                 ngrx
+|  |- app.component.*        app root component (shell)
+|  |- app.module.ts          app root module definition
+|  |- app-routing.module.ts  app routes
+|- assets/                   app assets (images, fonts, sounds...)
+|- environments/             values for various build environments
+|- theme/                    app global scss variables and theme
+|- translations/             translations files
+|- index.html                html entry point
+|- style.scss                 global style entry point
+|- main.ts                   app entry point
+|- main.server.ts            universal entry point
++- test.ts                   unit tests entry point
+ngsw-config.json             set up service worker (pwa)
+server.ts                    express server
+```
