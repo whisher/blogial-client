@@ -5,20 +5,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Getting started
 
 1. Go to project folder and install dependencies:
- ```sh
+ ```
  npm install
  ```
 
 2. Launch development server, and open `localhost:4200` in your browser:
- ```sh
+ ```
  npm start
  ```
 3. Build universal:
-  ```sh
+  ```
   npm run build:ssr
   ```
 4. Launch universal server, and open `localhost:4000` in your browser:
-  ```sh
+  ```
   npm run serve:ssr
   ```
 
