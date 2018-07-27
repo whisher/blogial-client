@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Authenticate } from '../../models/authentication';
+import { Authenticate } from '../../models/authentication.model';
 
 @Component({
   selector: 'iwdf-authentication-login-form',
@@ -9,6 +9,12 @@ import { Authenticate } from '../../models/authentication';
   styleUrls: ['./login-form.component.scss']
 })
 export class AuthenticationLoginFormComponent {
+  _pending: boolean;
+
+  get pending(): boolean {
+      return this._pending;
+  }
+
   @Input()
   set pending(isPending: boolean) {
     if (isPending) {
@@ -16,6 +22,7 @@ export class AuthenticationLoginFormComponent {
     } else {
       this.frm.enable();
     }
+    this._pending = isPending;
   }
 
   @Input() errorMessage: string | null;
@@ -26,6 +33,7 @@ export class AuthenticationLoginFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.createForm();
+
   }
 
   createForm() {

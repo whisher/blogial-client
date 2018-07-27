@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
       justify-content: center;
       height: 100vh;
     }
-  `]
+  `],
+  host:{'class': 'bg-primary'},
 })
 export class AuthenticationLogoutComponent implements OnInit {
 

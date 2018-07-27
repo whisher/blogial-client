@@ -6,7 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 /* Modules */
 import { AuthenticationLayoutModule } from './layout/layout.module';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { IconsModule } from '../../shared/icons/icons.module';
+import { IwdfIconsModule } from '../../shared/icons/icons.module';
+import { IwdfUiPasswordModule } from '../../shared/ui/password/password.module';
 
 /* Components */
 import * as fromComponents from './components';
@@ -19,7 +20,8 @@ import * as fromContainers from './containers';
     ReactiveFormsModule,
     AuthenticationLayoutModule,
     AuthenticationRoutingModule,
-    IconsModule
+    IwdfIconsModule,
+    IwdfUiPasswordModule
   ],
   declarations: [
     ...fromComponents.components,
