@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthenticationMainComponent } from './layout/containers';
+import { AuthenticationLayoutMainComponent } from './layout/containers';
 import {
   AuthenticationLoginPageComponent,
   AuthenticationLogoutComponent
@@ -9,7 +9,7 @@ import {
 
 export const ROUTES: Routes = [
   {
-    path: '', component: AuthenticationMainComponent,
+    path: '', component: AuthenticationLayoutMainComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'login' },
       { path: 'login', component: AuthenticationLoginPageComponent },

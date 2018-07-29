@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Authenticate } from '../../models/authentication.model';
 
 @Component({
-  selector: 'iwdf-authentication-login-form',
+  selector: 'authentication-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
@@ -33,7 +33,6 @@ export class AuthenticationLoginFormComponent {
 
   constructor(private fb: FormBuilder) {
     this.createForm();
-
   }
 
   createForm() {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'iwdf-authentication-logout',
+  selector: 'authentication-logout',
   template: `<p class="h1 text-white">Logging out...</p>`,
   styles: [`
     :host {

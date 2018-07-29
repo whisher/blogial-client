@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminMainComponent } from './layout/containers';
+import { AdminLayoutMainComponent } from './layout/containers';
 
 export const ROUTES: Routes = [
   {
-    path: '', component: AdminMainComponent,
+    path: '', component: AdminLayoutMainComponent,
     children: []
   }
 ];

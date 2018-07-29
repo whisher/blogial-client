@@ -13,7 +13,7 @@ import {
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CustomRouterStateSerializer } from './store/utils';
-import { reducers, metaReducers } from './store/reducers';
+import { effects, reducers, metaReducers } from './store';
 
 /* Externals */
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -39,7 +39,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([...effects]),
     StoreRouterConnectingModule.forRoot({stateKey:'router'}),
     StoreDevtoolsModule.instrument({
       name: 'Blogial DevTools',

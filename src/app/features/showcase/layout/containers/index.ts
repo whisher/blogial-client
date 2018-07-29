@@ -1,11 +1,11 @@
-import { ShowcaseFooterComponent } from './footer/footer.component';
-import { ShowcaseHeaderComponent } from './header/header.component';
-import { ShowcaseMainComponent } from './main/main.component';
+import { ShowcaseLayoutFooterComponent } from './footer/footer.component';
+import { ShowcaseLayoutHeaderComponent } from './header/header.component';
+import { ShowcaseLayoutMainComponent } from './main/main.component';
 
 export const containers: any[] = [
-  ShowcaseFooterComponent,
-  ShowcaseHeaderComponent,
-  ShowcaseMainComponent
+  ShowcaseLayoutFooterComponent,
+  ShowcaseLayoutHeaderComponent,
+  ShowcaseLayoutMainComponent
 ];
 
 export * from './main/main.component';

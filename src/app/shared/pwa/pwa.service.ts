@@ -9,10 +9,9 @@ type ServiceWorkerEvent = any;
   providedIn: 'root'
 })
 export class PwaService {
-  //promptEvent: BeforeInstallPromptEvent;
   promptEvent: ServiceWorkerEvent;
   constructor(private swUpdate: SwUpdate, platform: PlatformService) {
-    /*if(platform.isBrowser()){
+    if(platform.isBrowser()){
       swUpdate.available.subscribe(event =>  {
         if (window.confirm('Want to update?')) {
           window.location.reload();
@@ -21,12 +20,12 @@ export class PwaService {
       window.addEventListener('beforeinstallprompt', event => {
         this.promptEvent = event;
       });
-    }*/
+    }
   }
 
   install(): void {
     if(this.promptEvent){
-      //this.promptEvent.prompt();
+      this.promptEvent.prompt();
     }
   }
 }

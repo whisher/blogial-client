@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iwdf-showcase-header',
+  selector: 'showcase-layout-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class ShowcaseHeaderComponent {}
+export class ShowcaseLayoutHeaderComponent {}

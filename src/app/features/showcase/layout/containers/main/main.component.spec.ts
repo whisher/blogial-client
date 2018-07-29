@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowcaseMainComponent } from './main.component';
+import { ShowcaseLayoutMainComponent } from './main.component';
 
 describe('ShowcaseMainComponent', () => {
-  let component: ShowcaseMainComponent;
-  let fixture: ComponentFixture<ShowcaseMainComponent>;
+  let component: ShowcaseLayoutMainComponent;
+  let fixture: ComponentFixture<ShowcaseLayoutMainComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowcaseMainComponent ]
+      declarations: [ ShowcaseLayoutMainComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowcaseMainComponent);
+    fixture = TestBed.createComponent(ShowcaseLayoutMainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowcaseFooterComponent } from './footer.component';
+import { ShowcaseLayoutFooterComponent } from './footer.component';
 
 describe('ShowcaseFooterComponent', () => {
-  let component: ShowcaseFooterComponent;
-  let fixture: ComponentFixture<ShowcaseFooterComponent>;
+  let component: ShowcaseLayoutFooterComponent;
+  let fixture: ComponentFixture<ShowcaseLayoutFooterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowcaseFooterComponent ]
+      declarations: [ ShowcaseLayoutFooterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowcaseFooterComponent);
+    fixture = TestBed.createComponent(ShowcaseLayoutFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

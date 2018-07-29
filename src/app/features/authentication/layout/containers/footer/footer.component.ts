@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'iwdf-authentication-footer',
+  selector: 'authentication-layout-footer',
   template: `<footer><p class="text-muted text-center">&#169;Blogial - 2018</p></footer>`,
   styles: [`
     :host {
@@ -14,4 +14,4 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class AuthenticationFooterComponent {}
+export class AuthenticationLayoutFooterComponent {}

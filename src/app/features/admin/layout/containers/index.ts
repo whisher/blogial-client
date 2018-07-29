@@ -1,11 +1,11 @@
-import { AdminFooterComponent } from './footer/footer.component';
-import { AdminHeaderComponent } from './header/header.component';
-import { AdminMainComponent } from './main/main.component';
+import { AdminLayoutFooterComponent } from './footer/footer.component';
+import { AdminLayoutHeaderComponent } from './header/header.component';
+import { AdminLayoutMainComponent } from './main/main.component';
 
 export const containers: any[] = [
-  AdminFooterComponent,
-  AdminHeaderComponent,
-  AdminMainComponent
+  AdminLayoutFooterComponent,
+  AdminLayoutHeaderComponent,
+  AdminLayoutMainComponent
 ];
 
 export * from './main/main.component';

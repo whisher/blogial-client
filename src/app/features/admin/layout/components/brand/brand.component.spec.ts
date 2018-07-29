@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowcaseLayoutHeaderComponent } from './header.component';
+import { AdminLayoutBrandComponent } from './brand.component';
 
-describe('ShowcaseHeaderComponent', () => {
-  let component: ShowcaseLayoutHeaderComponent;
-  let fixture: ComponentFixture<ShowcaseLayoutHeaderComponent>;
+describe('BrandComponent', () => {
+  let component: AdminLayoutBrandComponent;
+  let fixture: ComponentFixture<AdminLayoutBrandComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowcaseLayoutHeaderComponent ]
+      declarations: [ AdminLayoutBrandComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowcaseLayoutHeaderComponent);
+    fixture = TestBed.createComponent(AdminLayoutBrandComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

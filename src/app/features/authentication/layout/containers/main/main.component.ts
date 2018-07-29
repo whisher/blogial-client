@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iwdf-authentication-main',
+  selector: 'authentication-layout-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class AuthenticationMainComponent {}
+export class AuthenticationLayoutMainComponent {}

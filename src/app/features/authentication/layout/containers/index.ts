@@ -1,11 +1,11 @@
-import { AuthenticationFooterComponent } from './footer/footer.component';
-import { AuthenticationHeaderComponent } from './header/header.component';
-import { AuthenticationMainComponent } from './main/main.component';
+import { AuthenticationLayoutFooterComponent } from './footer/footer.component';
+import { AuthenticationLayoutHeaderComponent } from './header/header.component';
+import { AuthenticationLayoutMainComponent } from './main/main.component';
 
 export const containers: any[] = [
-  AuthenticationFooterComponent,
-  AuthenticationHeaderComponent,
-  AuthenticationMainComponent
+  AuthenticationLayoutFooterComponent,
+  AuthenticationLayoutHeaderComponent,
+  AuthenticationLayoutMainComponent
 ];
 
 export * from './main/main.component';

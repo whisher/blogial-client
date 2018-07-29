@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'iwdf-admin-main',
+  selector: 'admin-layout-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class AdminMainComponent {}
+export class AdminLayoutMainComponent {}

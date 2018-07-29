@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Router} from '@angular/router';
 
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import { of } from 'rxjs';
 import { tap, map, exhaustMap, catchError } from 'rxjs/operators';
-import { Authenticate, AuthenticationToken } from '../../../models/authentication.model';
 
+import * as RouterActions from '../../../../../store';
+import {
+  Authenticate,
+  AuthenticationToken } from '../../../models/authentication.model';
 import {
   AuthenticationService
 } from '../../services/authentication.service';
@@ -37,19 +39,16 @@ export class AuthenticationEffects {
   @Effect({ dispatch: false })
   loginSuccess$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginSuccess),
-    tap(() => this.router.navigate(['/admin']))
+    tap(() => new RouterActions.Go({path: ['/admin']}))
   );
 
   @Effect({ dispatch: false })
   loginRedirect$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginRedirect, AuthenticationActionTypes.Logout),
-    tap(authed => {
-      this.router.navigate(['/auth/login']);
-    })
+    tap(authed => new RouterActions.Go({path: ['/auth/login']}))
   );
 
   constructor(
-    private router: Router,
     private actions$: Actions,
     private authenticationService: AuthenticationService
   ) {}

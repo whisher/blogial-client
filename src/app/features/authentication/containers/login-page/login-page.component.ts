@@ -6,13 +6,18 @@ import * as fromAuthentication from '../../shared/store/reducers';
 import * as Authentication from '../../shared/store/actions';
 
 @Component({
-  selector: 'iwdf-authentication-login-page',
+  selector: 'authentication-login-page',
   template: `
-    <iwdf-authentication-login-form
+    <authentication-login-form
       (submitted)="onSubmit($event)"
       [pending]="pending$ | async"
       [errorMessage]="error$ | async">
-    </iwdf-authentication-login-form>
+    </authentication-login-form>
+    <div class="mt-3">
+      <a class="btn btn-link" routerLink="">
+        Back to blogial
+      </a>
+    </div>
   `,
   styles: [],
 })
