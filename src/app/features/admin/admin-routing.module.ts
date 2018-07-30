@@ -6,7 +6,17 @@ import { AdminLayoutMainComponent } from './layout/containers';
 export const ROUTES: Routes = [
   {
     path: '', component: AdminLayoutMainComponent,
-    children: []
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
+      },
+      {
+        path: 'dashboard',
+        loadChildren: './dashboard/dashboard.module#AdminDashboardModule'
+      }
+    ]
   }
 ];
 

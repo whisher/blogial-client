@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Router} from '@angular/router';
 
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import { of } from 'rxjs';
@@ -36,19 +37,20 @@ export class AuthenticationEffects {
     )
   );
 
-  @Effect({ dispatch: false })
+  @Effect()
   loginSuccess$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginSuccess),
-    tap(() => new RouterActions.Go({path: ['/admin']}))
+    map(() => new RouterActions.Go({path: ['/admin']}))
   );
 
-  @Effect({ dispatch: false })
+  @Effect()
   loginRedirect$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginRedirect, AuthenticationActionTypes.Logout),
-    tap(authed => new RouterActions.Go({path: ['/auth/login']}))
+    map(authed => new RouterActions.Go({path: ['/auth/login']}))
   );
 
   constructor(
+    private router: Router,
     private actions$: Actions,
     private authenticationService: AuthenticationService
   ) {}
