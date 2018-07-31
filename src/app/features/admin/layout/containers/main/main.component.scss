@@ -1,7 +1,13 @@
 @import "theme-variables";
 
 :host{
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  padding-top: 150px;
   background-color: $admin-bck-color;
+}
+main{
+  flex: 1 1 auto;
+  background-color: #e0f7fa;
 }

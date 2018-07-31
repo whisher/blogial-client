@@ -5,12 +5,14 @@ import {
 } from '@ngrx/store';
 
 import * as fromRoot from '../../../../../store/reducers';
+import * as fromAccount from './account.reducers';
 import * as fromAuthentication from './authentication.reducers';
 import * as fromLoginPage from './login-page.reducers';
 
 export interface AuthenticationState {
   status: fromAuthentication.State;
   loginPage: fromLoginPage.State;
+  account: fromAccount.State
 }
 
 export interface State extends fromRoot.State {
@@ -19,7 +21,8 @@ export interface State extends fromRoot.State {
 
 export const reducers: ActionReducerMap<AuthenticationState> = {
   status: fromAuthentication.reducer,
-  loginPage: fromLoginPage.reducer
+  loginPage: fromLoginPage.reducer,
+  account: fromAccount.reducer
 };
 
 export const selectAuthenticationState = createFeatureSelector<AuthenticationState>('auth');
@@ -52,4 +55,9 @@ export const getLoginPageError = createSelector(
 export const getLoginPagePending = createSelector(
   selectLoginPageState,
   fromLoginPage.getPending
+);
+
+export const getAccount = createSelector(
+  selectAuthenticationState,
+  (state: AuthenticationState) => state.account
 );

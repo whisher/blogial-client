@@ -1,0 +1,14 @@
+.c-fancy-line {
+  display: flex;
+  align-items: center;
+  div {
+    flex: 1 0 auto;
+    height: 2px;
+    background-color: currentColor;
+  }
+  span {
+    display: block;
+    margin: 0 1rem;
+    color: currentColor;
+  }
+}

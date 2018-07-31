@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faArrowLeft,
   faEnvelope,
   faEye,
   faEyeSlash,
@@ -9,11 +10,22 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
+  faArrowLeft,
   faEnvelope,
   faEye,
   faEyeSlash,
   faKey
 );
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'iwdf-icon-arrowleft',
+  template: `<fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconArrowLeftComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

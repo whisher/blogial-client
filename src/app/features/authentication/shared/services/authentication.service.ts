@@ -9,11 +9,13 @@ import { HttpErrorHandler } from '../../../../shared/http/http-error-handler';
 
 import {
   Authenticate,
-  AuthenticationToken
+  AuthenticationToken,
+  Account
 } from '../../models/authentication.model';
 
 @Injectable()
 export class AuthenticationService {
+  urlAccount: string;
   urlLogin: string;
   constructor(
     private http: HttpClient,
@@ -27,5 +29,9 @@ export class AuthenticationService {
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
-
+  account(): Observable<Account>{
+    console.log('ri ppp ah pipppolooola');
+    return this.http.get<Account>(this.urlAccount)
+    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+  }
 }

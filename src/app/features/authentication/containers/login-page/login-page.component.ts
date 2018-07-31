@@ -14,8 +14,8 @@ import * as Authentication from '../../shared/store/actions';
       [errorMessage]="error$ | async">
     </authentication-login-form>
     <div class="mt-3">
-      <a class="btn btn-link" routerLink="">
-        Back to blogial
+      <a routerLink="">
+      <iwdf-icon-arrowleft></iwdf-icon-arrowleft>  Back to blogial
       </a>
     </div>
   `,
@@ -29,5 +29,6 @@ export class AuthenticationLoginPageComponent {
 
   onSubmit($event: Authenticate) {
     this.store.dispatch(new Authentication.Login($event));
+    //this.store.dispatch(new Authentication.AccountRequested());
   }
 }

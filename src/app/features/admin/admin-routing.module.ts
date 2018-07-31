@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthenticationGuard } from '../authentication/shared/guards';
 import { AdminLayoutMainComponent } from './layout/containers';
 
 export const ROUTES: Routes = [
   {
     path: '', component: AdminLayoutMainComponent,
+    //canActivate: [AuthenticationGuard],
     children: [
       {
         path: '',
@@ -15,6 +17,18 @@ export const ROUTES: Routes = [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#AdminDashboardModule'
+      },
+      {
+        path: 'media',
+        loadChildren: './media/media.module#AdminMediaModule'
+      },
+      {
+        path: 'posts',
+        loadChildren: './posts/posts.module#AdminPostsModule'
+      },
+      {
+        path: 'users',
+        loadChildren: './users/users.module#AdminUsersModule'
       }
     ]
   }

@@ -1,0 +1,44 @@
+@mixin base-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: $btn-font-weight;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  outline: none;
+  box-shadow: none;
+  appearance: button;
+  @include transition($btn-transition);
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin dropdown-button {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: $btn-font-weight;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  outline: none;
+  box-shadow: none;
+  appearance: button;
+  @include transition($btn-transition);
+  &:focus {
+    outline: 0;
+  }
+}

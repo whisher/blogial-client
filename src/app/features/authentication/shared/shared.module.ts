@@ -3,7 +3,10 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import * as fromGuards from './guards';
+import * as fromInterceptors from './interceptors';
 import * as fromService from './services';
+
 import { reducers, effects } from './store';
 
 @NgModule({
@@ -19,6 +22,8 @@ export class AuthenticationSharedModule {
     return {
       ngModule: AuthenticationSharedModule,
       providers: [
+        ...fromGuards.guards,
+        ...fromInterceptors.interceptors,
         ...fromService.services
       ]
     };
