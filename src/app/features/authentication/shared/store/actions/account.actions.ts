@@ -2,14 +2,14 @@ import { Action } from '@ngrx/store';
 import { Account } from '../../../models/authentication.model';
 
 export enum AccountActionTypes {
-  AccountFailure = '[Account] Account Failure',
-  AccountRequested = '[Account] Account Requested',
-  AccountSuccess = '[Account] Account Success',
+  AccountFailure = '[Account] Failure',
+  AccountRequested = '[Account] Requested',
+  AccountSuccess = '[Account] Success',
 }
 
 export class AccountFailure implements Action {
   readonly type = AccountActionTypes.AccountFailure;
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class AccountRequested implements Action {
@@ -18,7 +18,7 @@ export class AccountRequested implements Action {
 
 export class AccountSuccess implements Action {
   readonly type = AccountActionTypes.AccountSuccess;
-  constructor(public payload: { account:Account}) {}
+  constructor(public payload: { account: Account }) { }
 }
 
 

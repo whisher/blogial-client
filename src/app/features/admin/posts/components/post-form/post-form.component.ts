@@ -1,14 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Authenticate } from '../../models/authentication.model';
- 
+import { Post } from '../../models/post.model';
+
 @Component({
-  selector: 'authentication-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  selector: 'admin-posts-post-form',
+  templateUrl: './post-form.component.html',
+  styleUrls: ['./post-form.component.scss']
 })
-export class AuthenticationLoginFormComponent {
+export class AdminPostsPostFormComponent {
   _pending: boolean;
 
   get pending(): boolean {
@@ -27,7 +27,7 @@ export class AuthenticationLoginFormComponent {
 
   @Input() errorMessage: string | null;
 
-  @Output() submitted = new EventEmitter<Authenticate>();
+  @Output() submitted = new EventEmitter<Post>();
 
   frm: FormGroup;
 
@@ -37,8 +37,8 @@ export class AuthenticationLoginFormComponent {
 
   createForm() {
     this.frm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      title: ['', [Validators.required]],
+      content: ['', Validators.required],
     });
   }
 

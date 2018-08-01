@@ -8,7 +8,7 @@ import * as fromAuth from '../../../../store';
 
 @Injectable()
 export class AuthenticationGuard implements CanActivate {
-  constructor(private store: Store<fromAuth.State>) {}
+  constructor(private store: Store<fromAuth.State>) { }
 
   canActivate(): Observable<boolean> {
     return this.store.pipe(

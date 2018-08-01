@@ -21,6 +21,7 @@ export class AuthenticationService {
     private http: HttpClient,
     @Inject(URLS) private urls
   ) {
+    this.urlAccount = urls.authentication.account;
     this.urlLogin = urls.authentication.login;
   }
 
@@ -30,7 +31,6 @@ export class AuthenticationService {
   }
 
   account(): Observable<Account>{
-    console.log('ri ppp ah pipppolooola');
     return this.http.get<Account>(this.urlAccount)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }

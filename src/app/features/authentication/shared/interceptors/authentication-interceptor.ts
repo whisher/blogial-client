@@ -18,17 +18,13 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
     return this.store.select(fromStore.getToken)
       .pipe(
         take(1),
         switchMap((token: AuthenticationToken) => {
-          console.log('token',token);
           if (token) {
-            const clonedRequest = request.clone({
-              setHeaders: {
-                Authorization: `Bearer ${token.token}`
-              }
-            });
+            const clonedRequest = request.clone({ setHeaders: { Authorization: token.token } });
             return next.handle(clonedRequest);
           }
           return next.handle(request);

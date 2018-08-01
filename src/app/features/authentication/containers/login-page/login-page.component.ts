@@ -25,10 +25,9 @@ export class AuthenticationLoginPageComponent {
   pending$ = this.store.pipe(select(fromAuthentication.getLoginPagePending));
   error$ = this.store.pipe(select(fromAuthentication.getLoginPageError));
 
-  constructor(private store: Store<fromAuthentication.State>) { }
+  constructor(private store: Store<fromAuthentication.State>) {}
 
   onSubmit($event: Authenticate) {
     this.store.dispatch(new Authentication.Login($event));
-    //this.store.dispatch(new Authentication.AccountRequested());
   }
 }

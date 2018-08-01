@@ -31,15 +31,16 @@ import {
 export class AuthenticationEffects {
 
   @Effect()
-  account$ = this.actions$.ofType(AccountActionTypes.AccountRequested)
+  account$ = this.actions$
     .pipe(
-    switchMap(() => {
-    return this.authenticationService.account()
-        .pipe(
-          map((account:Account) => new AccountSuccess({ account })),
-          catchError(error => of(new AccountFailure(error)))
-        )
-    })
+      ofType(AccountActionTypes.AccountRequested),
+      switchMap(() => {
+        return this.authenticationService.account()
+          .pipe(
+            map((account: Account) => new AccountSuccess({ account })),
+            catchError(error => of(new AccountFailure(error)))
+          )
+      })
     );
   @Effect()
   login$ = this.actions$.pipe(
@@ -49,26 +50,31 @@ export class AuthenticationEffects {
       this.authenticationService
         .login(credentials)
         .pipe(
-          mergeMap((token: AuthenticationToken) => {
-            return [
-              new LoginSuccess({ token }),
-              new AccountRequested()
-            ]
-          }),
+          map((token: AuthenticationToken) => new LoginSuccess({ token })),
           catchError(error => of(new LoginFailure(error)))
         )
     )
   );
 
   @Effect()
-  /*loginSuccess$ = this.actions$.pipe(
+  loginSuccess$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginSuccess),
-    map(() => new RouterActions.Go({ path: ['/admin'] }))
-  );*/
+    mergeMap((token: AuthenticationToken) => {
+      return [
+        new AccountRequested(),
+        new RouterActions.Go({ path: ['/admin'] })
+      ]
+    }),
+    catchError(error => of(new AccountFailure(error)))
+  );
 
   @Effect()
   loginRedirect$ = this.actions$.pipe(
-    ofType(AuthenticationActionTypes.LoginRedirect, AuthenticationActionTypes.Logout),
+    ofType(
+      AuthenticationActionTypes.LoginRedirect,
+      AuthenticationActionTypes.Logout,
+      AccountActionTypes.AccountFailure
+    ),
     map(authed => new RouterActions.Go({ path: ['/auth/login'] }))
   );
 

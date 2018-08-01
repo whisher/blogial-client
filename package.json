@@ -44,6 +44,7 @@
     "core-js": "^2.5.4",
     "helmet": "^3.13.0",
     "ngrx-store-freeze": "^0.2.4",
+    "ngrx-store-localstorage": "^5.0.1",
     "rxjs": "^6.0.0",
     "ts-loader": "^4.4.2",
     "zone.js": "^0.8.26"

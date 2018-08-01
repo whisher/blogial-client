@@ -5,13 +5,14 @@ import {
   createSelector,
   MetaReducer
 } from '@ngrx/store';
-
 import { storeFreeze } from 'ngrx-store-freeze';
 import { routerReducer } from '@ngrx/router-store';
-import * as fromRouter from '@ngrx/router-store';
-import { RouterStateUrl } from '../utils';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { environment } from '../../../environments/environment';
+
+import * as fromRouter from '@ngrx/router-store';
+import { RouterStateUrl, customStorage } from '../utils';
 
 
 export interface State {
@@ -22,6 +23,13 @@ export const reducers: ActionReducerMap<State> = {
   router: routerReducer
 };
 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({
+    keys: ['auth'],
+    rehydrate: true,
+    storage: customStorage
+  })(reducer);
+}
 
 export const metaReducers: MetaReducer<State>[] =
-  !environment.production ? [storeFreeze] : [];
+  !environment.production ? [storeFreeze, localStorageSyncReducer] : [localStorageSyncReducer];

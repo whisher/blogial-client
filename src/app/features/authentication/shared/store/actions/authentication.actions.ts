@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { Authenticate, AuthenticationToken } from '../../../models/authentication.model';
 
 export enum AuthenticationActionTypes {
-  Login = '[Login] Action',
+  Login = '[Auth] Login',
   LoginFailure = '[Auth] Login Failure',
   Logout = '[Auth] Logout',
   LoginRedirect = '[Auth] Login Redirect',
@@ -11,12 +11,12 @@ export enum AuthenticationActionTypes {
 
 export class Login implements Action {
   readonly type = AuthenticationActionTypes.Login;
-  constructor(public payload: Authenticate) {}
+  constructor(public payload: Authenticate) { }
 }
 
 export class LoginFailure implements Action {
   readonly type = AuthenticationActionTypes.LoginFailure;
-  constructor(public payload: any) {}
+  constructor(public payload: any) { }
 }
 
 export class Logout implements Action {
@@ -29,7 +29,7 @@ export class LoginRedirect implements Action {
 
 export class LoginSuccess implements Action {
   readonly type = AuthenticationActionTypes.LoginSuccess;
-  constructor(public payload: { token: AuthenticationToken }) {}
+  constructor(public payload: { token: AuthenticationToken }) { }
 }
 
 export type AuthenticationActions =

@@ -7,7 +7,7 @@ import { AdminLayoutMainComponent } from './layout/containers';
 export const ROUTES: Routes = [
   {
     path: '', component: AdminLayoutMainComponent,
-    //canActivate: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard],
     children: [
       {
         path: '',
