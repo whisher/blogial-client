@@ -4,6 +4,7 @@ import { Authenticate, AuthenticationToken } from '../../../models/authenticatio
 export enum AuthenticationActionTypes {
   Login = '[Auth] Login',
   LoginFailure = '[Auth] Login Failure',
+  LoginJustLogged = '[Auth] Login Just Logged',
   Logout = '[Auth] Logout',
   LoginRedirect = '[Auth] Login Redirect',
   LoginSuccess = '[Auth] Login Success',
@@ -17,6 +18,10 @@ export class Login implements Action {
 export class LoginFailure implements Action {
   readonly type = AuthenticationActionTypes.LoginFailure;
   constructor(public payload: any) { }
+}
+
+export class LoginJustLogged implements Action {
+  readonly type = AuthenticationActionTypes.LoginJustLogged;
 }
 
 export class Logout implements Action {
@@ -35,6 +40,7 @@ export class LoginSuccess implements Action {
 export type AuthenticationActions =
   | Login
   | LoginFailure
+  | LoginJustLogged
   | Logout
   | LoginRedirect
   | LoginSuccess;

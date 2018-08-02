@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'authentication-layout-footer',
   template: `<footer><p class="text-muted text-center">&#169;Blogial - 2018</p></footer>`,
   styles: [`

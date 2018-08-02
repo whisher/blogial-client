@@ -5,12 +5,12 @@ export interface Authenticate {
 
 export interface AuthenticationToken {
   token: string;
-  expiresIn: number
+  expiresIn: number;
 }
 
 export interface Account {
-  avatar: string,
-  email: string,
-  id: string,
-  username: string,
+  avatar: string;
+  email: string;
+  id: string;
+  username: string;
 }

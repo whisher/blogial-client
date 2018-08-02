@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { Authenticate } from '../../models/authentication.model';
@@ -6,6 +6,7 @@ import * as fromAuthentication from '../../shared/store/reducers';
 import * as Authentication from '../../shared/store/actions';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'authentication-login-page',
   template: `
     <authentication-login-form

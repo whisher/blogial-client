@@ -78,6 +78,14 @@ export class AuthenticationEffects {
     map(authed => new RouterActions.Go({ path: ['/auth/login'] }))
   );
 
+  @Effect()
+  loginJustLogged$ = this.actions$.pipe(
+    ofType(
+      AuthenticationActionTypes.LoginJustLogged
+    ),
+    map(authed => new RouterActions.Go({ path: ['/admin'] }))
+  );
+
   constructor(
     private router: Router,
     private actions$: Actions,

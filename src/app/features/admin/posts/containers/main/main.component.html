@@ -1,3 +1,14 @@
-<div>
-  POSTS
-</div>
+<a class="btn btn-secondary btn-lg" routerLink="/admin/posts/post">
+  Add new
+</a>
+<ul>
+  <ng-container *ngIf="(posts$ | async) as posts">
+  <li *ngFor="let post of posts">
+    <a [routerLink]="['/admin/posts/post', post._id]">
+      {{post._id}}
+    </a>
+  </li>
+  </ng-container>
+
+
+</ul>

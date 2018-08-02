@@ -10,6 +10,8 @@ import { AdminPostsRoutingModule } from './posts-routing.module';
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
 
+// Guards
+import * as fromGuards from './guards';
 
 @NgModule({
   imports: [
@@ -19,7 +21,10 @@ import * as fromContainers from './containers';
   ],
   declarations: [
     ...fromComponents.components,
-    ...fromContainers.containers
+    ...fromContainers.containers,
+  ],
+  providers: [
+    ...fromGuards.guards
   ]
 })
 export class AdminPostsModule { }

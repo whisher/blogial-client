@@ -8,6 +8,10 @@ export function urls(): ConfigUrls {
     authentication: {
       account: `${host}/users/account`,
       login: `${host}/users/login`
+    },
+    posts:{
+      create: `${host}/posts`,
+      find: `${host}/posts`
     }
   };
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LoginGuard } from './shared/guards/login.guard';
 import { AuthenticationLayoutMainComponent } from './layout/containers';
 import {
   AuthenticationLoginPageComponent,
@@ -12,7 +13,11 @@ export const ROUTES: Routes = [
     path: '', component: AuthenticationLayoutMainComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'login' },
-      { path: 'login', component: AuthenticationLoginPageComponent },
+      {
+        path: 'login',
+        canActivate: [LoginGuard],
+        component: AuthenticationLoginPageComponent
+      },
     ]
   },
   { path: 'logout', component: AuthenticationLogoutComponent }

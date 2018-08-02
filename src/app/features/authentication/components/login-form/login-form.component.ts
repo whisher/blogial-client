@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Authenticate } from '../../models/authentication.model';
- 
+
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'authentication-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
