@@ -12,7 +12,7 @@ export class AdminPostsPostFormComponent implements OnInit {
   _pending: boolean;
   _isPristine = true;
   get pending(): boolean {
-      return this._pending;
+    return this._pending;
   }
 
   @Input()
@@ -40,15 +40,15 @@ export class AdminPostsPostFormComponent implements OnInit {
   }
   ngOnInit() {
     this.frm.valueChanges.subscribe(val => {
-      if(this._isPristine){
+      if (this._isPristine) {
         this._isPristine = false;
         this.isPristine.emit(false);
       }
     });
 
-  if(this.data){
-    //this.frm.setValue(this.data);
-  }
+    if (this.data) {
+      //this.frm.setValue(this.data);
+    }
 
   }
 
