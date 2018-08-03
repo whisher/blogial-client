@@ -4,23 +4,29 @@ import {
   HttpInterceptor,
   HttpRequest,HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError, of } from 'rxjs';
+
+import { Store } from '@ngrx/store';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-
+import * as fromAuthentication from '../../shared/store/reducers';
+import * as Authentication from '../../shared/store/actions';
 
 @Injectable()
 export class AuthenticationErrorInterceptor implements HttpInterceptor {
-
+  status = [401];
+  constructor(private store: Store<fromAuthentication.State>){}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     return next.handle(request)
       .pipe(
-        catchError((event: HttpEvent<any>) => {
-          if (event instanceof HttpErrorResponse) {
-            console.log('do something');
+        catchError((error: HttpEvent<any>) => {
+          if (error instanceof HttpErrorResponse) {
+            if(this.status.indexOf(error.status) !== -1){
+              this.store.dispatch(new Authentication.Logout());
+            }
           }
-          return throwError(event)
+          return throwError(error);
         })
       );
 
