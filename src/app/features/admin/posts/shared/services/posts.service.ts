@@ -20,12 +20,12 @@ export class PostsService {
     this.urlFind = urls.posts.find;
   }
 
-  create(data: Post): Observable<Post> {
+  add(data: Post): Observable<Post> {
     return this.http.post<Post>(this.urlCreate, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
-  find(): Observable<Post[]> {
+  load(): Observable<Post[]> {
     return this.http.get<Post[]>(this.urlFind)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
@@ -36,6 +36,11 @@ export class PostsService {
   }
 
   update(id: string, data: Post): Observable<Post> {
+    return this.http.put<Post>(`${this.urlFind}/${id}`, data)
+    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+  }
+
+  delete(id: string, data: Post): Observable<Post> {
     return this.http.put<Post>(`${this.urlFind}/${id}`, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }

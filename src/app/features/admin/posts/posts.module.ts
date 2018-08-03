@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Module
+import { IwdfUiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
 import { AdminPostsRoutingModule } from './posts-routing.module';
 
 // Components
@@ -17,6 +18,7 @@ import * as fromGuards from './guards';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    IwdfUiButtonSpinnerModule,
     AdminPostsRoutingModule
   ],
   declarations: [

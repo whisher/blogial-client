@@ -29,8 +29,10 @@
       </div>
       <div class="col">
         <button class="btn btn-primary btn-lg btn-block"
-                type="submit" [disabled]="frm.invalid || pending">
-            Login
+                type="submit" [disabled]="frm.invalid">
+            <iwdf-ui-button-spinner
+            [value]="'Login'"
+            [has]="pending"></iwdf-ui-button-spinner>
         </button>
       </div>
     </div>

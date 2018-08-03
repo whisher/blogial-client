@@ -18,8 +18,10 @@
     </div>
     <div class="col-sm-4">
       <button class="btn btn-primary btn-lg btn-block"
-              type="submit" [disabled]="frm.invalid || pending">
-          Publish
+              type="submit" [disabled]="frm.invalid">
+          <iwdf-ui-button-spinner
+          [value]="'Publish'"
+          [has]="pending"></iwdf-ui-button-spinner>
       </button>
     </div>
   </div>

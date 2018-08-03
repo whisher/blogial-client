@@ -4,7 +4,7 @@ import {
   ActionReducerMap,
 } from '@ngrx/store';
 
-import * as fromRoot from '../../../../../store/reducers';
+//import * as fromRoot from '../../../../../store/reducers';
 import * as fromAccount from './account.reducers';
 import * as fromAuthentication from './authentication.reducers';
 import * as fromLoginPage from './login-page.reducers';
@@ -15,7 +15,7 @@ export interface AuthenticationState {
   account: fromAccount.State
 }
 
-export interface State extends fromRoot.State {
+export interface State  {
   auth: AuthenticationState;
 }
 

@@ -11,7 +11,7 @@ import { reducers, effects } from './store';
 @NgModule({
   imports: [
     StoreModule.forFeature('auth', reducers),
-    EffectsModule.forFeature([...effects])
+    EffectsModule.forFeature(effects)
   ]
 })
 

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PostPageGuard } from './guards';
+import { PostsGuard } from './shared/guards';
+
 import {
   AdminPostsMainComponent,
   AdminPostsPostPageComponent
@@ -9,7 +11,10 @@ import {
 
 export const ROUTES: Routes = [
   {
-    path: '', component: AdminPostsMainComponent, pathMatch: 'full'
+    path: '',
+    component: AdminPostsMainComponent,
+    canActivate: [ PostsGuard ],
+    pathMatch: 'full'
   },
   {
     path: 'post',

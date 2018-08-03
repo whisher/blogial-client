@@ -23,9 +23,13 @@ export const reducers: ActionReducerMap<State> = {
   router: routerReducer
 };
 
+export const getRouterState = createFeatureSelector<
+  fromRouter.RouterReducerState<RouterStateUrl>
+>('routerReducer');
+
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
-    keys: ['auth'],
+    keys: [{auth:['status','account']}],
     rehydrate: true,
     storage: customStorage
   })(reducer);
