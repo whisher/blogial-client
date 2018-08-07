@@ -3,11 +3,11 @@ import { createSelector } from '@ngrx/store';
 import * as fromRoot from '../../../../../../store';
 import * as fromFeature from '../reducers';
 import * as fromPosts from '../reducers/posts.reducer';
-import { Post } from '../../../models/post.model';
+import { Post } from '../../../models';
 
 export const getPostState = createSelector(
   fromFeature.getPostsState,
-  (state: fromFeature.PostsState) => state.posts
+  (state: fromFeature.State) => state.posts
 );
 
 export const getPostsEntities = createSelector(

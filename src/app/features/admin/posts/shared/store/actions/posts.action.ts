@@ -76,7 +76,7 @@ export class UpdatePostSuccess implements Action {
 export class DeletePost implements Action {
   readonly type = PostsActionTypes.DeletePost;
 
-  constructor(public payload: { post: Post }) {}
+  constructor(public payload: { id }) {}
 }
 
 export class DeletePostFail implements Action {
@@ -88,7 +88,7 @@ export class DeletePostFail implements Action {
 export class DeletePostSuccess implements Action {
   readonly type = PostsActionTypes.DeletePostSuccess;
 
-  constructor(public payload: { post: Post }) {}
+  constructor(public payload: { id }) {}
 }
 
 export type PostsActions =

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 
-import { Observable } from 'rxjs';
-import { Post } from '../../models/post.model';
+import * as fromPosts from '../../shared/store';
+import { Post } from '../../models';
 
 @Component({
   selector: 'admin-posts-main',
@@ -9,9 +10,8 @@ import { Post } from '../../models/post.model';
   styleUrls: ['./main.component.scss']
 })
 export class AdminPostsMainComponent implements OnInit {
-  posts$:Observable<Post[]>; 
-  constructor() { }
-
+  posts$ = this.store.pipe(select(fromPosts.getPostsEntities));
+  constructor(private store: Store<fromPosts.State>) { }
   ngOnInit() {}
 
 }

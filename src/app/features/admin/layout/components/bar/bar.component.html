@@ -18,12 +18,12 @@
         </ul>
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdownAccount">
-        <ul class="user-bar__menu">
+        <ul class="user-bar__menu mat-elevation-5 arrow_box">
           <li class="c-dropdown-item text-secondary">Hello {{account.display_name}}</li>
           <li class="c-dropdown-item">{{account.role}}</li>
           <li class="c-dropdown-item"><hr /></li>
           <li class="c-dropdown-item">
-            <a class="c-btn" routerLinkActive="active" routerLink="/admin/users">
+            <a routerLinkActive="active" routerLink="/admin/users">
               Profile
             </a>
           </li>
@@ -35,40 +35,3 @@
     </div>
   </li>
 </ul>
-<!--
-<ul class="user-bar">
-  <li>
-    PPPP
-  </li>
-  <li class="ml-4">
-    <div iwdfDropdown>
-      <button class="c-btn-dropdown" id="dropdownAccount" iwdfDropdownToggle>
-        <ul class="user-bar__account">
-          <li>
-            <img class="d-inline-block" class="avatar" class="rounded-circle" src="/assets/images/avatar.jpg" alt="">
-          </li>
-          <li class="pl-2">
-            <span class="d-inline-block">{{account.account.username}}</span>
-          </li>
-          <li class="pl-3">
-            <i class="fas fa-angle-down"></i>
-          </li>
-        </ul>
-      </button>
-      <div iwdfDropdownMenu aria-labelledby="dropdownAccount">
-        <ul class="user-bar__menu">
-          <li class="c-dropdown-item text-secondary">Hello {{account.username}}</li>
-          <li class="c-dropdown-item">{{account.role}}</li>
-          <li class="c-dropdown-item"><hr /></li>
-          <li class="c-dropdown-item">
-            <button class="c-btn" (click)="onSettings()">Settings</button>
-          </li>
-          <li class="c-dropdown-item">
-            <button class="c-btn" (click)="onLogout()">Log out</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </li>
-</ul>
--->

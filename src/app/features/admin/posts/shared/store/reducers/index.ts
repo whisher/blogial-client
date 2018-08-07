@@ -3,14 +3,14 @@ import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as fromPosts from './posts.reducer';
 
 
-export interface PostsState {
-  posts: fromPosts.PostsState;
+export interface State {
+  posts: fromPosts.State;
 }
- 
-export const reducers: ActionReducerMap<PostsState> = {
+
+export const reducers: ActionReducerMap<State> = {
   posts: fromPosts.reducer
 };
 
-export const getPostsState = createFeatureSelector<PostsState>(
+export const getPostsState = createFeatureSelector<State>(
   'posts'
 );

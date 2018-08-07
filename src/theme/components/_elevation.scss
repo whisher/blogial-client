@@ -1,6 +1,6 @@
-.mat-elevation-main{
-  @include mat-elevation(12);
-  &:active {
-    @include mat-elevation(20);
-  }
+.mat-elevation-10{
+  @include mat-elevation(10);
+}
+.mat-elevation-5{
+  @include mat-elevation(5);
 }

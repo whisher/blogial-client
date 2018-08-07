@@ -25,7 +25,7 @@ export const reducers: ActionReducerMap<State> = {
 
 export const getRouterState = createFeatureSelector<
   fromRouter.RouterReducerState<RouterStateUrl>
->('routerReducer');
+>('router');
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({

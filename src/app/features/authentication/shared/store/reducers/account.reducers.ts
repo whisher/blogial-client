@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Account } from '../../../models/authentication.model';
+import { Account } from '../../../models';
 import {
   AccountActions,
   AccountActionTypes

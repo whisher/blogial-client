@@ -11,3 +11,8 @@ a {
 .dropdown-toggle::after {
   display: none;
 }
+.dropdown-menu{
+  float: none;
+  padding: 0;
+  margin: 0;
+}

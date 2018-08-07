@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import { Authenticate } from '../../models/authentication.model';
+import { Authenticate } from '../../models';
 import * as fromAuthentication from '../../shared/store';
 
 @Component({

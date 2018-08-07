@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+
+import * as fromAuthentication from '../../shared/store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'authentication-logout',
   template: `<p class="h1 text-white">Logging out...</p>`,
   styles: [`
@@ -15,9 +19,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationLogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<fromAuthentication.State>) { }
 
   ngOnInit() {
+    this.store.dispatch(new fromAuthentication.Logout());
   }
 
 }

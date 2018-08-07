@@ -48,7 +48,7 @@ export class PostsEffects {
       map((action: postsActions.AddPostSuccess) => action.payload.post),
       map(post => {
         return new RouterActions.Go({
-          path: ['/admin/posts/post', post._id],
+          path: ['/admin/posts'],
         });
       })
     );
@@ -70,19 +70,19 @@ export class PostsEffects {
   @Effect()
   deletePost$ = this.actions$.ofType(postsActions.PostsActionTypes.DeletePost)
   .pipe(
-    map((action: postsActions.DeletePost) => action.payload.post),
+    map((action: postsActions.DeletePost) => action.payload.id),
     switchMap(post => {
       return this.service
-        .delete(post._id, post)
+        .delete(post._id)
         .pipe(
-          map(post => new postsActions.DeletePostSuccess({post})),
+          map(id => new postsActions.DeletePostSuccess({id})),
           catchError(error => of(new postsActions.DeletePostFail(error)))
         );
     })
   );
 
   @Effect()
-  handlePizzaSuccess$ = this.actions$
+  handlePostsSuccess$ = this.actions$
     .ofType(
       postsActions.PostsActionTypes.UpdatePostSuccess,
       postsActions.PostsActionTypes.DeletePostSuccess

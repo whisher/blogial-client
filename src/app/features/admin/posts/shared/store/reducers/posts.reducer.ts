@@ -1,14 +1,14 @@
 import { PostsActionTypes, PostsActions } from '../actions/posts.action';
 import { Post } from '../../../models/post.model';
 
-export interface PostsState {
+export interface State {
   entities: { [id: string]: Post };
   error: boolean;
   loaded: boolean;
   loading: boolean;
 }
 
-export const initialState: PostsState = {
+export const initialState: State = {
   entities: {},
   error: false,
   loaded: false,
@@ -18,7 +18,7 @@ export const initialState: PostsState = {
 export function reducer(
   state = initialState,
   action: PostsActions
-): PostsState {
+): State {
   switch (action.type) {
     case PostsActionTypes.LoadPosts: {
       return {
@@ -61,6 +61,22 @@ export function reducer(
       };
     }
 
+    case PostsActionTypes.AddPost: {
+      return {
+        ...state,
+        loading: true,
+        loaded: false
+      };
+    }
+
+    case PostsActionTypes.AddPostFail: {
+      return {
+        ...state,
+        error: true,
+        loading: false
+      };
+    }
+
     case PostsActionTypes.AddPostSuccess:
     case PostsActionTypes.UpdatePostSuccess: {
       const post = action.payload.post;
@@ -79,8 +95,8 @@ export function reducer(
     }
 
     case PostsActionTypes.DeletePostSuccess: {
-      const post = action.payload.post;
-      const { [post._id]: removed, ...entities } = state.entities;
+      const id = action.payload.id;
+      const { [id]: removed, ...entities } = state.entities;
 
       return {
         ...state,
@@ -95,7 +111,7 @@ export function reducer(
   return state;
 }
 
-export const getPostsEntities = (state: PostsState) => state.entities;
-export const getPostsError = (state: PostsState) => state.error;
-export const getPostsLoading = (state: PostsState) => state.loading;
-export const getPostsLoaded = (state: PostsState) => state.loaded;
+export const getPostsEntities = (state: State) => state.entities;
+export const getPostsError = (state: State) => state.error;
+export const getPostsLoading = (state: State) => state.loading;
+export const getPostsLoaded = (state: State) => state.loaded;

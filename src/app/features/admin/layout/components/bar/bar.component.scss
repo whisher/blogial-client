@@ -1,3 +1,5 @@
+@import "theme-variables";
+
 :host {
   display: block;
 }
@@ -6,7 +8,7 @@
   align-items: center;
   &__anchor{
     display: block;
-    width: 150px;
+    width: 10rem;
   }
   &__account {
     display: flex;
@@ -22,6 +24,35 @@
   &__menu {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 10rem;
+    margin-top: 1rem;
+  }
+  .dropdown-menu{
+    border: none;
+  }
+  .arrow_box {
+    position: relative;
+  }
+  .arrow_box::after,
+  .arrow_box::before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    content: " ";
+    border: solid transparent;
+  }
+
+  .arrow_box::after {
+    margin-left: -1rem;
+    border-width: 1rem;
+    border-bottom-color: #fff;
+  }
+  .arrow_box::before {
+    margin-left: -1.1rem;
+    border-width: 1.1rem;
+    border-bottom-color: $light;
   }
 }

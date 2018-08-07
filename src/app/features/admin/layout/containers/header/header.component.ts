@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
@@ -11,8 +12,11 @@ import * as fromAuthentication from '../../../../authentication/shared/store';
 })
 export class AdminLayoutHeaderComponent {
   account$ = this.store.pipe(select(fromAuthentication.getAccount));
-  constructor(private store: Store<fromAuthentication.State>) {}
+  constructor(
+    private router: Router,
+    private store: Store<fromAuthentication.State>
+  ) {}
   onLogout(){
-    this.store.dispatch(new fromAuthentication.Logout());
+    this.router.navigateByUrl('/auth/logout');
   }
 }

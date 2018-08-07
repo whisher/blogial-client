@@ -1,15 +1,4 @@
-<a class="btn btn-secondary btn-block btn-lg" routerLink="/admin/posts/post">
+<a class="btn btn-light btn-block btn-lg mt-3 mb-3 c-btn-uppercase" routerLink="/admin/posts/post">
   Add new
 </a>
-<div><iwdf-ui-loader></iwdf-ui-loader></div>
-<ul>
-  <ng-container *ngIf="(posts$ | async) as posts">
-  <li *ngFor="let post of posts">
-    <a [routerLink]="['/admin/posts/post', post._id]">
-      {{post._id}}
-    </a>
-  </li>
-  </ng-container>
-
-
-</ul>
+<admin-posts-post-list [posts]="posts$ | async"></admin-posts-post-list>
