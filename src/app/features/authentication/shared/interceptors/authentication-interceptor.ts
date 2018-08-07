@@ -8,18 +8,17 @@ import { take, map, switchMap } from 'rxjs/operators';
 import {
   AuthenticationToken
 } from '../../models/authentication.model';
-import * as fromRootStore from '../../../../store';
-import * as fromStore from '../store';
+import * as fromAuthentication from '../store';
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
   constructor(
-    private store: Store<fromRootStore.State>
+    private store: Store<fromAuthentication.State>
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    return this.store.select(fromStore.getToken)
+    return this.store.select(fromAuthentication.getToken)
       .pipe(
         take(1),
         switchMap((token: AuthenticationToken) => {

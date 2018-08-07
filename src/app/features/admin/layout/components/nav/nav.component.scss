@@ -1,11 +1,15 @@
-:host{
-  flex: 1 1 auto;
-}
-.admin-nav{
-  li{
-    padding-left: 2rem;
+@import "theme-variables";
+
+ul {
+  li {
+    margin-right: 2rem;
   }
   a {
+    font-size: 1rem;
+    color: $admin-nav-color;
     text-transform: uppercase;
+  }
+  .active{
+    color: $admin-nav-color-active;
   }
 }

@@ -9,8 +9,8 @@ import { Store } from '@ngrx/store';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import * as fromAuthentication from '../../shared/store/reducers';
-import * as Authentication from '../../shared/store/actions';
+import * as fromAuthentication from '../../shared/store';
+
 
 @Injectable()
 export class AuthenticationErrorInterceptor implements HttpInterceptor {
@@ -23,7 +23,7 @@ export class AuthenticationErrorInterceptor implements HttpInterceptor {
         catchError((error: HttpEvent<any>) => {
           if (error instanceof HttpErrorResponse) {
             if(this.status.indexOf(error.status) !== -1){
-              this.store.dispatch(new Authentication.Logout());
+              this.store.dispatch(new fromAuthentication.Logout());
             }
           }
           return throwError(error);

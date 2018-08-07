@@ -4,61 +4,7 @@
 .c-btn-dropdown{
   @include dropdown-button;
 }
-.c-btn-icon {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  font-size: .9rem;
-  span:nth-child(2){
-    flex: 1 0 auto;
-  }
-}
-.c-btn-social {
-  text-transform: lowercase;
-  border: 1px solid transparent;
-  border-radius: .3rem;
-  i{
-    line-height: 1.5;
-  }
-  span {
-    display: block;
-    height: 46px;
-    margin-left: 5px;
-    line-height: 44px;
-  }
-}
-.c-btn-in {
-  color: #fff;
-  background-color: #127cb9;
-  span {
-    border-left: 1px solid #3895c5;
-  }
-}
-.c-btn-google {
-  color: $light;
-  background-color: #fff;
-  border-color: $light;
-  span{
-    border-left: 1px solid $light;
-  }
-}
 .c-btn-uppercase {
-  padding: .78rem 1.56rem;
-  font-size: .9rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-}
-.c-btn-block{
-  display: block;
-  width: 100%;
-  margin: 0;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid transparent;
-  outline: none;
-  box-shadow: none;
-  appearance: button;
-  @include transition($btn-transition);
-  &:focus {
-    outline: 0;
-  }
 }

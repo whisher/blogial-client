@@ -1,0 +1,11 @@
+:host{
+  display: block;
+}
+.header{
+  &__bar{
+    height: 70px;
+  }
+  &__nav{
+    height: 55px;
+  }
+}

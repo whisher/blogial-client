@@ -3,8 +3,5 @@ export interface ConfigUrls {
     account: string;
     login: string;
   },
-  posts:{
-    create: string;
-    find: string;
-  }
+  posts: string;
 }

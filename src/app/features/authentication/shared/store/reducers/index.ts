@@ -26,38 +26,3 @@ export const reducers: ActionReducerMap<AuthenticationState> = {
 };
 
 export const selectAuthenticationState = createFeatureSelector<AuthenticationState>('auth');
-
-export const selectAuthStatusState = createSelector(
-  selectAuthenticationState,
-  (state: AuthenticationState) => state.status
-);
-
-export const getLoggedIn = createSelector(
-  selectAuthStatusState,
-  fromAuthentication.getLoggedIn
-);
-
-export const getToken = createSelector(
-  selectAuthStatusState,
-  fromAuthentication.getToken
-);
-
-export const selectLoginPageState = createSelector(
-  selectAuthenticationState,
-  (state: AuthenticationState) => state.loginPage
-);
-
-export const getLoginPageError = createSelector(
-  selectLoginPageState,
-  fromLoginPage.getError
-);
-
-export const getLoginPagePending = createSelector(
-  selectLoginPageState,
-  fromLoginPage.getPending
-);
-
-export const getAccount = createSelector(
-  selectAuthenticationState,
-  (state: AuthenticationState) => state.account
-);

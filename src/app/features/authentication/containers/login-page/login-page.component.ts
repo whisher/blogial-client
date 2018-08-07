@@ -2,8 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { Authenticate } from '../../models/authentication.model';
-import * as fromAuthentication from '../../shared/store/reducers';
-import * as Authentication from '../../shared/store/actions';
+import * as fromAuthentication from '../../shared/store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,6 +28,6 @@ export class AuthenticationLoginPageComponent {
   constructor(private store: Store<fromAuthentication.State>) {}
 
   onSubmit($event: Authenticate) {
-    this.store.dispatch(new Authentication.Login($event));
+    this.store.dispatch(new fromAuthentication.Login($event));
   }
 }

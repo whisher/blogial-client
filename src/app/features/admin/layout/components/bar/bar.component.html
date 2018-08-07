@@ -1,3 +1,74 @@
-<p>
-  bar works!
-</p>
+<ul class="user-bar">
+  <li>
+    <iwdf-icon-bell></iwdf-icon-bell>
+  </li>
+  <li class="ml-4">
+    <div ngbDropdown class="d-inline-block">
+      <button class="c-btn-dropdown user-bar__anchor" id="dropdownAccount" ngbDropdownToggle>
+        <ul class="user-bar__account">
+          <li>
+            <img class="d-inline-block" class="avatar" class="rounded-circle" src="/assets/images/avatar.jpg" alt="">
+          </li>
+          <li class="user-bar__name pl-2">
+            <span class="d-inline-block">{{account.display_name}}</span>
+          </li>
+          <li class="pl-3">
+            <iwdf-icon-angledown></iwdf-icon-angledown>
+          </li>
+        </ul>
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownAccount">
+        <ul class="user-bar__menu">
+          <li class="c-dropdown-item text-secondary">Hello {{account.display_name}}</li>
+          <li class="c-dropdown-item">{{account.role}}</li>
+          <li class="c-dropdown-item"><hr /></li>
+          <li class="c-dropdown-item">
+            <a class="c-btn" routerLinkActive="active" routerLink="/admin/users">
+              Profile
+            </a>
+          </li>
+          <li class="c-dropdown-item">
+            <button class="c-btn" (click)="onLogout()">Log out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+<!--
+<ul class="user-bar">
+  <li>
+    PPPP
+  </li>
+  <li class="ml-4">
+    <div iwdfDropdown>
+      <button class="c-btn-dropdown" id="dropdownAccount" iwdfDropdownToggle>
+        <ul class="user-bar__account">
+          <li>
+            <img class="d-inline-block" class="avatar" class="rounded-circle" src="/assets/images/avatar.jpg" alt="">
+          </li>
+          <li class="pl-2">
+            <span class="d-inline-block">{{account.account.username}}</span>
+          </li>
+          <li class="pl-3">
+            <i class="fas fa-angle-down"></i>
+          </li>
+        </ul>
+      </button>
+      <div iwdfDropdownMenu aria-labelledby="dropdownAccount">
+        <ul class="user-bar__menu">
+          <li class="c-dropdown-item text-secondary">Hello {{account.username}}</li>
+          <li class="c-dropdown-item">{{account.role}}</li>
+          <li class="c-dropdown-item"><hr /></li>
+          <li class="c-dropdown-item">
+            <button class="c-btn" (click)="onSettings()">Settings</button>
+          </li>
+          <li class="c-dropdown-item">
+            <button class="c-btn" (click)="onLogout()">Log out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+-->

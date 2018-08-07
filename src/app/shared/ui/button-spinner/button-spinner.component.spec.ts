@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonSpinnerComponent } from './button-spinner.component';
+import { IwdfButtonSpinnerComponent } from './button-spinner.component';
 
 describe('ButtonSpinnerComponent', () => {
-  let component: ButtonSpinnerComponent;
-  let fixture: ComponentFixture<ButtonSpinnerComponent>;
+  let component: IwdfButtonSpinnerComponent;
+  let fixture: ComponentFixture<IwdfButtonSpinnerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonSpinnerComponent ]
+      declarations: [ IwdfButtonSpinnerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonSpinnerComponent);
+    fixture = TestBed.createComponent(IwdfButtonSpinnerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

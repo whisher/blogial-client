@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Subscription } from 'rxjs';
 
 import { Post } from '../../models/post.model';
 
@@ -8,7 +10,7 @@ import { Post } from '../../models/post.model';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.scss']
 })
-export class AdminPostsPostFormComponent implements OnInit {
+export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   _pending: boolean;
   _isPristine = true;
   get pending(): boolean {
@@ -35,11 +37,12 @@ export class AdminPostsPostFormComponent implements OnInit {
 
   frm: FormGroup;
 
+  subscription: Subscription;
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
   ngOnInit() {
-    this.frm.valueChanges.subscribe(val => {
+    this.subscription = this.frm.valueChanges.subscribe(val => {
       if (this._isPristine) {
         this._isPristine = false;
         this.isPristine.emit(false);
@@ -65,5 +68,8 @@ export class AdminPostsPostFormComponent implements OnInit {
       this.frm.value.status = 'draft';
       this.submitted.emit(this.frm.value);
     }
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }

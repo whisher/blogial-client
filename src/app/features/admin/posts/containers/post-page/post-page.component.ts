@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Observable } from 'rxjs';
 import { Post } from '../../models/post.model';
 
 @Component({
@@ -12,7 +13,7 @@ export class AdminPostsPostPageComponent implements OnInit {
   pending$ = null;
   error$ = null;
   isFormPristine = true;
-
+  post$: Observable<Post>;
   constructor() { }
 
   ngOnInit() {}

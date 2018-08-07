@@ -10,38 +10,36 @@ import { Post } from '../../models/post.model';
 
 @Injectable()
 export class PostsService {
-  urlCreate: string;
-  urlFind: string;
+  postsUrl: string;
   constructor(
     private http: HttpClient,
     @Inject(URLS) private urls
   ) {
-    this.urlCreate = urls.posts.create;
-    this.urlFind = urls.posts.find;
+    this.postsUrl = urls.posts;
   }
 
   add(data: Post): Observable<Post> {
-    return this.http.post<Post>(this.urlCreate, data)
+    return this.http.post<Post>(this.postsUrl, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
   load(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.urlFind)
+    return this.http.get<Post[]>(this.postsUrl)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
   findById(id): Observable<Post> {
-    return this.http.get<Post>(`${this.urlFind}/${id}`)
+    return this.http.get<Post>(`${this.postsUrl}/${id}`)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
   update(id: string, data: Post): Observable<Post> {
-    return this.http.put<Post>(`${this.urlFind}/${id}`, data)
+    return this.http.put<Post>(`${this.postsUrl}/${id}`, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
-  delete(id: string, data: Post): Observable<Post> {
-    return this.http.put<Post>(`${this.urlFind}/${id}`, data)
+  delete(id: string): Observable<Post> {
+    return this.http.delete<Post>(`${this.postsUrl}/${id}`)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 }

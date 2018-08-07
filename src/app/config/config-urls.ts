@@ -9,10 +9,7 @@ export function urls(): ConfigUrls {
       account: `${host}/users/account`,
       login: `${host}/users/login`
     },
-    posts:{
-      create: `${host}/posts`,
-      find: `${host}/posts`
-    }
+    posts:`${host}/posts`
   };
 }
 

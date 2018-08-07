@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+
+import { Account } from '../../../../authentication/models/authentication.model';
 
 @Component({
   selector: 'admin-layout-bar',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bar.component.scss']
 })
 export class AdminLayoutBarComponent implements OnInit {
-
+  @Input() account: Account;
+  @Output() logout = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+    console.log('account',this.account);
   }
 
+  onLogout() {
+    this.logout.emit();
+  }
 }

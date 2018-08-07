@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faAngleDown,
   faArrowLeft,
+  faBell,
   faEnvelope,
   faEye,
   faEyeSlash,
@@ -10,12 +12,24 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
+  faAngleDown,
   faArrowLeft,
+  faBell,
   faEnvelope,
   faEye,
   faEyeSlash,
   faKey
 );
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'iwdf-icon-angledown',
+  template: `<fa-icon [icon]="['fas', 'angle-down']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconAngleDownComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,6 +40,18 @@ library.add(
   }`]
 })
 export class IconArrowLeftComponent{}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'iwdf-icon-bell',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'bell']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconBellComponent{
+  @Input() cls: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

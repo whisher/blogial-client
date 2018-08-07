@@ -1,9 +1,12 @@
-<header>
-  <nav class="fixed-top bg-white">
-    <div class="container d-flex flex-row align-items-center justify-content-between" style="height:100px">
+<div class="fixed-top bg-white">
+  <div class="header container p-0">
+    <div class="header__bar d-flex flex-row align-items-center justify-content-between border-bottom">
       <admin-layout-brand></admin-layout-brand>
-      <admin-layout-nav></admin-layout-nav>
-      <admin-layout-bar></admin-layout-bar>
+      <admin-layout-bar
+      [account]="account$ | async" (logout)="onLogout()"></admin-layout-bar>
     </div>
-  </nav>
-</header>
+    <nav class="header__nav d-flex flex-row align-items-center justify-content-start">
+      <admin-layout-nav></admin-layout-nav>
+    </nav>
+  </div>
+</div>

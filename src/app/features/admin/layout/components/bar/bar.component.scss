@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+.user-bar {
+  display: flex;
+  align-items: center;
+  &__anchor{
+    display: block;
+    width: 150px;
+  }
+  &__account {
+    display: flex;
+    align-items: center;
+    img{
+      width: 40px;
+    }
+  }
+  &__name{
+    flex: 1 0 auto;
+    text-align: left;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+  }
+}

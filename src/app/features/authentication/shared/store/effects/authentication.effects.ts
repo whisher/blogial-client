@@ -22,6 +22,7 @@ import {
   Login,
   LoginSuccess,
   LoginFailure,
+  Logout,
   AuthenticationActionTypes
 } from '../actions';
 
@@ -42,6 +43,17 @@ export class AuthenticationEffects {
           )
       })
     );
+
+  @Effect()
+  accountSuccess$ = this.actions$.pipe(
+      ofType(AccountActionTypes.AccountSuccess),
+      map(() => new RouterActions.Go({ path: ['/admin'] }))
+    );
+  @Effect()
+    accountFailure$ = this.actions$.pipe(
+      ofType(AccountActionTypes.AccountFailure),
+      map(() => new Logout())
+    );
   @Effect()
   login$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.Login),
@@ -59,13 +71,7 @@ export class AuthenticationEffects {
   @Effect()
   loginSuccess$ = this.actions$.pipe(
     ofType(AuthenticationActionTypes.LoginSuccess),
-    mergeMap((token: AuthenticationToken) => {
-      return [
-        new AccountRequested(),
-        new RouterActions.Go({ path: ['/admin'] })
-      ]
-    }),
-    catchError(error => of(new AccountFailure(error)))
+    map((token: AuthenticationToken) => new AccountRequested())
   );
 
   @Effect()
