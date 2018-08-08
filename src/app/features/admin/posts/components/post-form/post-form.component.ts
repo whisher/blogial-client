@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { Post } from '../../models/post.model';
-import { Account } from '../../../../authentication/models';
 
 @Component({
   selector: 'admin-posts-post-form',
@@ -35,8 +34,6 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
   @Input() error: boolean;
 
-  @Input() account: Account;
-
   @Output() submitted = new EventEmitter<Post>();
 
   @Output() isPristine = new EventEmitter<boolean>();
@@ -65,10 +62,10 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
     if (this.selectedPost) {
       const post = {...this.selectedPost};
       this.postId = post._id;
-      this.isDraft = post.status === 'draft';
       const data = {
         title : post.title,
-        content: post.content
+        content: post.content,
+        isDraft: post.isDraft
       }
       this.frm.setValue(data);
     }
@@ -79,6 +76,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
     this.frm = this.fb.group({
       title: ['', [Validators.required]],
       content: ['', Validators.required],
+      isDraft: [false]
     });
   }
 
@@ -87,11 +85,9 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       this._hasSubmited = true;
       this._isPristine = true;
       this.isPristine.emit(true);
-      this.frm.value.author = this.account.display_name;
-      this.frm.value.status = this.isDraft ? 'draft' : 'published';
 
       this.submitted.emit({
-        _id:this.postId,
+        _id: this.postId,
         ...this.frm.value
       });
     }

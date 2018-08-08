@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-4 bg-primary">
+    {{post.title}}
+  </div>
+  <div class="col-md-2 bg-secondary">
+  pp
+  </div>
+  <div class="col-md-1 bg-info">
+    {{post.isDraft ? 'Draft' : 'Published'}}
+  </div>
+  <div class="col-md-1 bg-danger">
+    {{post.created | date:'longDate'}}
+  </div>
+  <div class="col-md-2 bg-primary">
+    {{post.updated | date:'longDate'}}
+  </div>
+  <div class="col-md-2 bg-danger">
+    <ul class="d-flex flex-row justify-content-end">
+      <li class="pr-1">
+        <a class="btn btn-info" [routerLink]="['/admin/posts/post', post._id]">
+          Update
+        </a>
+      </li>
+      <li>
+        <button type="button" (click)="open(content)" class="btn btn-danger">Deleted</button>
+      </li>
+    </ul>
+  </div>
+</div>
+<pre>{{closeResult}}</pre>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Do you want really delete the post?
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="alert alert-light p-0 m-0" role="alert">
+     {{post.title}}
+    </div>
+  </div>
+  <div class="modal-footer">
+    <ul class="d-flex flex-row justify-content-end">
+      <li class="pr-1">
+        <button type="button" class="btn btn-secondary" (click)="c(false)">No</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-danger" (click)="c(true)">Yes</button>
+      </li>
+    </ul>
+  </div>
+</ng-template>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IwdfUiPasswordComponent } from './password.component';
+import { UiPasswordComponent } from './password.component';
 
-describe('PasswordComponent', () => {
-  let component: IwdfUiPasswordComponent;
-  let fixture: ComponentFixture<IwdfUiPasswordComponent>;
+describe('UiPasswordComponent', () => {
+  let component: UiPasswordComponent;
+  let fixture: ComponentFixture<UiPasswordComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IwdfUiPasswordComponent ]
+      declarations: [ UiPasswordComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IwdfUiPasswordComponent);
+    fixture = TestBed.createComponent(UiPasswordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

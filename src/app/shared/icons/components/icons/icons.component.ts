@@ -23,7 +23,7 @@ library.add(
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-angledown',
+  selector: 'icon-angledown',
   template: `<fa-icon [icon]="['fas', 'angle-down']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
@@ -33,7 +33,7 @@ export class IconAngleDownComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-arrowleft',
+  selector: 'icon-arrowleft',
   template: `<fa-icon [icon]="['fas', 'arrow-left']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
@@ -43,7 +43,7 @@ export class IconArrowLeftComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-bell',
+  selector: 'icon-bell',
   template: `<fa-icon class="{{cls}}" [icon]="['fas', 'bell']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
@@ -55,7 +55,7 @@ export class IconBellComponent{
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-envelope',
+  selector: 'icon-envelope',
   template: `<fa-icon [icon]="['fas', 'envelope']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
@@ -65,17 +65,17 @@ export class IconEnvelopeComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-eye',
+  selector: 'icon-eye',
   template: `<fa-icon [icon]="['fas', 'eye']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
   }`]
 })
 export class IconEyeComponent{}
-
+ 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-eyeslash',
+  selector: 'icon-eyeslash',
   template: `<fa-icon [icon]="['fas', 'eye-slash']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;
@@ -85,7 +85,7 @@ export class IconEyeSlashComponent{}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'iwdf-icon-key',
+  selector: 'icon-key',
   template: `<fa-icon [icon]="['fas', 'key']"></fa-icon>`,
   styles: [`:host {
     display: inline-block;

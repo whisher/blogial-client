@@ -1,10 +1,10 @@
-import { IwdfUiPasswordModule } from './password.module';
+import { UiPasswordModule } from './password.module';
 
-describe('PasswordModule', () => {
-  let passwordModule: IwdfUiPasswordModule;
+describe('UiPasswordModule', () => {
+  let passwordModule: UiPasswordModule;
 
   beforeEach(() => {
-    passwordModule = new IwdfUiPasswordModule();
+    passwordModule = new UiPasswordModule();
   });
 
   it('should create an instance', () => {

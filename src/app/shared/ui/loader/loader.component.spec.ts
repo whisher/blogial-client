@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IwdfLoaderComponent } from './loader.component';
+import { UiLoaderComponent } from './loader.component';
 
-describe('IwdfLoaderComponent', () => {
-  let component: IwdfLoaderComponent;
-  let fixture: ComponentFixture<IwdfLoaderComponent>;
+describe('UiLoaderComponent', () => {
+  let component: UiLoaderComponent;
+  let fixture: ComponentFixture<UiLoaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IwdfLoaderComponent ]
+      declarations: [ UiLoaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IwdfLoaderComponent);
+    fixture = TestBed.createComponent(UiLoaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

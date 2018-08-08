@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import * as fromPosts from '../../shared/store';
@@ -9,9 +9,12 @@ import { Post } from '../../models';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class AdminPostsMainComponent implements OnInit {
+export class AdminPostsMainComponent {
   posts$ = this.store.pipe(select(fromPosts.getPostsEntities));
-  constructor(private store: Store<fromPosts.State>) { }
-  ngOnInit() {}
 
+  constructor(private store: Store<fromPosts.State>) { }
+  onDelete(post){
+    const id = post._id;
+    this.store.dispatch(new fromPosts.DeletePost({id}));
+  }
 }

@@ -14,12 +14,16 @@
 @import "~bootstrap/scss/alert";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/close";
 
 /*
  * Global application theme.
  * Framework overrides and customization goes here.
  */
 @import "./components/buttons";
+@import "./components/checkbox";
 @import "./components/dropdown";
 @import "./components/elevation";
+@import "./ng/modal";
 @import "./reset";

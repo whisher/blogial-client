@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 // Module
-import { IwdfUiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
-import { IwdfUiLoaderModule } from '../../../shared/ui/loader/loader.module';
+import { UiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
+import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 import { AdminPostsRoutingModule } from './posts-routing.module';
 
 // Components
@@ -20,8 +22,9 @@ import * as fromGuards from './guards';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    IwdfUiButtonSpinnerModule,
-    IwdfUiLoaderModule,
+    NgbModalModule,
+    UiButtonSpinnerModule,
+    UiLoaderModule,
     AdminPostsRoutingModule
   ],
   declarations: [

@@ -1,10 +1,10 @@
-import { IwdfIconsModule } from './icons.module';
+import { IconsModule } from './icons.module';
 
 describe('IconsModule', () => {
-  let iconsModule: IwdfIconsModule;
+  let iconsModule: IconsModule;
 
   beforeEach(() => {
-    iconsModule = new IwdfIconsModule();
+    iconsModule = new IconsModule();
   });
 
   it('should create an instance', () => {

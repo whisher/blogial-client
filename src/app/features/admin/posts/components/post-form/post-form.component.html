@@ -18,19 +18,23 @@
     <div class="col-sm-4">
       <div class="row mb-3">
         <div class="col">
-          <button
-          type="button"
-          class="btn btn-secondary btn-default"
-          [ngClass]="{'btn-active':isDraft}" (click)="isDraft = !isDraft">Draft</button>
+          <label class="i-checks" for="isDraft">
+            <input
+            type="checkbox"
+            tabindex="3"
+            name="isDraft"
+            id="isDraft" formControlName="isDraft"/>
+            <i></i> Draft
+          </label>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <button class="btn btn-primary btn-lg btn-block c-btn-uppercase"
                   type="submit" [disabled]="frm.invalid">
-              <iwdf-ui-button-spinner
+              <ui-button-spinner
               [value]="'Publish'"
-              [has]="pending"></iwdf-ui-button-spinner>
+              [has]="pending"></ui-button-spinner>
           </button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 <a class="btn btn-light btn-block btn-lg mt-3 mb-3 c-btn-uppercase" routerLink="/admin/posts/post">
   Add new
 </a>
-<admin-posts-post-list [posts]="posts$ | async"></admin-posts-post-list>
+<admin-posts-post-list [posts]="posts$ | async" (deleted)="onDelete($event)"></admin-posts-post-list>
+{{ posts$ | async | json}}

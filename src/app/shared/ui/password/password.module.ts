@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IwdfUiPasswordComponent } from './password.component';
+import { UiPasswordComponent } from './password.component';
 
-const IWDF_UI_PASSWORD = [IwdfUiPasswordComponent];
+const UI_PASSWORD = [UiPasswordComponent];
 
 @NgModule({
   imports: [CommonModule],
-  declarations: IWDF_UI_PASSWORD,
-  exports: IWDF_UI_PASSWORD
+  declarations: UI_PASSWORD,
+  exports: UI_PASSWORD
 })
-export class IwdfUiPasswordModule { }
+export class UiPasswordModule { }

@@ -1,10 +1,10 @@
-import { IwdfUiLoaderModule } from './loader.module';
+import { UiLoaderModule } from './loader.module';
 
 describe('LoaderModule', () => {
-  let loaderModule: IwdfUiLoaderModule;
+  let loaderModule: UiLoaderModule;
 
   beforeEach(() => {
-    loaderModule = new IwdfUiLoaderModule();
+    loaderModule = new UiLoaderModule();
   });
 
   it('should create an instance', () => {

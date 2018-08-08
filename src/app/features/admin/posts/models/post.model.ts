@@ -3,7 +3,7 @@ export interface Post {
   author: string;
   content: string;
   created?: Date;
-  status: string;
+  isDraft: boolean;
   title: string;
   updated?: Date;
 }

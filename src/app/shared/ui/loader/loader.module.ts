@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
-import { IwdfLoaderComponent } from './loader.component';
+import { UiLoaderComponent } from './loader.component';
 
-const IWDF_LOADER = [IwdfLoaderComponent];
+const UI_LOADER = [UiLoaderComponent];
 
 @NgModule({
-  declarations: IWDF_LOADER,
-  exports: IWDF_LOADER
+  declarations: UI_LOADER,
+  exports: UI_LOADER
 })
-export class IwdfUiLoaderModule { }
+export class UiLoaderModule { }

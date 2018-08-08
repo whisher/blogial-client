@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Modules
-import { IwdfIconsModule } from '../../shared/icons/icons.module';
-import { IwdfUiButtonSpinnerModule } from '../../shared/ui/button-spinner/button-spinner.module';
-import { IwdfUiPasswordModule } from '../../shared/ui/password/password.module';
+import { IconsModule } from '../../shared/icons/icons.module';
+import { UiButtonSpinnerModule } from '../../shared/ui/button-spinner/button-spinner.module';
+import { UiPasswordModule } from '../../shared/ui/password/password.module';
 import { AuthenticationLayoutModule } from './layout/layout.module';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 
@@ -19,9 +19,9 @@ import * as fromContainers from './containers';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    IwdfIconsModule,
-    IwdfUiButtonSpinnerModule,
-    IwdfUiPasswordModule,
+    IconsModule,
+    UiButtonSpinnerModule,
+    UiPasswordModule,
     AuthenticationLayoutModule,
     AuthenticationRoutingModule
   ],

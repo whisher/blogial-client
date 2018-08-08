@@ -71,9 +71,9 @@ export class PostsEffects {
   deletePost$ = this.actions$.ofType(postsActions.PostsActionTypes.DeletePost)
   .pipe(
     map((action: postsActions.DeletePost) => action.payload.id),
-    switchMap(post => {
+    switchMap(id => {
       return this.service
-        .delete(post._id)
+        .delete(id)
         .pipe(
           map(id => new postsActions.DeletePostSuccess({id})),
           catchError(error => of(new postsActions.DeletePostFail(error)))

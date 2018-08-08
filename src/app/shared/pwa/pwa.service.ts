@@ -15,6 +15,7 @@ type ServiceWorkerEvent = any;
 export class PwaService {
   promptEvent: ServiceWorkerEvent;
   constructor(private swUpdate: SwUpdate, platform: PlatformService) {
+    console.log('platform.isBrowser()',platform.isBrowser());
     if(platform.isBrowser() && environment.production){
       console.log('hello browser');
       swUpdate.available.subscribe(event =>  {

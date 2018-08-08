@@ -1,3 +1,4 @@
+/* Common */
 ul {
   padding: 0;
   margin: 0;
@@ -8,11 +9,23 @@ a {
     text-decoration: none;
   }
 }
+
+/* Dropdown */
 .dropdown-toggle::after {
   display: none;
 }
-.dropdown-menu{
+.dropdown-menu {
   float: none;
   padding: 0;
   margin: 0;
+}
+
+/* Buttons */
+.btn{
+  &:focus{
+    box-shadow: none !important;
+  }
+}
+.btn-lg {
+  min-height: 3.25rem;
 }

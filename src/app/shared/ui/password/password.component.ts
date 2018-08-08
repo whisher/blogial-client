@@ -3,17 +3,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const PASSWORD_CONTROL_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => IwdfUiPasswordComponent),
+  useExisting: forwardRef(() => UiPasswordComponent),
   multi: true
 };
 
 @Component({
-  selector: 'iwdf-ui-password',
+  selector: 'ui-password',
   templateUrl: './password.component.html',
   styleUrls: ['./password.component.scss'],
   providers: [PASSWORD_CONTROL_ACCESSOR]
 })
-export class IwdfUiPasswordComponent  implements ControlValueAccessor {
+export class UiPasswordComponent  implements ControlValueAccessor {
   @ViewChild('input') input: ElementRef;
   @Input() tabindex = 1;
   value: string;

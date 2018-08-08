@@ -1,36 +1,38 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, ChangeDetectionStrategy, ViewEncapsulation, EventEmitter } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
-import { Post } from '../../models/post.model';
+import { Post } from '../../models';
+import * as fromPosts from '../../shared/store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
   selector: 'admin-posts-post-item',
-  template: `
-    <div class="row">
-      <div class="col-md-4">
-        {{post.title}}
-      </div>
-      <div class="col-md-1">
-        {{post.author}}
-      </div>
-      <div class="col-md-1">
-        {{post.status}}
-      </div>
-      <div class="col-md-2">
-        {{post.created | date:'longDate'}}
-      </div>
-      <div class="col-md-2">
-        {{post.updated | date:'longDate'}}
-      </div>
-      <div class="col-md-2">
-        <a class="btn btn-info" [routerLink]="['/admin/posts/post', post._id]">
-          Update
-        </a>
-        <button type="button" class="btn btn-danger">Delete</button>
-      </div>
-    </div>
-  `
+  templateUrl: './post-item.component.html'
 })
 export class AdminPostsPostItemComponent {
-  @Input() post: Post
+  @Input() post: Post;
+  @Output() deleted = new EventEmitter<Post>();
+  closeResult: string;
+
+  constructor(
+    private store: Store<fromPosts.State>,
+    private modalService: NgbModal
+  ) {}
+
+  open(content, post) {
+    const modalRef = this.modalService.open(content, {
+      backdropClass: 'danger-backdrop',
+      ariaLabelledBy: 'modal-delete-post',
+      centered: true
+    })
+
+    modalRef.result.then((result) => {
+      if(result){
+        this.deleted.emit(this.post)
+      }
+    }, (reason) => {});
+  }
+
 }

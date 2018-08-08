@@ -23,7 +23,9 @@ export class AuthenticationInterceptor implements HttpInterceptor {
         take(1),
         switchMap((token: AuthenticationToken) => {
           if (token) {
-            const clonedRequest = request.clone({ setHeaders: { Authorization: token.token } });
+            const clonedRequest = request.clone({
+              headers: request.headers.set('Authorization', token.token)
+            });
             return next.handle(clonedRequest);
           }
           return next.handle(request);

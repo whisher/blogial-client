@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { IwdfIconsModule } from '../../../shared/icons/icons.module';
+import { IconsModule } from '../../../shared/icons/icons.module';
 
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
@@ -15,7 +15,7 @@ import * as fromContainers from './containers';
     CommonModule,
     RouterModule,
     NgbDropdownModule,
-    IwdfIconsModule
+    IconsModule
   ],
   declarations: [
     ...fromComponents.components,

@@ -15,7 +15,7 @@ import * as fromAuthentication from '../../shared/store';
     </authentication-login-form>
     <div class="mt-3">
       <a routerLink="">
-      <iwdf-icon-arrowleft></iwdf-icon-arrowleft>  Back to blogial
+      <icon-arrowleft></icon-arrowleft>  Back to blogial
       </a>
     </div>
   `,

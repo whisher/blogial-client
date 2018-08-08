@@ -1,7 +1,7 @@
 import { Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'iwdf-ui-button-spinner',
+  selector: 'ui-button-spinner',
   template: `
     <ng-container *ngIf="has; else elseTemplate">
       <div class="loader">Loading...</div>
@@ -11,8 +11,8 @@ import { Component, Input} from '@angular/core';
     </ng-template>
   `,
   styleUrls: ['./button-spinner.component.scss']
-}) 
-export class IwdfButtonSpinnerComponent {
+})
+export class UiButtonSpinnerComponent {
     @Input() value: string;
     @Input() has: boolean;
 }
