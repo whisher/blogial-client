@@ -9,7 +9,10 @@ import * as fromPosts from '../../shared/store';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   selector: 'admin-posts-post-item',
-  templateUrl: './post-item.component.html'
+  templateUrl: './post-item.component.html',
+  host:{
+    class:'row--list border-bottom py-1'
+  }
 })
 export class AdminPostsPostItemComponent {
   @Input() post: Post;
@@ -21,7 +24,7 @@ export class AdminPostsPostItemComponent {
     private modalService: NgbModal
   ) {}
 
-  open(content, post) {
+  open(content) {
     const modalRef = this.modalService.open(content, {
       backdropClass: 'danger-backdrop',
       ariaLabelledBy: 'modal-delete-post',

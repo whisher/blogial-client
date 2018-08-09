@@ -44,32 +44,31 @@ export function reducer(
 
       return {
         ...state,
-        entities,
-        error: false,
         loading: false,
-        loaded: true
+        loaded: true,
+        entities
       };
     }
 
     case PostsActionTypes.LoadPostsFail: {
       return {
         ...state,
-        entities: {},
-        error: true,
         loading: false,
         loaded: false
       };
     }
 
-    case PostsActionTypes.AddPost: {
+    case PostsActionTypes.AddPost:
+    case PostsActionTypes.UpdatePost: {
       return {
         ...state,
-        loading: true,
-        loaded: false
+        loading: true
       };
     }
 
-    case PostsActionTypes.AddPostFail: {
+    case PostsActionTypes.AddPostFail:
+    case PostsActionTypes.UpdatePostFail:
+    case PostsActionTypes.DeletePostFail: {
       return {
         ...state,
         error: true,
@@ -82,15 +81,14 @@ export function reducer(
       const post = action.payload.post;
       const entities = {
         ...state.entities,
-        [post._id]: post,
+        [post._id]: post
       };
 
       return {
         ...state,
         entities,
         error: false,
-        loading: false,
-        loaded: false
+        loading: false
       };
     }
 
@@ -102,8 +100,7 @@ export function reducer(
         ...state,
         entities,
         error: false,
-        loading: false,
-        loaded: false
+        loading: false
       };
     }
   }

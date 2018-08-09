@@ -36,7 +36,6 @@ export class AdminPostsPostPageComponent {
     }
     else {
       delete post._id;
-      console.log('this.frm.value',post);
       this.store.dispatch(new fromPosts.AddPost({post}))
     }
   }

@@ -7,23 +7,23 @@ import { Post } from '../../models/post.model';
   selector: 'admin-posts-post-list',
   template: `
   <ng-container *ngIf="hasPosts; else noPosts">
-    <div class="row">
+    <div class="row no-gutters border-bottom pb-1 mb-1">
       <div class="col-md-4">
         <strong>Title</strong>
       </div>
-      <div class="col-md-1">
+      <div class="col-md-3">
         <strong>Author</strong>
       </div>
       <div class="col-md-1">
         <strong>Status</strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
         <strong>Create</strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
         <strong>Update</strong>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 text-center">
         <strong>Actions</strong>
       </div>
     </div>
@@ -38,11 +38,12 @@ import { Post } from '../../models/post.model';
 })
 export class AdminPostsPostListComponent implements OnInit{
  @Input() posts: Post[];
+ @Input() hasPosts: boolean;
  @Output() deleted = new EventEmitter<Post>();
- hasPosts = false;
+
  constructor(){}
  ngOnInit(){
-   this.hasPosts = !!Object.keys(this.posts).length;
+console.log(this.posts);
  }
  onDelete(event){
    this.deleted.emit(event);

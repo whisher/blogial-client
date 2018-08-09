@@ -11,8 +11,9 @@ import { Post } from '../../models';
 })
 export class AdminPostsMainComponent {
   posts$ = this.store.pipe(select(fromPosts.getPostsEntities));
-
-  constructor(private store: Store<fromPosts.State>) { }
+  loaded$ = this.store.pipe(select(fromPosts.getPostsLoaded));
+  hasPosts$ = this.store.pipe(select(fromPosts.getHasPosts));
+  constructor(private store: Store<fromPosts.State>) {}
   onDelete(post){
     const id = post._id;
     this.store.dispatch(new fromPosts.DeletePost({id}));

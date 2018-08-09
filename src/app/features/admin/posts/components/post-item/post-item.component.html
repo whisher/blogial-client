@@ -1,20 +1,20 @@
-<div class="row">
-  <div class="col-md-4 bg-primary">
+<div class="row no-gutters align-items-center">
+  <div class="col-md-4">
     {{post.title}}
   </div>
-  <div class="col-md-2 bg-secondary">
-  pp
+  <div class="col-md-3">
+    {{post.author.display_name}}
   </div>
-  <div class="col-md-1 bg-info">
+  <div class="col-md-1">
     {{post.isDraft ? 'Draft' : 'Published'}}
   </div>
-  <div class="col-md-1 bg-danger">
-    {{post.created | date:'longDate'}}
+  <div class="col-md-1">
+    {{post.created | date:'shortDate'}}
   </div>
-  <div class="col-md-2 bg-primary">
-    {{post.updated | date:'longDate'}}
+  <div class="col-md-1">
+    {{post.updated | date:'shortDate'}}
   </div>
-  <div class="col-md-2 bg-danger">
+  <div class="col-md-2">
     <ul class="d-flex flex-row justify-content-end">
       <li class="pr-1">
         <a class="btn btn-info" [routerLink]="['/admin/posts/post', post._id]">
@@ -27,7 +27,6 @@
     </ul>
   </div>
 </div>
-<pre>{{closeResult}}</pre>
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">

@@ -39,7 +39,6 @@ export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionRedu
 export function clearState(reducer: ActionReducer<State>): ActionReducer<State> {
   return function(state: State, action: Action): State {
     if (action.type === AuthenticationActionTypes.Logout) {
-      console.log('BINGO');
       state = undefined;
     }
     return reducer(state, action);

@@ -25,7 +25,6 @@ export class PostsGuard implements CanActivate {
           this.store.dispatch(new fromStore.LoadPosts());
         }
       }),
-      filter(loaded => loaded),
       take(1)
     );
   }

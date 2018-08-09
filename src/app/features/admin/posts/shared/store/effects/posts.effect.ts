@@ -88,7 +88,7 @@ export class PostsEffects {
       postsActions.PostsActionTypes.DeletePostSuccess
     )
     .pipe(
-      map(pizza => {
+      map(post => {
         return new RouterActions.Go({
           path: ['/admin/posts'],
         });
