@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
 
+import { mimeTypeValidator } from '../../../../../shared/validators';
 import { Post } from '../../models/post.model';
 
 @Component({
@@ -46,6 +47,8 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
   isDraft = false;
 
+  imagePreview: string;
+
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -75,7 +78,8 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   createForm() {
     this.frm = this.fb.group({
       title: ['', [Validators.required]],
-      content: ['', Validators.required],
+      content: ['', [Validators.required]],
+      image:[null, [Validators.required], mimeTypeValidator],
       isDraft: [false]
     });
   }
@@ -90,8 +94,21 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         _id: this.postId,
         ...this.frm.value
       });
+
+      this.frm.reset();
     }
   }
+
+  onImagePicker(event: Event){
+    const file = (<HTMLInputElement>event.target).files[0];
+    this.frm.patchValue({image: file})
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }

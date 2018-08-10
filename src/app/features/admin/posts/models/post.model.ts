@@ -5,6 +5,7 @@ export interface Post {
   };
   content: string;
   created?: Date;
+  imagePath: string,
   isDraft: boolean;
   title: string;
   updated?: Date;

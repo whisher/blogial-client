@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="row mb-3">
+      <div class="row">
         <div class="col">
           <label class="i-checks" for="isDraft">
             <input
@@ -29,13 +29,41 @@
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col mb-2">
           <button class="btn btn-primary btn-lg btn-block c-btn-uppercase"
                   type="submit" [disabled]="frm.invalid">
               <ui-button-spinner
               [value]="'Publish'"
               [has]="pending"></ui-button-spinner>
           </button>
+        </div>
+      </div>
+      <ng-container *ngIf="frm.get('image').valid; else invalidImage">
+        <div class="row mb-2" *ngIf="imagePreview">
+          <div class="col">
+            <img class="img-fluid" [src]="imagePreview" [alt]="frm.get('title').value">
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #invalidImage>
+        <div class="row mb-2" *ngIf="imagePreview">
+          <div class="col">
+            <div class="alert alert-danger m-0" role="alert">
+              Invalid file extension, accept only jpg, png.
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <div class="row">
+        <div class="col">
+          <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg c-btn-icon c-btn-uppercase"
+          (click)="filePicker.click()">
+            <icon-image [cls]="'fa-lg'"></icon-image>
+            <span>Pick Image</span>
+          </button>
+          <input type="file" #filePicker (change)="onImagePicker($event)">
         </div>
       </div>
     </div>

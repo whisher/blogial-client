@@ -8,6 +8,7 @@ import {
   faEnvelope,
   faEye,
   faEyeSlash,
+  faImage,
   faKey
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,6 +19,7 @@ library.add(
   faEnvelope,
   faEye,
   faEyeSlash,
+  faImage,
   faKey
 );
 
@@ -72,7 +74,7 @@ export class IconEnvelopeComponent{}
   }`]
 })
 export class IconEyeComponent{}
- 
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'icon-eyeslash',
@@ -82,6 +84,18 @@ export class IconEyeComponent{}
   }`]
 })
 export class IconEyeSlashComponent{}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-image',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'image']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconImageComponent{
+  @Input() cls: string;
+}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

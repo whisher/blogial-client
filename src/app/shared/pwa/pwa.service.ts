@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 
-import { interval } from 'rxjs';
+import { Subscription, interval } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 
@@ -14,6 +14,7 @@ type ServiceWorkerEvent = any;
 })
 export class PwaService {
   promptEvent: ServiceWorkerEvent;
+  interval: Subscription;
   constructor(private swUpdate: SwUpdate,private platform: PlatformService) {
    this.checkForUpdate();
   }
@@ -31,6 +32,7 @@ export class PwaService {
         console.log('available version is', event.available);
         if(this.platform.isBrowser()) {
           if (window.confirm('Want to update?')) {
+            this.interval.unsubscribe();
             this.swUpdate.activateUpdate().then(() => {
               console.log('Update');
               document.location.reload();
@@ -48,7 +50,7 @@ export class PwaService {
         });
         this.install();
       }
-      interval(6 * 60 * 60).subscribe(() => this.swUpdate.checkForUpdate());
+      this.interval = interval(6 * 60 * 60).subscribe(() => this.swUpdate.checkForUpdate());
     }
   }
 }

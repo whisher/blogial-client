@@ -10,6 +10,11 @@ a {
   }
 }
 
+/* Form */
+[type="file"]{
+  display: none;
+}
+
 /* Dropdown */
 .dropdown-toggle::after {
   display: none;
@@ -28,4 +33,17 @@ a {
 }
 .btn-lg {
   min-height: 3.25rem;
+}
+.btn-outline-secondary{
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #fff !important;
+    color: $secondary !important;
+  }
+}
+
+/* Image */
+.img-fluid{
+  border-radius: $border-radius-lg;
 }

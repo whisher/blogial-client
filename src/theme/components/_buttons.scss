@@ -8,3 +8,11 @@
   font-size: 1.1rem;
   text-transform: uppercase;
 }
+.c-btn-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  span {
+    flex: 1 0 auto;
+  }
+}

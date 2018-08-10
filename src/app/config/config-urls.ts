@@ -6,10 +6,10 @@ const host = environment.serverUrl;
 export function urls(): ConfigUrls {
   return {
     authentication: {
-      account: `${host}/users/account`,
-      login: `${host}/users/login`
+      account: `${host}/api/users/account`,
+      login: `${host}/api/users/login`
     },
-    posts:`${host}/posts`
+    posts:`${host}/api/posts`
   };
 }
 

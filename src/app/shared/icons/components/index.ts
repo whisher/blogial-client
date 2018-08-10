@@ -5,6 +5,7 @@ import {
   IconEnvelopeComponent,
   IconEyeComponent,
   IconEyeSlashComponent,
+  IconImageComponent,
   IconKeyComponent
 }
 from './icons/icons.component';
@@ -16,5 +17,6 @@ export const components: any[] = [
   IconEnvelopeComponent,
   IconEyeComponent,
   IconEyeSlashComponent,
+  IconImageComponent,
   IconKeyComponent
 ];

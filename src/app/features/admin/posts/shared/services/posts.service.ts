@@ -18,9 +18,15 @@ export class PostsService {
     this.postsUrl = urls.posts;
   }
 
-  add(data: Post): Observable<Post> {
-    return this.http.post<Post>(this.postsUrl, data)
-    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+  add(data): Observable<Post> {
+    const { title, content, isDraft, image } = data;
+    const postData = new FormData();
+    postData.append('title', title);
+    postData.append('content', content);
+    postData.append('isDraft', isDraft);
+    postData.append('image', image, title);
+    return this.http.post<Post>(this.postsUrl, postData)
+   .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
   load(): Observable<Post[]> {

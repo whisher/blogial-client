@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { Post } from '../../models/post.model';
 
@@ -36,15 +36,11 @@ import { Post } from '../../models/post.model';
   </ng-template>
   `
 })
-export class AdminPostsPostListComponent implements OnInit{
+export class AdminPostsPostListComponent {
  @Input() posts: Post[];
  @Input() hasPosts: boolean;
  @Output() deleted = new EventEmitter<Post>();
 
- constructor(){}
- ngOnInit(){
-console.log(this.posts);
- }
  onDelete(event){
    this.deleted.emit(event);
  }
