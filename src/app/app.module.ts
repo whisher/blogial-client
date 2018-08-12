@@ -53,7 +53,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
-    { provide: URLS, useValue: Config_Urls }
+    { provide: URLS, useValue: Config_Urls },
   ],
   bootstrap: [AppComponent]
 })

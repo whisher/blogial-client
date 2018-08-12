@@ -11,9 +11,9 @@ export class LoginGuard implements CanActivate {
 
   canActivate(): Observable<boolean> {
     return this.store.pipe(
-      select(fromAuthentication.getLoggedIn),
-      map(authed => {
-        if (authed) {
+      select(fromAuthentication.isValidToken),
+      map(isValidToken => {
+        if (isValidToken) {
           this.store.dispatch(new fromAuthentication.LoginJustLogged());
           return false;
         }

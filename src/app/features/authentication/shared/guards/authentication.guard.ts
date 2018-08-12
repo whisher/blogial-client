@@ -7,13 +7,14 @@ import * as fromAuthentication from '../store';
 
 @Injectable()
 export class AuthenticationGuard implements CanActivate {
-  constructor(private store: Store<fromAuthentication.State>) { }
+  constructor(private store: Store<fromAuthentication.State>) {
+   }
 
   canActivate(): Observable<boolean> {
     return this.store.pipe(
-      select(fromAuthentication.getLoggedIn),
-      map(authed => {
-        if (!authed) {
+      select(fromAuthentication.isValidToken),
+      map(isValidToken => {
+        if (!isValidToken) {
           this.store.dispatch(new fromAuthentication.LoginRedirect());
           return false;
         }

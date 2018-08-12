@@ -18,7 +18,6 @@ export const mimeTypeValidator = (
         for (let i = 0; i < arr.length; i++) {
           header += arr[i].toString(16);
         }
-        console.log('header',header);
         switch (header) {
           case '89504e47':
             isValid = true;
