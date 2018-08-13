@@ -68,9 +68,11 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       const data = {
         title : post.title,
         content: post.content,
+        image: post.imagePath,
         isDraft: post.isDraft
       }
       this.frm.setValue(data);
+      this.imagePreview = post.imagePath;
     }
 
   }
@@ -95,7 +97,6 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         ...this.frm.value
       });
 
-      this.frm.reset();
     }
   }
 

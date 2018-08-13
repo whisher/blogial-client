@@ -8,10 +8,13 @@ import { Post } from '../../models/post.model';
   template: `
   <ng-container *ngIf="hasPosts; else noPosts">
     <div class="row no-gutters border-bottom pb-1 mb-1">
+      <div class="col-md-1">
+        <strong>Thumb</strong>
+      </div>
       <div class="col-md-4">
         <strong>Title</strong>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <strong>Author</strong>
       </div>
       <div class="col-md-1">

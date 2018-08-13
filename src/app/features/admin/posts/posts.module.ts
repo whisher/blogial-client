@@ -15,6 +15,7 @@ import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 // Components
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
+import * as fromModals from './modals';
 
 // Guards
 import * as fromGuards from './guards';
@@ -32,10 +33,12 @@ import * as fromGuards from './guards';
   ],
   declarations: [
     ...fromComponents.components,
-    ...fromContainers.containers
+    ...fromContainers.containers,
+    ...fromModals.modals
   ],
   providers: [
     ...fromGuards.guards
-  ]
+  ],
+  entryComponents: [...fromModals.modals]
 })
 export class AdminPostsModule { }

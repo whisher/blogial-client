@@ -25,7 +25,7 @@ export const getToken = createSelector(
 export const isValidToken = createSelector(
   getLoggedIn,
   getToken,
-  (authed:boolean, token: AuthenticationToken) => {
+  (authed: boolean, token: AuthenticationToken) => {
     if(!authed){
       return false
     }

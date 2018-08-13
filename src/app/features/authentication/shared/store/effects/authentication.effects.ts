@@ -81,7 +81,7 @@ export class AuthenticationEffects {
       AuthenticationActionTypes.Logout,
       AccountActionTypes.AccountFailure
     ),
-    map(authed => new RouterActions.Go({ path: ['/auth/login'] }))
+    map(authed => new RouterActions.Go({ path: ['/auth'] }))
   );
 
   @Effect()

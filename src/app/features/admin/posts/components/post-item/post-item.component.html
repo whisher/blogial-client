@@ -1,8 +1,11 @@
 <div class="row no-gutters align-items-center">
+  <div class="col-md-1">
+    <img class="img-fluid" [src]="post.imagePath" [alt]="post.title"/>
+  </div>
   <div class="col-md-4">
     {{post.title}}
   </div>
-  <div class="col-md-3">
+  <div class="col-md-2">
     {{post.author.display_name}}
   </div>
   <div class="col-md-1">
@@ -22,33 +25,8 @@
         </a>
       </li>
       <li>
-        <button type="button" (click)="open(content)" class="btn btn-danger">Deleted</button>
+        <button type="button" (click)="open()" class="btn btn-danger">Deleted</button>
       </li>
     </ul>
   </div>
 </div>
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">
-      Do you want really delete the post?
-    </h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div class="alert alert-light p-0 m-0" role="alert">
-     {{post.title}}
-    </div>
-  </div>
-  <div class="modal-footer">
-    <ul class="d-flex flex-row justify-content-end">
-      <li class="pr-1">
-        <button type="button" class="btn btn-secondary" (click)="c(false)">No</button>
-      </li>
-      <li>
-        <button type="button" class="btn btn-danger" (click)="c(true)">Yes</button>
-      </li>
-    </ul>
-  </div>
-</ng-template>

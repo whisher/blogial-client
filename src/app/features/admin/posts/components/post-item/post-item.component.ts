@@ -1,9 +1,10 @@
 import { Component, Input, Output, ChangeDetectionStrategy, ViewEncapsulation, EventEmitter } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Post } from '../../models';
 import * as fromPosts from '../../shared/store';
+import { AdminPostsPostDeleteComponent } from '../../modals'
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,13 +25,13 @@ export class AdminPostsPostItemComponent {
     private modalService: NgbModal
   ) {}
 
-  open(content) {
-    const modalRef = this.modalService.open(content, {
+  open() {
+    const modalRef = this.modalService.open(AdminPostsPostDeleteComponent, {
       backdropClass: 'danger-backdrop',
       ariaLabelledBy: 'modal-delete-post',
       centered: true
     })
-
+    modalRef.componentInstance.post = this.post;
     modalRef.result.then((result) => {
       if(result){
         this.deleted.emit(this.post)
