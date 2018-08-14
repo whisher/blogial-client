@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-// External
+// Ng-Bootstrap
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabsetModule }  from '@ng-bootstrap/ng-bootstrap';
 
 // Module
 import { AdminPostsRoutingModule } from './posts-routing.module';
@@ -16,16 +17,20 @@ import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
 import * as fromModals from './modals';
+import {
+  AdminPostsPostDeleteComponent,
+  AdminPostsPostGalleryComponent
+} from './modals';
 
 // Guards
 import * as fromGuards from './guards';
-
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgbModalModule,
+    NgbTabsetModule,
     AdminPostsRoutingModule,
     IconsModule,
     UiButtonSpinnerModule,
@@ -39,6 +44,9 @@ import * as fromGuards from './guards';
   providers: [
     ...fromGuards.guards
   ],
-  entryComponents: [...fromModals.modals]
+  entryComponents: [
+    AdminPostsPostDeleteComponent,
+    AdminPostsPostGalleryComponent
+  ]
 })
 export class AdminPostsModule { }

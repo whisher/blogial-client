@@ -1,0 +1,48 @@
+<ng-container *ngIf="hasPosts; else noPosts">
+  <ngb-tabset class="ng-switch-content" (tabChange)="onSwitchContent($event)">
+    <ngb-tab id="tab-box">
+      <ng-template ngbTabTitle>
+        <icon-table cls="fa-2x"></icon-table>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="row no-gutters border-bottom pb-1 mb-1">
+          <div class="col-md-1">
+            <strong>Thumb</strong>
+          </div>
+          <div class="col-md-4">
+            <strong>Title</strong>
+          </div>
+          <div class="col-md-2">
+            <strong>Author</strong>
+          </div>
+          <div class="col-md-1">
+            <strong>Status</strong>
+          </div>
+          <div class="col-md-1">
+            <strong>Create</strong>
+          </div>
+          <div class="col-md-1">
+            <strong>Update</strong>
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>Actions</strong>
+          </div>
+        </div>
+        <admin-posts-post-item *ngFor="let post of posts | keyvalue" [post]="post.value" (deleted)="onDelete($event)"></admin-posts-post-item>
+      </ng-template>
+    </ngb-tab>
+      <ngb-tab id="tab-table">
+        <ng-template ngbTabTitle>
+          <icon-th-list cls="fa-2x"></icon-th-list>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <admin-posts-post-box *ngFor="let post of posts | keyvalue" [post]="post.value" (deleted)="onDelete($event)"></admin-posts-post-box>
+        </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</ng-container>
+<ng-template #noPosts>
+  <div class="alert alert-info" role="alert">
+    There are no posts yet.
+  </div>
+</ng-template>

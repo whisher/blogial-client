@@ -11,7 +11,28 @@
       </div>
       <div class="form-group">
         <div class="input-group">
-          <textarea tabindex="2" id="content" class="form-control" placeholder="Post content" cols="30" rows="5" formControlName="content"></textarea>
+          <textarea tabindex="2" id="content" class="form-control form-control-lg" placeholder="Post content" cols="30" rows="5" formControlName="content"></textarea>
+        </div>
+      </div>
+      <div formArrayName="places"
+        *ngFor="let place of places.controls; let i = index;">
+        <div class="form-group" [formGroupName]="i">
+          <div class="input-group">
+            <input type="text" [attr.tabindex]="2 + i + 1" class="form-control form-control-lg" placeholder="Place name" formControlName="name">
+            <div class="input-group-append" (click)="onRemovePlace(place, i)">
+              <span class="input-group-text">
+                <icon-minus [cls]="'fa-lg'"></icon-minus>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="d-flex flex-row justify-content-end" (click)="onAddPlace()">
+            <span class="text-uppercase pr-2">Add a place not to be missed</span>
+            <button type="button" class="c-btn">
+              <icon-plus [cls]="'fa-lg'"></icon-plus>
+            </button>
         </div>
       </div>
     </div>
@@ -28,16 +49,11 @@
           </label>
         </div>
       </div>
-      <div class="row">
-        <div class="col mb-2">
-          <button class="btn btn-primary btn-lg btn-block c-btn-uppercase"
-                  type="submit" [disabled]="frm.invalid">
-              <ui-button-spinner
-              [value]="'Publish'"
-              [has]="pending"></ui-button-spinner>
-          </button>
-        </div>
-      </div>
+      <!--
+        *ngIf="_hasSubmited || imagePreview"
+        workaround because after submit
+        frm.get('image').valid is false ^^
+      -->
       <ng-container *ngIf="frm.get('image').valid; else invalidImage">
         <div class="row mb-2" *ngIf="imagePreview">
           <div class="col">
@@ -46,7 +62,7 @@
         </div>
       </ng-container>
       <ng-template #invalidImage>
-        <div class="row mb-2" *ngIf="imagePreview">
+        <div class="row mb-2" *ngIf="_hasSubmited || imagePreview">
           <div class="col">
             <div class="alert alert-danger m-0" role="alert">
               Invalid file extension, accept only jpg, png.
@@ -54,7 +70,7 @@
           </div>
         </div>
       </ng-template>
-      <div class="row">
+      <div class="row mb-2">
         <div class="col">
           <button
           type="button"
@@ -66,6 +82,32 @@
           <input type="file" #filePicker (change)="onImagePicker($event)">
         </div>
       </div>
+      <div class="row no-gutters mb-2" *ngIf="files.length > 0">
+        <div class="col-12 col-md-2 pr-1" *ngFor="let file of files">
+          <img class="img-fluid card-img-top" [src]="file.src" alt="...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg c-btn-icon c-btn-uppercase"
+          (click)="openGallery()">
+            <icon-images [cls]="'fa-lg'"></icon-images>
+            <span>Gallery</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <button class="btn btn-primary btn-lg btn-block c-btn-uppercase"
+              type="submit" [disabled]="frm.invalid">
+          <ui-button-spinner
+          [value]="'Publish'"
+          [has]="pending"></ui-button-spinner>
+      </button>
     </div>
   </div>
 </form>

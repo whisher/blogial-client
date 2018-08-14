@@ -9,7 +9,12 @@ import {
   faEye,
   faEyeSlash,
   faImage,
-  faKey
+  faImages,
+  faKey,
+  faMinus,
+  faPlus,
+  faTable,
+  faThList
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -20,7 +25,12 @@ library.add(
   faEye,
   faEyeSlash,
   faImage,
-  faKey
+  faImages,
+  faKey,
+  faMinus,
+  faPlus,
+  faTable,
+  faThList
 );
 
 @Component({
@@ -51,7 +61,7 @@ export class IconArrowLeftComponent{}
     display: inline-block;
   }`]
 })
-export class IconBellComponent{
+export class IconBellComponent {
   @Input() cls: string;
 }
 
@@ -93,9 +103,22 @@ export class IconEyeSlashComponent{}
     display: inline-block;
   }`]
 })
-export class IconImageComponent{
+export class IconImageComponent {
   @Input() cls: string;
 }
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-images',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'images']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconImagesComponent {
+  @Input() cls: string;
+}
+
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -106,3 +129,51 @@ export class IconImageComponent{
   }`]
 })
 export class IconKeyComponent{}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-minus',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'minus']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconMinusComponent {
+  @Input() cls: string;
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-plus',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'plus']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconPlusComponent{
+  @Input() cls: string;
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-table',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'table']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconTableComponent{
+  @Input() cls: string;
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-th-list',
+  template: `<fa-icon class="{{cls}}" [icon]="['fas', 'th-list']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconThListComponent{
+  @Input() cls: string;
+}

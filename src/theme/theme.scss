@@ -16,6 +16,8 @@
 @import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/close";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
 
 /*
  * Global application theme.
@@ -26,5 +28,6 @@
 @import "./components/dropdown";
 @import "./components/elevation";
 @import "./ng/modal";
+@import "./ng/tabs";
 @import "./utilities";
 @import "./reset";

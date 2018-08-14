@@ -8,14 +8,11 @@ import { AdminPostsPostDeleteComponent } from '../../modals';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
-  selector: 'admin-posts-post-item',
-  templateUrl: './post-item.component.html',
-  host:{
-    class:'row--list border-bottom py-1'
-  }
+  selector: 'admin-posts-post-box',
+  templateUrl: './post-box.component.html',
+  styleUrls: ['./post-box.component.scss']
 })
-export class AdminPostsPostItemComponent {
+export class AdminPostsPostBoxComponent {
   @Input() post: Post;
   @Output() deleted = new EventEmitter<Post>();
 

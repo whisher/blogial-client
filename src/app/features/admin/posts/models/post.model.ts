@@ -5,8 +5,10 @@ export interface Post {
   };
   content: string;
   created?: Date;
+  files: Array<{src: string, name: string}>;
   imagePath: string,
   isDraft: boolean;
+  places: Array<any>;
   title: string;
   updated?: Date;
 }

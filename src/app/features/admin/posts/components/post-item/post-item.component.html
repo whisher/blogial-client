@@ -1,6 +1,9 @@
 <div class="row no-gutters align-items-center">
+  {{post.places | json}}
   <div class="col-md-1">
-    <img class="img-fluid" [src]="post.imagePath" [alt]="post.title"/>
+    <div class="px-1">
+      <img class="img-fluid" [src]="post.imagePath" [alt]="post.title"/>
+    </div>
   </div>
   <div class="col-md-4">
     {{post.title}}

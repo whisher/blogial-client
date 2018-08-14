@@ -1,10 +1,12 @@
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { mimeTypeValidator } from '../../../../../shared/validators';
 import { Post } from '../../models/post.model';
+import { AdminPostsPostGalleryComponent } from '../../modals';
 
 @Component({
   selector: 'admin-posts-post-form',
@@ -49,9 +51,19 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
   imagePreview: string;
 
-  constructor(private fb: FormBuilder) {
+  // Gallery
+  files: Array<{src: string, name: string}> = [];
+
+  get places() {
+    return this.frm.get('places') as FormArray;
+  }
+  constructor(
+    private fb: FormBuilder,
+    private modalService: NgbModal
+  ) {
     this.createForm();
   }
+
   ngOnInit() {
     this.subscription = this.frm.valueChanges.subscribe(val => {
       if (this._isPristine) {
@@ -69,10 +81,12 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         title : post.title,
         content: post.content,
         image: post.imagePath,
-        isDraft: post.isDraft
+        isDraft: post.isDraft,
+        places: post.places
       }
       this.frm.setValue(data);
       this.imagePreview = post.imagePath;
+      this.files = post.files;
     }
 
   }
@@ -82,8 +96,24 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       title: ['', [Validators.required]],
       content: ['', [Validators.required]],
       image:[null, [Validators.required], mimeTypeValidator],
-      isDraft: [false]
+      isDraft: [false],
+      places:this.fb.array([this.createPlace()])
     });
+  }
+
+  createPlace(): FormGroup {
+    return this.fb.group({
+      name: ['', [Validators.required]]
+    });
+  }
+
+  onAddPlace(): void {
+    this.places.push(this.createPlace());
+  }
+
+  onRemovePlace({ group, index }: { group: FormGroup, index: number }){
+    const control = this.places;
+    control.removeAt(index);
   }
 
   onSubmit() {
@@ -94,6 +124,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
       this.submitted.emit({
         _id: this.postId,
+        files: this.files,
         ...this.frm.value
       });
 
@@ -103,11 +134,28 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   onImagePicker(event: Event){
     const file = (<HTMLInputElement>event.target).files[0];
     this.frm.patchValue({image: file})
+    this.frm.get('image').updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result;
     };
     reader.readAsDataURL(file);
+  }
+
+  openGallery() {
+    const modalRef = this.modalService.open(AdminPostsPostGalleryComponent, {
+      backdropClass: 'backdrop-primary',
+      ariaLabelledBy: 'modal-post-gallery',
+      size: 'lg',
+      centered: true
+    })
+    modalRef.componentInstance.files = this.files;
+    modalRef.result.then((result) => {
+      if(result) {
+        this.files = [...result];
+        console.log('result',this.files);
+      }
+    }, (reason) => {});
   }
 
   ngOnDestroy(){

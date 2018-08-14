@@ -1,0 +1,17 @@
+<div class="row box">
+  <div class="col-12 col-md-4 box__thumb">
+    <img class="img-fluid" [src]="post.imagePath" [alt]="post.title"/>
+  </div>
+  <div class="col-12 col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <p>
+          {{post.title}}
+        </p>
+        <div>
+          {{post.content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,15 +19,24 @@ export class PostsService {
   }
 
   add(data): Observable<Post> {
-    const { title, content, isDraft, image } = data;
+    const { title, content, isDraft, image, places, files } = data;
     const postData = new FormData();
     postData.append('title', title);
     postData.append('content', content);
     postData.append('isDraft', isDraft);
     postData.append('image', image, title);
+    postData.append('places', JSON.stringify(places));
+    postData.append('files', JSON.stringify(files));
     return this.http.post<Post>(this.postsUrl, postData)
    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
+
+  gallery(file, name): Observable<{src: string, name: string}> {
+    const postData = new FormData();
+    postData.append('gallery', file, name);
+    return this.http.post<{src: string, name: string}>(`${this.postsUrl}/gallery`, postData)
+   .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+ }
 
   load(): Observable<Post[]> {
     return this.http.get<Post[]>(this.postsUrl)
@@ -39,8 +48,16 @@ export class PostsService {
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
-  update(id: string, data: Post): Observable<Post> {
-    return this.http.put<Post>(`${this.postsUrl}/${id}`, data)
+  update(id: string, data): Observable<Post> {
+    const { title, content, isDraft, image, places, files } = data;
+    const postData = new FormData();
+    postData.append('title', title);
+    postData.append('content', content);
+    postData.append('isDraft', isDraft);
+    postData.append('image', image, title);
+    postData.append('places', JSON.stringify(places));
+    postData.append('files', JSON.stringify(files));
+    return this.http.put<Post>(`${this.postsUrl}/${id}`, postData)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 
