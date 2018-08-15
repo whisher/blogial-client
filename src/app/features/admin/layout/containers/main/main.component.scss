@@ -2,8 +2,8 @@
 
 :host{
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
-  height: 100%;
   padding-top: 140px;
   background-color: $admin-bck-color;
 }
@@ -13,11 +13,6 @@ header {
 main{
   flex: 1 1 auto;
   background-color: #fff;
-  /*.content{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }*/
 }
 footer{
 

@@ -1,0 +1,37 @@
+@import "theme-variables";
+
+:host{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  background-color: $blog-bck-color;
+}
+header {
+  flex: 0 0 $blog-header-height;
+  width: 100%;
+  max-height: $blog-header-height;
+  background-color: $white;
+}
+.header{
+  height: 100%;
+  background-color: inherit;
+}
+main{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+.main{
+  flex: 1 0 auto;
+  background-color: $white;
+}
+footer{
+  flex: 0 0 $blog-footer-height;
+  width: 100%;
+  max-height: $blog-footer-height;
+  background-color: $white;
+}
+.footer{
+  height: 100%;
+  background-color: inherit;
+}

@@ -1,17 +1,7 @@
-/*
- * Application global variables.
- */
-
-// ---------------------------------------------------------------------------
-// Bootstrap variables
-//
-// Override Bootstrap variables here to suite your theme.
-// Copy variables you want to customize from node_modules/bootstrap/scss/_variables.scss
+// App Theme
 @import "~bootstrap/scss/_functions";
-
 @import "./variables/colors";
 @import "./variables/colors-custom";
-@import "./variables/colors-app";
 @import "./variables/options";
 @import "./variables/spacing";
 @import "./variables/body";
@@ -46,6 +36,10 @@
 @import "./variables/printing";
 @import "./mixins/buttons";
 @import "./mixins/elevation";
+
+// App variables
+@import "./variables/app-colors";
+@import "./variables/app-layout";
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
 // in components.

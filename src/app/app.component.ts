@@ -6,8 +6,10 @@ import { PwaService } from './shared/pwa/pwa.service';
   template: `<router-outlet></router-outlet>`,
   styles: [`
     :host {
-      display: block;
-      height: 100vh;
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      background: #fff;
     }
   `]
 })

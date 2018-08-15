@@ -240,7 +240,7 @@ $orange-a100: #ffd180 !default;
 $orange-a200: #ffab40 !default;
 $orange-a400: #ff9100 !default;
 $orange-a700: #ff6d00 !default;
-$orange: $orange-600 !default;
+$orange: $orange-a400 !default;
 
 $deep-orange-50: #fbe9e7 !default;
 $deep-orange-100: #ffccbc !default;
@@ -372,7 +372,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $purple !default;
+$primary:       $orange !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;

@@ -1,17 +1,14 @@
 @import "theme-variables";
 
 :host{
-  display: block;
-  height: 100%;
   background-color: $authentication-bck-color;
 }
 .layout-main {
-  height: 100%;
   &__row {
-    height: 100%;
+    height: 100vh;
   }
   &__col {
-    height: 100%;
+    height: 100vh;
   }
   &__col:first-child {
     display: flex;

@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'admin-layout-nav',
+  selector: 'blog-layout-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class AdminLayoutNavComponent {}
+export class BlogLayoutNavComponent{}

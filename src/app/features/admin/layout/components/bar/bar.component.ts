@@ -1,8 +1,9 @@
-import { Component, Output, Input, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, Input, EventEmitter } from '@angular/core';
 
 import { Account } from '../../../../authentication/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'admin-layout-bar',
   templateUrl: './bar.component.html',
   styleUrls: ['./bar.component.scss']

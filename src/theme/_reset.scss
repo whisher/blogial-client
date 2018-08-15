@@ -29,10 +29,13 @@ a {
 }
 
 /* Buttons */
-.btn{
-  &:focus{
-    box-shadow: none !important;
+.btn {
+  &:focus {
+    box-shadow: none;
   }
+}
+.btn-primary {
+  color: $white;
 }
 .btn-lg {
   min-height: 3.25rem;
@@ -41,8 +44,8 @@ a {
   &:hover,
   &:focus,
   &:active {
-    background-color: #fff !important;
-    color: $secondary !important;
+    color: $secondary;
+    background-color: $white;
   }
 }
 
