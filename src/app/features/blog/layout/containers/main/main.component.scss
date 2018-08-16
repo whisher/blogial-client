@@ -32,6 +32,8 @@ main{
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
+  padding-top: $blog-padding-top;
+  padding-bottom: $blog-padding-bottom;
 }
 .main{
   flex: 1 0 auto;

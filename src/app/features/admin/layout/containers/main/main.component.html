@@ -1,13 +1,17 @@
 <div class="admin">
   <header>
-    <admin-layout-header></admin-layout-header>
+    <div class="container header">
+      <admin-layout-header></admin-layout-header>
+    </div>
   </header>
-  <main class="container mat-elevation-10">
-    <div class="content">
+  <main>
+    <div class="container main mat-elevation-10">
       <router-outlet></router-outlet>
     </div>
   </main>
   <footer>
-    <admin-layout-footer></admin-layout-footer>
+    <div class="container footer">
+      <admin-layout-footer></admin-layout-footer>
+    </div>
   </footer>
 </div>

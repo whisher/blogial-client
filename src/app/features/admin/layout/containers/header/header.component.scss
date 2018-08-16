@@ -1,11 +1,11 @@
+@import "theme-variables";
+
 :host{
   display: block;
 }
-.header{
-  &__bar{
-    height: 70px;
-  }
-  &__nav{
-    height: 55px;
-  }
+.bar{
+  height: $admin-header-bar-height;
+}
+.nav{
+  height: $admin-header-nav-height;
 }
