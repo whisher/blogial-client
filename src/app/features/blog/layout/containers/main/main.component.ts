@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+
 
 @Component({
   selector: 'blog-layout-main',

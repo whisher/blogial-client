@@ -46,6 +46,7 @@
     "helmet": "^3.13.0",
     "ngrx-store-freeze": "^0.2.4",
     "ngrx-store-localstorage": "^5.0.1",
+    "ngx-md": "^6.0.0",
     "rxjs": "^6.0.0",
     "ts-loader": "^4.4.2",
     "zone.js": "^0.8.26"
@@ -58,7 +59,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "codelyzer": "~4.2.1",
+    "codelyzer": "^4.2.1",
     "htmlhint": "^0.9.13",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

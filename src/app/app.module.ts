@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Ngrx */
 import { StoreModule } from '@ngrx/store';
@@ -17,6 +18,7 @@ import { effects, reducers, metaReducers } from './store';
 
 /* Externals */
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxMdModule } from 'ngx-md';
 
 /* Env */
 import { environment } from '../environments/environment';
@@ -38,6 +40,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'blogial' }),
     HttpClientModule,
+    BrowserAnimationsModule,
     ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([...effects]),
@@ -47,6 +50,7 @@ import { AppComponent } from './app.component';
       logOnly: environment.production,
     }),
     NgbModule.forRoot(),
+    NgxMdModule.forRoot(),
     AuthenticationSharedModule.forRoot(),
     PostsSharedModule.forRoot(),
     AppRoutingModule

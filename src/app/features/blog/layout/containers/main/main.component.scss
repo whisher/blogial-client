@@ -22,7 +22,12 @@ header {
   flex: 0 0 $blog-header-height;
   width: 100%;
   max-height: $blog-header-height;
+}
+.isDefault{
   background-color: $white;
+}
+.isScrolabled{
+  background-color: $cyan-100;
 }
 .header{
   height: 100%;

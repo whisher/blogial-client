@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbTabsetModule }  from '@ng-bootstrap/ng-bootstrap';
 
+import { NgxMdModule } from 'ngx-md';
+
 // Module
 import { AdminPostsRoutingModule } from './posts-routing.module';
 import { IconsModule } from '../../../shared/icons/icons.module';
@@ -31,6 +33,7 @@ import * as fromGuards from './guards';
     ReactiveFormsModule,
     NgbModalModule,
     NgbTabsetModule,
+    NgxMdModule,
     AdminPostsRoutingModule,
     IconsModule,
     UiButtonSpinnerModule,

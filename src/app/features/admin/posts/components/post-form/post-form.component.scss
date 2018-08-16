@@ -3,7 +3,19 @@
 :host{
   display: block;
 }
-.post-form{
+.post-form {
+  textarea {
+    min-height: 15rem;
+    border-top: none;
+  }
+  &__md {
+    min-height: 15rem;
+    padding: $input-padding-y-lg  $input-padding-x-lg;
+    font-size: $font-size-lg;
+    color: $input-color;
+    border: 1px solid $input-border-color;
+    border-top: none;
+  }
   .btn-active{
     background-color: darken($secondary, 8.5%);
     border-color: darken($secondary, 8.5%);
