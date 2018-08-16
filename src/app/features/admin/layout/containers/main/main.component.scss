@@ -2,10 +2,16 @@
 
 :host{
   display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
+  height: 100vh;
   padding-top: 140px;
   background-color: $admin-bck-color;
+}
+.admin {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  background-color: inherit;
 }
 header {
 

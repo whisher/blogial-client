@@ -2,11 +2,23 @@
 
 :host{
   display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
+  height: 100vh;
   background-color: $blog-bck-color;
 }
+.blog {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  background-color: inherit;
+}
 header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
   flex: 0 0 $blog-header-height;
   width: 100%;
   max-height: $blog-header-height;
