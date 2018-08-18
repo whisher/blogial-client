@@ -11,11 +11,13 @@ import { Post } from '../../models/post.model';
 @Injectable()
 export class PostsService {
   postsUrl: string;
+  pwaNotificationUrl: string;
   constructor(
     private http: HttpClient,
     @Inject(URLS) private urls
   ) {
     this.postsUrl = urls.posts;
+    this.pwaNotificationUrl = urls.pwa.notification;
   }
 
   add(data): Observable<Post> {
@@ -63,6 +65,11 @@ export class PostsService {
 
   delete(id: string): Observable<Post> {
     return this.http.delete<Post>(`${this.postsUrl}/${id}`)
+    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+  }
+
+  notification(data: Post): Observable<any> {
+    return this.http.post<any>(`${this.pwaNotificationUrl}`, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
 }

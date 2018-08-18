@@ -1,4 +1,5 @@
-# BlogialClient
+# Blogial-Client
+## Simple blog pwa + push notification, univerval
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 

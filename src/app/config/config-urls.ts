@@ -9,7 +9,11 @@ export function urls(): ConfigUrls {
       account: `${host}/api/users/account`,
       login: `${host}/api/users/login`
     },
-    posts:`${host}/api/posts`
+    posts:`${host}/api/posts`,
+    pwa: {
+      subscription: `${host}/pwa/subscription`,
+      notification: `${host}/pwa/notification`,
+    }
   };
 }
 

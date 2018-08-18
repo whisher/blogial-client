@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import { SwUpdate, SwPush } from '@angular/service-worker';
 
 import { Subscription, interval } from 'rxjs';
 
@@ -12,12 +12,12 @@ type ServiceWorkerEvent = any;
 @Injectable({
   providedIn: 'root'
 })
-export class PwaService {
+export class PwaInstallService {
   promptEvent: ServiceWorkerEvent;
   interval: Subscription;
-  constructor(private swUpdate: SwUpdate,private platform: PlatformService) {
-   this.checkForUpdate();
-  }
+  constructor(
+    private swUpdate: SwUpdate,
+    private platform: PlatformService) {}
 
   install(): void {
     if(this.promptEvent){

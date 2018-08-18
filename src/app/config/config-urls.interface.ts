@@ -4,4 +4,8 @@ export interface ConfigUrls {
     login: string;
   },
   posts: string;
+  pwa: {
+    subscription: string;
+    notification: string;
+  }
 }

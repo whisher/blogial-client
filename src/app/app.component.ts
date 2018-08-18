@@ -9,7 +9,11 @@ import {
   transition,
   trigger } from '@angular/animations';
 
-import { PwaService } from './shared/pwa/pwa.service';
+import {
+  PwaInstallService,
+  PwaNotificationService
+} from './shared/pwa';
+
 @Component({
   selector: 'iwdf-root',
   template: `<div [@routeState]="getAnimationData(rOutlet)">
@@ -36,7 +40,13 @@ import { PwaService } from './shared/pwa/pwa.service';
   ]
 })
 export class AppComponent {
-  constructor(private pwa: PwaService){}
+  constructor(
+    pwaInstallService: PwaInstallService,
+    pwaNotificationService: PwaNotificationService
+  ){
+    pwaInstallService.checkForUpdate();
+    pwaNotificationService.askForPermission();
+  }
   getAnimationData(outlet: RouterOutlet) {
     const routeData = outlet.activatedRouteData['animation'];
     if (!routeData) {

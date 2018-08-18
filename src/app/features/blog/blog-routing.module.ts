@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BlogLayoutMainComponent } from './layout/containers';
 
-
-
 export const ROUTES: Routes = [
   {
     path: '', component: BlogLayoutMainComponent,
