@@ -28,7 +28,8 @@
       "urls": [
         "https://ajax.googleapis.com/**",
         "https://fonts.googleapis.com/**",
-        "https://fonts.gstatic.com/**"
+        "https://fonts.gstatic.com/**",
+        "https://blogial-server.herokuapp.com/images/**"
       ]
     }
   }],
