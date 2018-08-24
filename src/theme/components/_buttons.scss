@@ -1,5 +1,27 @@
+$hover-danger-color: darken($danger, 15%) !default;
+$hover-info-color: darken($info, 15%) !default;
+
 .c-btn{
   @include base-button;
+}
+.c-btn-fab{
+  @include base-button;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  @include mat-elevation(2);
+}
+.c-btn-fab--danger{
+  color: theme-color("danger");
+  &:hover {
+    color: $hover-danger-color;
+  }
+}
+.c-btn-fab--info{
+  color: theme-color("info");
+  &:hover{
+    color: $hover-info-color;
+  }
 }
 .c-btn-dropdown{
   @include dropdown-button;

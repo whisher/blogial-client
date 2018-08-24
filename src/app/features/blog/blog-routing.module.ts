@@ -10,11 +10,11 @@ export const ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home'
+        redirectTo: 'posts'
       },
       {
-        path: 'home',
-        loadChildren: './home/home.module#BlogHomeModule'
+        path: 'posts',
+        loadChildren: './posts/posts.module#BlogPostsModule'
       }
     ]
   }

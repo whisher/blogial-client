@@ -10,6 +10,7 @@
   font-weight: $btn-font-weight;
   line-height: inherit;
   text-decoration: none;
+  touch-action: manipulation;
   cursor: pointer;
   user-select: none;
   background-color: inherit;

@@ -17,8 +17,8 @@
     background-image: linear-gradient(rgba($primary-red, $primary-green, $primary-blue, .25), rgba($primary-red, $primary-green, $primary-blue, .25)), url("/assets/images/authentication-bck.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: 0 0;
-    background-size: contain;
+    background-position: center center;
+    background-size: cover;
   }
   &__hint{
     padding-bottom: 2rem;

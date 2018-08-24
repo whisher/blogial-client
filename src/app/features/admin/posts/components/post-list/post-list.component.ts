@@ -5,14 +5,23 @@ import { Post } from '../../models/post.model';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'admin-posts-post-list',
-  templateUrl: './post-list.component.html'
+  templateUrl: './post-list.component.html',
+  host:{
+    class: 'd-block my-3'
+  }
 })
 export class AdminPostsPostListComponent {
  @Input() posts: Post[];
  @Input() hasPosts: boolean;
  @Output() deleted = new EventEmitter<Post>();
+ @Output() edit = new EventEmitter<Post>();
 
- onDelete(event){
-   this.deleted.emit(event);
+ onEdit(post) {
+   this.edit.emit(post);
  }
+
+ onDelete(post) {
+   this.deleted.emit(post);
+ }
+
 }

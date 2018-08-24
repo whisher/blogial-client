@@ -20,8 +20,10 @@
             </ngb-tab>
             <ngb-tab title="Preview">
               <ng-template ngbTabContent>
-                <div class="post-form__md" Markdown>
-                  {{frm.value.content}}
+                <div class="post-form__md">
+                  <ngx-md>
+                    {{frm.value.content}}
+                  </ngx-md>
                 </div>
               </ng-template>
             </ngb-tab>

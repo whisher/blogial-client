@@ -43,10 +43,10 @@ export class UiPasswordComponent  implements ControlValueAccessor {
   onToggleShow() {
     this.show = !this.show;
     if (this.show) {
-      this.type = "text";
+      this.type = 'text';
     }
     else {
-      this.type = "password";
+      this.type = 'password';
     }
   }
 

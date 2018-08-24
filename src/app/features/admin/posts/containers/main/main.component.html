@@ -2,7 +2,10 @@
   Add new post
 </a>
 <ng-container *ngIf="loaded$ | async; else noLoaded">
-  <admin-posts-post-list [hasPosts]="hasPosts$ | async" [posts]="posts$ | async" (deleted)="onDelete($event)"></admin-posts-post-list>
+  <admin-posts-post-list
+  [hasPosts]="hasPosts$ | async"
+  [posts]="posts$ | async"
+  (deleted)="onDelete($event)" (edit)="onEdit($event)"></admin-posts-post-list>
 </ng-container>
 <ng-template #noLoaded>
   <div class="d-flex flex-row justify-content-center">

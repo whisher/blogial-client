@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { PostsGuard } from '../../admin/posts/shared/guards';
 
 import {
-  BlogHomeMainComponent
+  BlogPostsMainComponent
 } from './containers';
 
 export const ROUTES: Routes = [
   {
     path: '',
-    component: BlogHomeMainComponent,
+    component: BlogPostsMainComponent,
+    canActivate: [PostsGuard],
     pathMatch: 'full'
   }
 ];
@@ -20,4 +22,4 @@ export const ROUTES: Routes = [
   ],
   exports: [RouterModule]
 })
-export class BlogHomeRoutingModule {}
+export class BlogPostsRoutingModule {}

@@ -13,7 +13,7 @@ export const ROUTES: Routes = [
   {
     path: '',
     component: AdminPostsMainComponent,
-    canActivate: [ PostsGuard ],
+    canActivate: [PostsGuard],
     pathMatch: 'full'
   },
   {

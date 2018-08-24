@@ -1,15 +1,12 @@
 <ng-container *ngIf="hasPosts; else noPosts">
-  <ngb-tabset class="ng-switch-content" (tabChange)="onSwitchContent($event)">
+  <ngb-tabset class="ng-switch-content">
     <ngb-tab id="tab-box">
       <ng-template ngbTabTitle>
         <icon-table cls="fa-2x"></icon-table>
       </ng-template>
       <ng-template ngbTabContent>
-        <div class="row no-gutters border-bottom pb-1 mb-1">
-          <div class="col-md-1">
-            <strong>Thumb</strong>
-          </div>
-          <div class="col-md-4">
+        <div class="row no-gutters border-bottom py-3">
+          <div class="col-md-5">
             <strong>Title</strong>
           </div>
           <div class="col-md-2">
@@ -28,7 +25,11 @@
             <strong>Actions</strong>
           </div>
         </div>
-        <admin-posts-post-item *ngFor="let post of posts | keyvalue" [post]="post.value" (deleted)="onDelete($event)"></admin-posts-post-item>
+        <admin-posts-post-item
+        *ngFor="let post of posts | keyvalue"
+        [post]="post.value"
+        (deleted)="onDelete($event)"
+        (edit)="onEdit($event)"></admin-posts-post-item>
       </ng-template>
     </ngb-tab>
       <ngb-tab id="tab-table">
@@ -36,7 +37,11 @@
           <icon-th-list cls="fa-2x"></icon-th-list>
         </ng-template>
         <ng-template ngbTabContent>
-          <admin-posts-post-box *ngFor="let post of posts | keyvalue" [post]="post.value" (deleted)="onDelete($event)"></admin-posts-post-box>
+          <admin-posts-post-box
+          *ngFor="let post of posts | keyvalue"
+          [post]="post.value"
+          (deleted)="onDelete($event)"
+          (edit)="onEdit($event)"></admin-posts-post-box>
         </ng-template>
     </ngb-tab>
   </ngb-tabset>
