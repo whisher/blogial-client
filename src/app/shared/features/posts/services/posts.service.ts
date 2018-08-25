@@ -31,7 +31,7 @@ export class PostsService {
     postData.append('files', JSON.stringify(files));
     return this.http.post<Post>(this.postsUrl, postData)
    .pipe(
-     tap(data => this.notification(data)),
+     tap(data => this.notification(data).subscribe()),
      catchError((error: any) => HttpErrorHandler.handle(error))
    );
   }
@@ -72,6 +72,7 @@ export class PostsService {
   }
 
   notification(data: Post): Observable<any> {
+    console.log('pippo',data);
     return this.http.post<any>(`${this.pwaNotificationUrl}`, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }
