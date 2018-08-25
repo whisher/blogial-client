@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { AuthenticationToken } from '../../../models';
+import { AuthenticationToken } from '../../models';
 import {
   AuthenticationActions,
   AuthenticationActionTypes

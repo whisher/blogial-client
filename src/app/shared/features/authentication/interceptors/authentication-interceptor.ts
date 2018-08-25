@@ -7,7 +7,7 @@ import { take, map, switchMap } from 'rxjs/operators';
 
 import {
   AuthenticationToken
-} from '../../models/authentication.model';
+} from '../models/authentication.model';
 import * as fromAuthentication from '../store';
 
 @Injectable()

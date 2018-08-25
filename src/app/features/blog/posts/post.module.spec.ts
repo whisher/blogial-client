@@ -1,4 +1,4 @@
-import { BlogPostsModule } from './posts.module';
+import { BlogPostsModule } from './post.module';
 
 describe('PostsModule', () => {
   let postsModule: BlogPostsModule;

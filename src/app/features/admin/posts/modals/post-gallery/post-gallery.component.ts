@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
-import { PostsService } from '../../shared/services';
+import { PostsService } from '../../../../../shared/features/posts/services';
 
 @Component({
   selector: 'admin-posts-post-gallery',

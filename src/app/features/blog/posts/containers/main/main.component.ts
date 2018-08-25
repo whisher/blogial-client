@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
 
-import * as fromPosts from '../../../../admin/posts/shared/store';
-import { Post } from '../../../../admin/posts/models';
+import * as fromPosts from '../../../../../shared/features/posts/store';
+import { Post } from '../../../../../shared/features/posts/models';
 
 @Component({
   selector: 'blog-home-main',

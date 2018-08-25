@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Account } from '../../../models';
+import { Account } from '../../models';
 
 export enum AccountActionTypes {
   AccountFailure = '[Account] Failure',

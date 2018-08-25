@@ -4,7 +4,7 @@ import { Effect, Actions } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
 
-import * as RouterActions from '../../../../../../store';
+import * as RouterActions from '../../../../../store';
 import * as postsActions from '../actions/posts.action';
 import * as fromServices from '../../services';
 

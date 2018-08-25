@@ -11,7 +11,7 @@ import {
   Authenticate,
   AuthenticationToken,
   Account
-} from '../../models/authentication.model';
+} from '../models/authentication.model';
 
 @Injectable()
 export class AuthenticationService {

@@ -24,8 +24,8 @@ import { NgxMdModule } from 'ngx-md';
 import { environment } from '../environments/environment';
 
 /* App */
-import { AuthenticationSharedModule } from './features/authentication/shared/shared.module';
-import { PostsSharedModule } from './features/admin/posts/shared/shared.module';
+import { AuthenticationSharedModule } from './shared/features/authentication/shared.module';
+import { PostsSharedModule } from './shared/features/posts/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { URLS } from './config/config.tokens';

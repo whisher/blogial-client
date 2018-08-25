@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthenticationGuard } from '../authentication/shared/guards';
+import { AuthenticationGuard } from '../../shared/features/authentication/guards';
 import { AdminLayoutMainComponent } from './layout/containers';
 
 export const ROUTES: Routes = [

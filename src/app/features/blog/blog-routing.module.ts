@@ -14,7 +14,8 @@ export const ROUTES: Routes = [
       },
       {
         path: 'posts',
-        loadChildren: './posts/posts.module#BlogPostsModule'
+        /* it's post.module because of conflit with ./posts/posts.module#AdminPostsModule */
+        loadChildren: './posts/post.module#BlogPostsModule'
       }
     ]
   }

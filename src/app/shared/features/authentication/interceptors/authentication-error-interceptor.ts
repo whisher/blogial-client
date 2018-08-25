@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import * as fromAuthentication from '../../shared/store';
+import * as fromAuthentication from '../store';
 
 
 @Injectable()

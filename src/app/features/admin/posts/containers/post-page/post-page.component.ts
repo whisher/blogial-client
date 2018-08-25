@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import * as fromPosts from '../../shared/store';
-import { Post } from '../../models';
+import * as fromPosts from '../../../../../shared/features/posts/store';
+import { Post } from '../../../../../shared/features/posts/models';
 
 
 @Component({

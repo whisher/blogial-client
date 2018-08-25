@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PostsGuard } from '../../admin/posts/shared/guards';
+import { PostsGuard } from '../../../shared/features/posts/guards';
 
 import {
   BlogPostsMainComponent

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Authenticate } from '../../models';
+import { Authenticate } from '../../../../shared/features/authentication/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

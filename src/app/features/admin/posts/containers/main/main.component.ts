@@ -5,8 +5,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store, select } from '@ngrx/store';
 
 import { AdminPostsPostDeleteComponent } from '../../modals';
-import * as fromPosts from '../../shared/store';
-import { Post } from '../../models';
+import * as fromPosts from '../../../../../shared/features/posts/store';
+import { Post } from '../../../../../shared/features/posts/models';
 
 @Component({
   selector: 'admin-posts-main',

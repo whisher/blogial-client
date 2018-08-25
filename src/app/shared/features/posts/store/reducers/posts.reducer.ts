@@ -1,5 +1,5 @@
 import { PostsActionTypes, PostsActions } from '../actions/posts.action';
-import { Post } from '../../../models/post.model';
+import { Post } from '../../models';
 
 export interface State {
   entities: { [id: string]: Post };

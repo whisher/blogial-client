@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
-import * as fromAuthentication from '../../../../authentication/shared/store';
+import * as fromAuthentication from '../../../../../shared/features/authentication/store';
 
 @Component({
   selector: 'admin-layout-header',

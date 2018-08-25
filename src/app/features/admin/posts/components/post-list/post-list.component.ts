@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { Post } from '../../models/post.model';
+import { Post } from '../../../../../shared/features/posts/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

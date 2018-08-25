@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Output, Input, EventEmitter } from '@angular/core';
 
-import { Account } from '../../../../authentication/models';
+import { Account } from '../../../../../shared/features/authentication/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

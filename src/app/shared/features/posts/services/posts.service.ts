@@ -2,11 +2,11 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
-import { URLS } from '../../../../../config/config.tokens';
-import { HttpErrorHandler } from '../../../../../shared/http/http-error-handler';
-import { Post } from '../../models/post.model';
+import { URLS } from '../../../../config/config.tokens';
+import { HttpErrorHandler } from '../../../http/http-error-handler';
+import { Post } from '../models';
 
 @Injectable()
 export class PostsService {
@@ -30,7 +30,10 @@ export class PostsService {
     postData.append('places', JSON.stringify(places));
     postData.append('files', JSON.stringify(files));
     return this.http.post<Post>(this.postsUrl, postData)
-   .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
+   .pipe(
+     tap(data => this.notification(data)),
+     catchError((error: any) => HttpErrorHandler.handle(error))
+   );
   }
 
   gallery(file, name): Observable<{src: string, name: string}> {

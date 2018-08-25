@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 
-import { AuthenticationToken } from '../../../models';
+import { AuthenticationToken } from '../../models';
 import * as fromFeature from '../reducers';
 import * as fromAuthentication from '../reducers/authentication.reducers';
 import * as fromLoginPage from '../reducers/login-page.reducers';

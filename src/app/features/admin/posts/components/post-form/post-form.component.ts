@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { mimeTypeValidator } from '../../../../../shared/validators';
-import { Post } from '../../models/post.model';
+import { Post } from '../../../../../shared/features/posts/models';
 import { AdminPostsPostGalleryComponent } from '../../modals';
 
 @Component({

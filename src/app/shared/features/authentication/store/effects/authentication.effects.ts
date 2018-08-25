@@ -10,7 +10,7 @@ import {
   Account,
   Authenticate,
   AuthenticationToken,
-} from '../../../models/authentication.model';
+} from '../../models';
 import {
   AuthenticationService
 } from '../../services/authentication.service';

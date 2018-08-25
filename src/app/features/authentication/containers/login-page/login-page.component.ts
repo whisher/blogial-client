@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import { Authenticate } from '../../models';
-import * as fromAuthentication from '../../shared/store';
+import { Authenticate } from '../../../../shared/features/authentication/models';
+import * as fromAuthentication from '../../../../shared/features/authentication/store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
