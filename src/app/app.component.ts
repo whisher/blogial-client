@@ -17,11 +17,11 @@ import {
 @Component({
   selector: 'iwdf-root',
   template: `<div [@routeState]="getAnimationData(rOutlet)">
-    <router-outlet #rOutlet="outlet"></router-outlet>
+    <router-outlet #rOutlet="outlet"></router-outlet> 
   </div>`,
   animations: [
     trigger('routeState', [
-      transition('* => *', [
+      transition('* <=> *', [
         group([
           query(':enter', [
             style({
@@ -50,7 +50,7 @@ export class AppComponent {
   getAnimationData(outlet: RouterOutlet) {
     const routeData = outlet.activatedRouteData['animation'];
     if (!routeData) {
-      return 'home';
+      return '';
     }
     return routeData['page'];
   }

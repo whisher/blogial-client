@@ -1,6 +1,7 @@
 @import "theme-variables";
 
 :host{
+  display: block;
   background-color: $authentication-bck-color;
 }
 .layout-main {
@@ -32,5 +33,10 @@
   }
   &__content{
     height: 60%;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .o-container-fluid {
+    padding: 15px;
   }
 }

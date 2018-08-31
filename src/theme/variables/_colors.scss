@@ -32,7 +32,7 @@ $pink-a100: #ff80ab !default;
 $pink-a200: #ff4081 !default;
 $pink-a400: #f50057 !default;
 $pink-a700: #c51162 !default;
-$pink: $pink-600 !default;
+$pink: $pink-500 !default;
 
 $purple-50: #f3e5f5 !default;
 $purple-100: #e1bee7 !default;
@@ -48,7 +48,7 @@ $purple-a100: #ea80fc !default;
 $purple-a200: #e040fb !default;
 $purple-a400: #d500f9 !default;
 $purple-a700: #a0f !default;
-$purple: $purple-600 !default;
+$purple: $purple-a400 !default;
 
 $deep-purple-50: #ede7f6 !default;
 $deep-purple-100: #d1c4e9 !default;
@@ -376,7 +376,7 @@ $primary:       $orange !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
-$warning:       $orange !default;
+$warning:       $pink !default;
 $danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $gray-800 !default;

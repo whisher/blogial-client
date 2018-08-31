@@ -9,14 +9,16 @@ import {
   faEnvelope,
   faEye,
   faEyeSlash,
+  faFileUpload,
   faImage,
   faImages,
   faKey,
   faMinus,
   faPlus,
+  faSearch,
   faTable,
   faThList,
-  faTrash
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -27,11 +29,13 @@ library.add(
   faEnvelope,
   faEye,
   faEyeSlash,
+  faFileUpload,
   faImage,
   faImages,
   faKey,
   faMinus,
   faPlus,
+  faSearch,
   faTable,
   faThList,
   faTrash
@@ -111,6 +115,18 @@ export class IconEyeComponent {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-file-upload',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'file-upload']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconFileUploadComponent {
+  @Input() cls: string = '';
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'icon-eyeslash',
   template: `<fa-icon [className]="cls" [icon]="['fas', 'eye-slash']"></fa-icon>`,
   styles: [`:host {
@@ -179,6 +195,18 @@ export class IconMinusComponent {
   }`]
 })
 export class IconPlusComponent{
+  @Input() cls: string = '';
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-search',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'search']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconSearchComponent{
   @Input() cls: string = '';
 }
 

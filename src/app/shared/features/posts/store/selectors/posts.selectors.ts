@@ -12,6 +12,7 @@ export const getPostState = createSelector(
 
 export const getPostsEntities = createSelector(
   getPostState,
+  fromPosts.getPostsIds,
   fromPosts.getPostsEntities
 );
 

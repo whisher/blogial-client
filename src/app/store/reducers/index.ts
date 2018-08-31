@@ -30,7 +30,7 @@ export const getRouterState = createFeatureSelector<
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
-    keys: [{auth:['status','account']}],
+    keys: [{auth:['status']}],
     rehydrate: true,
     storage: customStorage
   })(reducer);

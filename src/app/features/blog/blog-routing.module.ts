@@ -7,13 +7,14 @@ export const ROUTES: Routes = [
   {
     path: '', component: BlogLayoutMainComponent,
     children: [
-      {
+      /*{
         path: '',
         pathMatch: 'full',
         redirectTo: 'posts'
-      },
+      },*/
       {
-        path: 'posts',
+        path: '',
+        pathMatch: 'full',
         /* it's post.module because of conflit with ./posts/posts.module#AdminPostsModule */
         loadChildren: './posts/post.module#BlogPostsModule'
       }

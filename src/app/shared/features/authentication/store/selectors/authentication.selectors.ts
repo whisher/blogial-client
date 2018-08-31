@@ -6,6 +6,8 @@ import * as fromAuthentication from '../reducers/authentication.reducers';
 import * as fromLoginPage from '../reducers/login-page.reducers';
 import * as fromAccount from '../reducers/account.reducers';
 
+const TOKEN_LATENCY = 300;
+
 export const selectAuthStatusState = createSelector(
   fromFeature.selectAuthenticationState,
   (state: fromFeature.AuthenticationState) => state.status
@@ -31,7 +33,7 @@ export const isValidToken = createSelector(
     }
     const now = new Date();
     const expiredAt = new Date();
-    expiredAt.setSeconds(expiredAt.getSeconds() + token.expiresIn);
+    expiredAt.setSeconds(expiredAt.getSeconds() + token.expiresIn - TOKEN_LATENCY);
     return expiredAt > now;
   }
 );
@@ -49,6 +51,11 @@ export const getLoginPageError = createSelector(
 export const getLoginPagePending = createSelector(
   selectLoginPageState,
   fromLoginPage.getPending
+);
+
+export const getAccountLoaded = createSelector(
+  fromFeature.selectAuthenticationState,
+  (state: fromFeature.AuthenticationState) => state.account.isLoaded
 );
 
 export const getAccount = createSelector(

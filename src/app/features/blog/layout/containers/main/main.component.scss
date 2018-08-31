@@ -1,22 +1,12 @@
 @import "theme-variables";
 
 :host{
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: $blog-bck-color;
-  background-image: linear-gradient(rgba($primary-red, $primary-green, $primary-blue, .25), rgba($primary-red, $primary-green, $primary-blue, .25)), url("/assets/images/blog-bck.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
 }
-.blog {
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  background-color: inherit;
-}
+
 header {
   position: fixed;
   top: 0;
@@ -42,17 +32,13 @@ main{
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  padding-top: $blog-padding-top;
-  padding-bottom: $blog-padding-bottom;
 }
-.main{
-  flex: 1 0 auto;
-  background-color: $white;
-}
+
 footer{
   flex: 0 0 $blog-footer-height;
   width: 100%;
   max-height: $blog-footer-height;
+  margin-top: auto;
   background-color: $white;
 }
 .footer{

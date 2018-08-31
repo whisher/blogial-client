@@ -9,11 +9,13 @@ import {
 
 export interface State {
   account: Account | null,
+  isLoaded: boolean,
   isLoading: boolean
 }
 
 export const initialState: State = {
   account: null,
+  isLoaded: false,
   isLoading: false
 };
 
@@ -24,6 +26,7 @@ export function reducer(state = initialState, action: AccountActions): State {
       return {
         ...state,
         account: null,
+        isLoaded: false,
         isLoading: false
       };
     }
@@ -31,6 +34,7 @@ export function reducer(state = initialState, action: AccountActions): State {
       return {
         ...state,
         account: null,
+        isLoaded: false,
         isLoading: true
       };
     }
@@ -38,6 +42,7 @@ export function reducer(state = initialState, action: AccountActions): State {
       return {
         ...state,
         account: action.payload.account,
+        isLoaded: true,
         isLoading: false
       };
     }

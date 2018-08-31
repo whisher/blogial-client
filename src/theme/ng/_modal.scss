@@ -4,3 +4,9 @@
 .backdrop-primary {
   background-color: theme-color("primary");
 }
+.modal-container {
+  .modal-lg{
+    @include make-container();
+    @include make-container-max-widths();
+  }
+}

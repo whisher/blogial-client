@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthenticationGuard } from '../../shared/features/authentication/guards';
+import {
+  AccountGuard,
+  AuthenticationGuard
+} from '../../shared/features/authentication/guards';
 import { AdminLayoutMainComponent } from './layout/containers';
 
 export const ROUTES: Routes = [
   {
     path: '', component: AdminLayoutMainComponent,
-    canActivate: [AuthenticationGuard],
+    canActivate: [AuthenticationGuard, AccountGuard],
     children: [
       {
         path: '',

@@ -2,6 +2,32 @@
   Add new post
 </a>
 <ng-container *ngIf="loaded$ | async; else noLoaded">
+  <form [formGroup]="frm" class="d-flex justify-content-between">
+    <div class="form-group">
+      <div class="input-group">
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="status">
+      <label ngbButtonLabel class="btn-lg btn-warning">
+        <input ngbButton type="radio" value="all"> All
+      </label>
+      <label ngbButtonLabel class="btn-lg btn-warning">
+        <input ngbButton type="radio" value="publisher"> Publisher
+      </label>
+      <label ngbButtonLabel class="btn-lg btn-warning">
+        <input ngbButton type="radio" value="draft"> Draft
+      </label>
+    </div>
+    </div></div>
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" tabindex="1" id="search" class="form-control form-control-lg" placeholder="Post title" formControlName="search">
+        <div class="input-group-append" (click)="onToggleShow()">
+          <span class="input-group-text">
+            <icon-search></icon-search>
+          </span>
+        </div>
+      </div>
+    </div>
+  </form>
   <admin-posts-post-list
   [hasPosts]="hasPosts$ | async"
   [posts]="posts$ | async"

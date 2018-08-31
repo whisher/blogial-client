@@ -18,7 +18,12 @@ export enum PostsActionTypes {
   UpdatePostFail = '[Posts] Update Post Fail',
   DeletePost = '[Posts] Delete Post',
   DeletePostSuccess = '[Posts] Delete Post Success',
-  DeletePostFail = '[Posts] Delete Post Fail'
+  DeletePostFail = '[Posts] Delete Post Fail',
+  NotificationPost = '[Posts] Notification Post',
+  NotificationPostFail = '[Posts] Notification Post Fail',
+  NotificationPostSuccess = '[Posts] Notification Post Success',
+  FilterPostsByStatus = '[Posts] Filter Posts By Status',
+  FilterPostsByTitle = '[Posts] Filter Posts By Title'
 }
 
 export class LoadPosts implements Action {
@@ -91,6 +96,40 @@ export class DeletePostSuccess implements Action {
   constructor(public payload: { id }) {}
 }
 
+export class NotificationPost implements Action {
+  readonly type = PostsActionTypes.NotificationPost;
+
+  constructor(public payload: { post: Post }) {}
+}
+
+export class NotificationPostFail implements Action {
+  readonly type = PostsActionTypes.NotificationPostFail;
+
+  constructor(public payload: any) {
+      console.log('notification fail',payload);
+  }
+}
+
+export class NotificationPostSuccess implements Action {
+  readonly type = PostsActionTypes.NotificationPostSuccess;
+
+  constructor(public payload: { post: Post }) {
+      console.log('notification',payload);
+  }
+}
+
+export class FilterPostsByStatus implements Action {
+  readonly type = PostsActionTypes.FilterPostsByStatus;
+
+  constructor(public payload: { status: string }) {}
+}
+
+export class FilterPostsByTitle implements Action {
+  readonly type = PostsActionTypes.FilterPostsByTitle;
+
+  constructor(public payload: { search: string }) {}
+}
+
 export type PostsActions =
   | LoadPosts
   | LoadPostsFail
@@ -103,4 +142,9 @@ export type PostsActions =
   | UpdatePostSuccess
   | DeletePost
   | DeletePostFail
-  | DeletePostSuccess;
+  | DeletePostSuccess
+  | NotificationPost
+  | NotificationPostFail
+  | NotificationPostSuccess
+  | FilterPostsByStatus
+  | FilterPostsByTitle;

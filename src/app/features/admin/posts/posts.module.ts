@@ -4,8 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Ng-Bootstrap
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbTabsetModule }  from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbModalModule,
+  NgbTabsetModule,
+  NgbButtonsModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { NgxMdModule } from 'ngx-md';
 
@@ -34,6 +37,7 @@ import * as fromGuards from './guards';
     ReactiveFormsModule,
     NgbModalModule,
     NgbTabsetModule,
+    NgbButtonsModule,
     NgxMdModule,
     AdminPostsRoutingModule,
     IconsModule,

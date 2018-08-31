@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
+import { Thumb } from '../../../../../shared/features/posts/models';
 import { PostsService } from '../../../../../shared/features/posts/services';
 
 @Component({
@@ -11,7 +12,7 @@ import { PostsService } from '../../../../../shared/features/posts/services';
 })
 export class AdminPostsPostGalleryComponent {
   private invalidFiles : Array<File> = [];
-  @Input() files: Array<{src: string, name: string}>;
+  @Input() files: Array<Thumb>;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -28,6 +29,10 @@ export class AdminPostsPostGalleryComponent {
       },
       console.error
     )
+  }
+
+  onEditable(evt){
+  console.log(evt);
   }
 
   onFileInvalids(fileList : Array<File>){

@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { mimeTypeValidator } from '../../../../../shared/validators';
 import { Post } from '../../../../../shared/features/posts/models';
 import { AdminPostsPostGalleryComponent } from '../../modals';
+import { Thumb } from '../../../../../shared/features/posts/models';
 
 @Component({
   selector: 'admin-posts-post-form',
@@ -52,7 +53,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   imagePreview: string;
 
   // Gallery
-  files: Array<{src: string, name: string}> = [];
+  files: Array<Thumb> = [];
 
   get places() {
     return this.frm.get('places') as FormArray;
@@ -146,6 +147,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
     const modalRef = this.modalService.open(AdminPostsPostGalleryComponent, {
       backdropClass: 'backdrop-primary',
       ariaLabelledBy: 'modal-post-gallery',
+      windowClass: 'modal-container',
       size: 'lg',
       centered: true
     })
@@ -153,7 +155,6 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
     modalRef.result.then((result) => {
       if(result) {
         this.files = [...result];
-        console.log('result',this.files);
       }
     }, (reason) => {});
   }

@@ -2,6 +2,8 @@ import {Component, Input} from '@angular/core';
 
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
+import { Post } from '../../../../../shared/features/posts/models';
+
 @Component({
   selector: 'admin-posts-post-delete',
   template: `
@@ -31,7 +33,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
   `
 })
 export class AdminPostsPostDeleteComponent {
-  @Input() post;
+  @Input() post: Post;
 
   constructor(public activeModal: NgbActiveModal) {}
 }

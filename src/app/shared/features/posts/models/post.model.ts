@@ -1,3 +1,7 @@
+export interface Thumb {
+  name: string;
+  string: string;
+}
 export interface Post {
   _id?: string;
   author: {
@@ -5,10 +9,11 @@ export interface Post {
   };
   content: string;
   created?: Date;
-  files: Array<{src: string, name: string}>;
+  files: Array<Thumb>;
   imagePath: string,
   isDraft: boolean;
   places: Array<any>;
+  slug: string;
   title: string;
   updated?: Date;
 }

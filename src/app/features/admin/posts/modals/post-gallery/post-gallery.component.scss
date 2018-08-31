@@ -1,5 +1,9 @@
 @import "theme-variables";
 
+$admin-post-dropzone-border-color-default : theme-color("light") !default;
+$admin-post-dropzone-border-color-dragover : theme-color("primary") !default;
+$admin-post-dropzone-border-color-drop : theme-color("light") !default;
+$admin-post-dropzone-files-bg : theme-color("light") !default;
 .dropzope {
   &__box{
     display: flex;
@@ -7,10 +11,17 @@
     align-items: center;
     justify-content: center;
     min-height: 10rem;
-    border: 1px dashed theme-color("warning");
   }
-  &__files{
-    background-color: theme-color("light");
+  &__box--default{
+    border: 1px dashed $admin-post-dropzone-border-color-default;
   }
-
+  &__box--dragover{
+    border: 1px dashed $admin-post-dropzone-border-color-dragover;
+  }
+  &__box--drop{
+    border: 1px dashed $admin-post-dropzone-border-color-drop;
+  }
+  &__gallery{
+    border: 1px solid $admin-post-dropzone-border-color-default;
+  }
 }

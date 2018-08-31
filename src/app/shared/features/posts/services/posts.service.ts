@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 import { URLS } from '../../../../config/config.tokens';
 import { HttpErrorHandler } from '../../../http/http-error-handler';
-import { Post } from '../models';
+import { Post, Thumb } from '../models';
 
 @Injectable()
 export class PostsService {
@@ -31,15 +31,14 @@ export class PostsService {
     postData.append('files', JSON.stringify(files));
     return this.http.post<Post>(this.postsUrl, postData)
    .pipe(
-     tap(data => this.notification(data).subscribe()),
      catchError((error: any) => HttpErrorHandler.handle(error))
    );
   }
 
-  gallery(file, name): Observable<{src: string, name: string}> {
+  gallery(file, name): Observable<Thumb> {
     const postData = new FormData();
     postData.append('gallery', file, name);
-    return this.http.post<{src: string, name: string}>(`${this.postsUrl}/gallery`, postData)
+    return this.http.post<Thumb>(`${this.postsUrl}/gallery`, postData)
    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
  }
 
@@ -72,7 +71,6 @@ export class PostsService {
   }
 
   notification(data: Post): Observable<any> {
-    console.log('pippo',data);
     return this.http.post<any>(`${this.pwaNotificationUrl}`, data)
     .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
   }

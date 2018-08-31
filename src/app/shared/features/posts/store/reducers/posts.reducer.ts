@@ -3,6 +3,7 @@ import { Post } from '../../models';
 
 export interface State {
   entities: { [id: string]: Post };
+  ids: Array<string>;
   error: boolean;
   loaded: boolean;
   loading: boolean;
@@ -10,6 +11,7 @@ export interface State {
 
 export const initialState: State = {
   entities: {},
+  ids: [],
   error: false,
   loaded: false,
   loading: false,
@@ -46,7 +48,8 @@ export function reducer(
         ...state,
         loading: false,
         loaded: true,
-        entities
+        entities,
+        ids: Object.keys(entities)
       };
     }
 
@@ -87,6 +90,7 @@ export function reducer(
       return {
         ...state,
         entities,
+        ids: Object.keys(entities),
         error: false,
         loading: false
       };
@@ -99,6 +103,43 @@ export function reducer(
       return {
         ...state,
         entities,
+        ids: Object.keys(entities),
+        error: false,
+        loading: false
+      };
+    }
+
+    case PostsActionTypes.FilterPostsByStatus: {
+      const status = action.payload.status;
+      const entities = { ...state.entities};
+      const ids = Object.keys(entities).filter(id => {
+        if(status==='draft'){
+          return entities[id].isDraft
+        }
+        else if(status==='publisher'){
+          return !entities[id].isDraft
+        }
+        else{
+          return true;
+        }
+      });
+      return {
+        ...state,
+        ids,
+        error: false,
+        loading: false
+      };
+    }
+
+    case PostsActionTypes.FilterPostsByTitle: {
+      const search = action.payload.search;
+      const entities = { ...state.entities};
+      const ids = Object.keys(entities).filter(id => {
+        return entities[id].title.indexOf(search) !== -1;
+      });
+      return {
+        ...state,
+        ids,
         error: false,
         loading: false
       };
@@ -108,7 +149,26 @@ export function reducer(
   return state;
 }
 
-export const getPostsEntities = (state: State) => state.entities;
+export const getPostsIds = (state: State) => state.ids;
+export const getPostsEntities = (state: State) => {
+  const data = {};
+  const ids = [...state.ids];
+  ids.sort((a, b) =>{
+    if(state.entities[a].created > state.entities[b].created){
+      console.log(state.entities[a].created , state.entities[b].created);
+      return -1
+    }
+    if(state.entities[a].created < state.entities[b].created){
+      console.log(1);
+      return 1
+    }
+    return 0;
+  });
+  ids.forEach(id => {
+    data[id] = state.entities[id];
+  });
+  return data;
+};
 export const getPostsError = (state: State) => state.error;
 export const getPostsLoading = (state: State) => state.loading;
 export const getPostsLoaded = (state: State) => state.loaded;

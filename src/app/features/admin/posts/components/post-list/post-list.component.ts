@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-
 import { Post } from '../../../../../shared/features/posts/models';
 
 @Component({
@@ -11,17 +10,17 @@ import { Post } from '../../../../../shared/features/posts/models';
   }
 })
 export class AdminPostsPostListComponent {
- @Input() posts: Post[];
- @Input() hasPosts: boolean;
- @Output() deleted = new EventEmitter<Post>();
- @Output() edit = new EventEmitter<Post>();
+  @Input() posts: Post[];
+  @Input() hasPosts: boolean;
+  @Output() deleted = new EventEmitter<Post>();
+  @Output() edit = new EventEmitter<Post>();
 
- onEdit(post) {
-   this.edit.emit(post);
- }
+  onEdit(post) {
+    this.edit.emit(post);
+  }
 
- onDelete(post) {
-   this.deleted.emit(post);
- }
+  onDelete(post) {
+    this.deleted.emit(post);
+  }
 
 }

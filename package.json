@@ -12,8 +12,9 @@
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server",
     "build:client-and-server-bundles": "ng build --prod && ng run blogial-client:server",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors --stats-json",
     "start:heroku": "npm run serve:ssr",
+    "stats": "webpack-bundle-analyzer ./dist/stats.json",
     "postinstall": "npm run build:ssr"
   },
   "private": true,
@@ -77,6 +78,7 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.7.2",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.1.0"
   }
 }
