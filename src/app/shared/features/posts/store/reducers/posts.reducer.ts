@@ -153,17 +153,6 @@ export const getPostsIds = (state: State) => state.ids;
 export const getPostsEntities = (state: State) => {
   const data = {};
   const ids = [...state.ids];
-  ids.sort((a, b) =>{
-    if(state.entities[a].created > state.entities[b].created){
-      console.log(state.entities[a].created , state.entities[b].created);
-      return -1
-    }
-    if(state.entities[a].created < state.entities[b].created){
-      console.log(1);
-      return 1
-    }
-    return 0;
-  });
   ids.forEach(id => {
     data[id] = state.entities[id];
   });

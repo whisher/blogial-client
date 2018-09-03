@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
@@ -16,8 +17,17 @@ export class BlogPostsMainComponent {
   hasPosts$ = this.store.pipe(select(fromPosts.getHasPosts));
 
   constructor(
+    private route: ActivatedRoute,
     private store: Store<fromPosts.State>
   ) {}
 
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        console.log('fragment',fragment);
+        document.querySelector('#' + fragment).scrollIntoView({ behavior: 'smooth' })
+      }
+    })
+  }
 
 }

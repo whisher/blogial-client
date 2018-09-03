@@ -23,4 +23,10 @@ export class AdminPostsPostListComponent {
     this.deleted.emit(post);
   }
 
+  descOrder(a, b){
+    if(b.value.created > a.value.created) {
+      return a.value.created;
+    }
+  }
+
 }

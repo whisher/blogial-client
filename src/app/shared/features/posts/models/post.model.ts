@@ -9,11 +9,12 @@ export interface Post {
   };
   content: string;
   created?: Date;
-  files: Array<Thumb>;
+  files: any; /* Json */
   imagePath: string,
   isDraft: boolean;
-  places: Array<any>;
+  places: any; /* Json */
   slug: string;
+  tags: any, /* Json */
   title: string;
   updated?: Date;
 }

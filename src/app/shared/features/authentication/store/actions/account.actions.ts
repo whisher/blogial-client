@@ -5,6 +5,7 @@ export enum AccountActionTypes {
   AccountFailure = '[Account] Failure',
   AccountRequested = '[Account] Requested',
   AccountSuccess = '[Account] Success',
+  AccountNoop = '[Account] Noop',
 }
 
 export class AccountFailure implements Action {
@@ -21,8 +22,14 @@ export class AccountSuccess implements Action {
   constructor(public payload: { account: Account }) { }
 }
 
+export class AccountNoop implements Action {
+  readonly type = AccountActionTypes.AccountNoop;
+  constructor() { }
+}
+
 
 export type AccountActions =
   | AccountFailure
+  | AccountNoop
   | AccountRequested
   | AccountSuccess;

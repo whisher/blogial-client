@@ -10,7 +10,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   `,
   styles: [ `
     img{
-      width: 3rem;
+      width: 6rem;
     }
   `
   ]

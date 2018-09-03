@@ -1,7 +1,7 @@
 // Core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 
 // Ng-Bootstrap
 import {
@@ -9,7 +9,10 @@ import {
   NgbTabsetModule,
   NgbButtonsModule} from '@ng-bootstrap/ng-bootstrap';
 
+// Chips
+//import { TagInputModule } from 'ngx-chips';
 
+// Markdown
 import { NgxMdModule } from 'ngx-md';
 
 // Module
@@ -38,6 +41,7 @@ import * as fromGuards from './guards';
     NgbModalModule,
     NgbTabsetModule,
     NgbButtonsModule,
+    //TagInputModule,
     NgxMdModule,
     AdminPostsRoutingModule,
     IconsModule,

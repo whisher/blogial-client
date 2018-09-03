@@ -35,7 +35,7 @@ export class AuthenticationEffects {
   @Effect()
   accountSuccess$ = this.actions$.pipe(
     ofType(authenticationActions.AccountActionTypes.AccountSuccess),
-    map(() => new RouterActions.Go({ path: ['/admin'] }))
+    map(() => new authenticationActions.AccountNoop())
   );
 
   @Effect()
@@ -62,7 +62,12 @@ export class AuthenticationEffects {
   @Effect()
   loginSuccess$ = this.actions$.pipe(
     ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
-    map((token: AuthenticationToken) =>new authenticationActions.AccountRequested())
+    mergeMap((token: AuthenticationToken) =>{
+      return [
+        new authenticationActions.AccountRequested(),
+        new RouterActions.Go({ path: ['/admin'] })
+      ]
+    })
   );
 
   @Effect()
@@ -72,7 +77,9 @@ export class AuthenticationEffects {
       authenticationActions.AuthenticationActionTypes.Logout,
       authenticationActions.AccountActionTypes.AccountFailure
     ),
-    map(authed => new RouterActions.Go({ path: ['/auth'] }))
+    map(authed => {
+      return new RouterActions.Go({ path: ['/auth'] })
+    })
   );
 
   @Effect()

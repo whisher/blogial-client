@@ -1,6 +1,9 @@
 .i-checks {
   cursor: pointer;
 }
+.i-checks span{
+  color: $input-color;
+}
 .i-checks input {
   position: absolute;
   margin-left: -1.25rem;

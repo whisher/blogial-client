@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { mimeTypeValidator } from '../../../../../shared/validators';
+import { atLeastOne, mimeTypeValidator } from '../../../../../shared/validators';
 import { Post } from '../../../../../shared/features/posts/models';
 import { AdminPostsPostGalleryComponent } from '../../modals';
 import { Thumb } from '../../../../../shared/features/posts/models';
@@ -53,7 +53,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   imagePreview: string;
 
   // Gallery
-  files: Array<Thumb> = [];
+  files: any = [];
 
   get places() {
     return this.frm.get('places') as FormArray;
@@ -83,11 +83,12 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         content: post.content,
         image: post.imagePath,
         isDraft: post.isDraft,
-        places: post.places
+        //tags: JSON.parse(post.tags),
+        places: JSON.parse(post.places)
       }
       this.frm.setValue(data);
       this.imagePreview = post.imagePath;
-      this.files = post.files;
+      this.files = JSON.parse(post.files);
     }
 
   }
@@ -98,6 +99,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       content: ['', [Validators.required]],
       image:[null, [Validators.required], mimeTypeValidator],
       isDraft: [false],
+      //tags: [[],[atLeastOne]],
       places:this.fb.array([this.createPlace()])
     });
   }
@@ -122,7 +124,8 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       this._hasSubmited = true;
       this._isPristine = true;
       this.isPristine.emit(true);
-
+      /* TODO ngx-chip bug issue */
+      this.frm.value.tags = [{display: 'pippo', value: 'pippo'}];
       this.submitted.emit({
         _id: this.postId,
         files: this.files,

@@ -35,8 +35,3 @@
     height: 60%;
   }
 }
-@include media-breakpoint-down(sm) {
-  .o-container-fluid {
-    padding: 15px;
-  }
-}

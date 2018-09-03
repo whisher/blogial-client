@@ -8,6 +8,9 @@
     min-height: 15rem;
     border-top: none;
   }
+  span{
+    color: $input-color;
+  }
   &__md {
     min-height: 15rem;
     padding: $input-padding-y-lg  $input-padding-x-lg;
@@ -29,5 +32,9 @@
     &:active{
       box-shadow: none;
     }
+  }
+  h3{
+    font-weight: 300;
+    color: $input-color;
   }
 }

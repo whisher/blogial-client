@@ -6,7 +6,6 @@ import { join } from 'path';
 import * as express from 'express';
 import * as helmet from 'helmet';
 import { enableProdMode } from '@angular/core';
-
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 

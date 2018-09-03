@@ -26,7 +26,7 @@
           </div>
         </div>
         <admin-posts-post-item
-        *ngFor="let post of posts | keyvalue"
+        *ngFor="let post of posts | keyvalue:descOrder"
         [post]="post.value"
         (deleted)="onDelete($event)"
         (edit)="onEdit($event)"></admin-posts-post-item>
@@ -38,7 +38,7 @@
         </ng-template>
         <ng-template ngbTabContent>
           <admin-posts-post-box
-          *ngFor="let post of posts | keyvalue"
+          *ngFor="let post of posts | keyvalue:descOrder"
           [post]="post.value"
           (deleted)="onDelete($event)"
           (edit)="onEdit($event)"></admin-posts-post-box>
