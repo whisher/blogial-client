@@ -17,7 +17,7 @@ import {
 @Component({
   selector: 'iwdf-root',
   template: `<div [@routeState]="getAnimationData(rOutlet)">
-    <router-outlet #rOutlet="outlet"></router-outlet> 
+    <router-outlet #rOutlet="outlet"></router-outlet>
   </div>`,
   animations: [
     trigger('routeState', [
@@ -44,8 +44,8 @@ export class AppComponent {
     pwaInstallService: PwaInstallService,
     pwaNotificationService: PwaNotificationService
   ){
-    pwaInstallService.checkForUpdate();
-    pwaNotificationService.askForPermission();
+    //pwaInstallService.checkForUpdate();
+    //pwaNotificationService.askForPermission();
   }
   getAnimationData(outlet: RouterOutlet) {
     const routeData = outlet.activatedRouteData['animation'];
