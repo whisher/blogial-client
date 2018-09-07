@@ -1,4 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+
+import { Account } from '../../../../../shared/features/authentication/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -6,4 +8,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class AdminLayoutNavComponent {}
+export class AdminLayoutNavComponent {
+  @Input() account: Account;
+}

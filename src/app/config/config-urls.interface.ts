@@ -4,6 +4,7 @@ export interface ConfigUrls {
     login: string;
   },
   posts: string;
+  users: string;
   pwa: {
     subscription: string;
     notification: string;

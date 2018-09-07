@@ -1,6 +1,6 @@
 <ul>
   <li>
-    <a routerLinkActive="active" routerLink="/">
+    <a routerLinkActive="active" routerLink="/home">
       Home
     </a>
   </li>
@@ -10,13 +10,22 @@
     </a>
   </li>
   <li>
-    <a routerLinkActive="active" routerLink="/contacs">
-      Contacts
+    <a routerLinkActive="active" routerLink="/contact">
+      Contact
     </a>
   </li>
-  <li>
-    <a routerLink="/auth/login">
-      Login
-    </a>
-  </li>
+  <ng-container *ngIf="isLoggedIn; else noLogged">
+    <li>
+      <a routerLink="/admin">
+        <icon-home cls="fa-lg"></icon-home>
+      </a>
+    </li>
+  </ng-container>
+  <ng-template #noLogged>
+    <li>
+      <a routerLink="/auth/login">
+        Login
+      </a>
+    </li>
+  </ng-template>
 </ul>

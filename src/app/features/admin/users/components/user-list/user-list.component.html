@@ -1,0 +1,33 @@
+<ng-container *ngIf="hasUsers; else noUsers">
+  <div class="row no-gutters border-bottom py-3">
+    <div class="col-md-2">
+      <strong>Avatar</strong>
+    </div>
+    <div class="col-md-2">
+      <strong>Fullname</strong>
+    </div>
+    <div class="col-md-2">
+      <strong>Display name</strong>
+    </div>
+    <div class="col-md-2">
+      <strong>Created</strong>
+    </div>
+    <div class="col-md-2">
+      <strong>Role</strong>
+    </div>
+    <div class="col-md-2 text-center">
+      <strong>Actions</strong>
+    </div>
+  </div>
+  <admin-users-user-item
+    *ngFor="let user of users | keyvalue:descOrder"
+    [user]="user.value"
+    (deleted)="onDelete($event)"
+    (edit)="onEdit($event)">
+  </admin-users-user-item>
+</ng-container>
+<ng-template #noUsers>
+  <div class="alert alert-info" role="alert">
+    There are no users yet.
+  </div>
+</ng-template>

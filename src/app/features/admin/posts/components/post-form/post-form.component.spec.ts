@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminPostsPostFormComponent } from './post-form.component';
 
-describe('PostFormComponent', () => {
+describe('AdminPostsPostFormComponent', () => {
   let component: AdminPostsPostFormComponent;
   let fixture: ComponentFixture<AdminPostsPostFormComponent>;
 

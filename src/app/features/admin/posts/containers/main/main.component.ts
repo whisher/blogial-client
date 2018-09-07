@@ -1,22 +1,31 @@
-import { Component, OnDestroy } from '@angular/core';
+// Core
+import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Store, select } from '@ngrx/store';
+// Rxjs
 import { Subscription } from 'rxjs';
-import { map, filter, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 
+// Ngrx
+import { Store, select } from '@ngrx/store';
+
+// Ng-bootstrap
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+// Modals
 import { AdminPostsPostDeleteComponent } from '../../modals';
-import * as fromPosts from '../../../../../shared/features/posts/store';
+
+// Store
 import { Post } from '../../../../../shared/features/posts/models';
+import * as fromPosts from '../../../../../shared/features/posts/store';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'admin-posts-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  templateUrl: './main.component.html'
 })
-export class AdminPostsMainComponent implements OnDestroy{
+export class AdminPostsMainComponent implements OnDestroy {
   posts$ = this.store.pipe(select(fromPosts.getPostsEntities))
   loaded$ = this.store.pipe(select(fromPosts.getPostsLoaded));
   hasPosts$ = this.store.pipe(select(fromPosts.getHasPosts));
@@ -28,9 +37,6 @@ export class AdminPostsMainComponent implements OnDestroy{
     private modalService: NgbModal,
     private store: Store<fromPosts.State>
   ) {}
-  public ;
-
-
 
   ngOnInit() {
     this.frm = this.formBuilder.group({
@@ -38,13 +44,20 @@ export class AdminPostsMainComponent implements OnDestroy{
       search: null
     });
 
-    const statusSubscription = this.frm.get('status').valueChanges.subscribe(
+    const statusSubscription = this.frm.get('status')
+    .valueChanges.subscribe(
       status => {
         this.store.dispatch(new fromPosts.FilterPostsByStatus({status}))
       }
     );
 
-    const titleSubscription = this.frm.get('search').valueChanges.subscribe(
+    const titleSubscription = this.frm.get('search')
+    .valueChanges.
+    pipe(
+      debounceTime(500),
+      distinctUntilChanged()
+    )
+    .subscribe(
       search => {
         this.store.dispatch(new fromPosts.FilterPostsByTitle({search}))
       }
@@ -52,10 +65,11 @@ export class AdminPostsMainComponent implements OnDestroy{
 
     this.subscriptions = [statusSubscription, titleSubscription];
   }
-  
+
   onEdit(post) {
     this.router.navigate(['/admin/posts/post', post._id]);
   }
+
   onDelete(post) {
     const modalRef = this.modalService.open(AdminPostsPostDeleteComponent, {
       backdropClass: 'backdrop-danger',

@@ -61,8 +61,8 @@ export class PostsEffects {
       })
     );
 
-    @Effect()
-    notificationPost$ = this.actions$.ofType(postsActions.PostsActionTypes.NotificationPost)
+  @Effect()
+  notificationPost$ = this.actions$.ofType(postsActions.PostsActionTypes.NotificationPost)
     .pipe(
       map((action: postsActions.NotificationPost) => action.payload.post),
       switchMap((post: Post) => {
@@ -75,22 +75,21 @@ export class PostsEffects {
       })
     );
 
-    @Effect()
-    notificationPostSuccess$ = this.actions$
+  @Effect()
+  notificationPostSuccess$ = this.actions$
       .ofType(postsActions.PostsActionTypes.NotificationPostSuccess)
       .pipe(
         map((action: postsActions.NotificationPostSuccess) => action.payload.post),
         map((post: Post) => console.log('Notification success', post)),
       );
 
-    @Effect()
-    notificationPostFail$ = this.actions$
+  @Effect()
+  notificationPostFail$ = this.actions$
       .ofType(postsActions.PostsActionTypes.NotificationPostFail)
       .pipe(
         map((action: postsActions.NotificationPostFail) => action.payload),
         map((error: any) => console.error('Notification fail', error)),
       );
-
 
   @Effect()
   updatePost$ = this.actions$.ofType(postsActions.PostsActionTypes.UpdatePost)

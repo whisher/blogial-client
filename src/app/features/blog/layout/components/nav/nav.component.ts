@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -6,4 +6,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class BlogLayoutNavComponent{}
+export class BlogLayoutNavComponent{
+  @Input() isLoggedIn: boolean;
+}

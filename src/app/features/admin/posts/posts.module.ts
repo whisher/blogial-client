@@ -1,7 +1,7 @@
 // Core
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Ng-Bootstrap
 import {
@@ -15,17 +15,22 @@ import {
 // Markdown
 import { NgxMdModule } from 'ngx-md';
 
-// Module
-import { AdminPostsRoutingModule } from './posts-routing.module';
+// Modules
 import { IconsModule } from '../../../shared/icons/icons.module';
 import { UiButtonsModule } from '../../../shared/ui/buttons/buttons.module';
 import { UiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 
+// Routing
+import { AdminPostsRoutingModule } from './posts-routing.module';
+
 // Components
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
+
+// Modals
 import * as fromModals from './modals';
+
 import {
   AdminPostsPostDeleteComponent,
   AdminPostsPostGalleryComponent
@@ -43,11 +48,11 @@ import * as fromGuards from './guards';
     NgbButtonsModule,
     //TagInputModule,
     NgxMdModule,
-    AdminPostsRoutingModule,
     IconsModule,
     UiButtonsModule,
     UiButtonSpinnerModule,
-    UiLoaderModule
+    UiLoaderModule,
+    AdminPostsRoutingModule
   ],
   declarations: [
     ...fromComponents.components,

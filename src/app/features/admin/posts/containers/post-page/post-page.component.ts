@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+// Core
+import { Component } from '@angular/core';
+
+// Ngrx
 import { Store, select } from '@ngrx/store';
 
-import * as fromPosts from '../../../../../shared/features/posts/store';
+// Store
 import { Post } from '../../../../../shared/features/posts/models';
-
+import * as fromPosts from '../../../../../shared/features/posts/store';
 
 @Component({
   selector: 'admin-posts-post-page',

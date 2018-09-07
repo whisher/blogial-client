@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminLayoutBrandComponent } from './brand.component';
 
-describe('BrandComponent', () => {
+describe('AdminLayoutBrandComponent', () => {
   let component: AdminLayoutBrandComponent;
   let fixture: ComponentFixture<AdminLayoutBrandComponent>;
 

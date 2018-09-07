@@ -46,6 +46,16 @@ export function reducer(state = initialState, action: AccountActions): State {
         isLoading: false
       };
     }
+    case AccountActionTypes.AccountUpdate: {
+      const current = state.account;
+      const payload = action.payload.account;
+      const account = (current._id===payload._id) ? payload : current;
+      console.log(account);
+      return {
+        ...state,
+        account
+      };
+    }
     default: {
       return state;
     }

@@ -1,0 +1,85 @@
+<form class="post-form mb-3" [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <div class="alert alert-danger mt-3" role="alert" *ngIf="error">
+    Something went wrong.Please try again.
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-8">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" tabindex="1" id="firstname" class="form-control form-control-lg" placeholder="Firstname" formControlName="firstname">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" tabindex="2" id="lastname" class="form-control form-control-lg" placeholder="Lastname" formControlName="lastname">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" tabindex="3" id="display_name" class="form-control form-control-lg" placeholder="Display name" formControlName="display_name">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="email" tabindex="4" id="email" class="form-control form-control-lg" placeholder="Email" formControlName="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <ui-password [tabindex]="5" formControlName="password" [hasPrepend]="false">
+            <icon-eyeslash></icon-eyeslash>
+            <icon-eye></icon-eye>
+          </ui-password>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <div class="input-group">
+          <select class="form-control form-control-lg" formControlName="role">
+            <option value="">Select a role</option>
+            <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+          </select>
+        </div>
+      </div>
+      <ng-container *ngIf="frm.get('avatar').valid; else invalidImage">
+        <div class="row mb-2" *ngIf="imagePreview">
+          <div class="col">
+            <img class="img-fluid rounded-circle" [src]="imagePreview" [alt]="frm.get('display_name').value">
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #invalidImage>
+        <div class="row mb-2" *ngIf="imagePreview">
+          <div class="col">
+            <div class="alert alert-danger m-0" role="alert">
+              Invalid file extension, accept only jpg, png.
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <div class="row mb-2">
+        <div class="col">
+          <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg c-btn-icon c-btn-uppercase"
+          (click)="filePicker.click()">
+            <icon-image cls="fa-lg"></icon-image>
+            <span>Pick avatar</span>
+          </button>
+          <input type="file" #filePicker (change)="onImagePicker($event)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <button class="btn btn-primary btn-lg btn-block c-btn-uppercase"
+              type="submit" [disabled]="frm.invalid">
+          <ui-button-spinner
+          [value]="'Publish'"
+          [has]="pending"></ui-button-spinner>
+      </button>
+    </div>
+  </div>
+</form>

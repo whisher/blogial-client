@@ -12,7 +12,6 @@ export const getPostState = createSelector(
 
 export const getPostsEntities = createSelector(
   getPostState,
-  fromPosts.getPostsIds,
   fromPosts.getPostsEntities
 );
 
@@ -21,6 +20,15 @@ export const getSelectedPost = createSelector(
   fromRoot.getRouterState,
   (entities, router): Post => {
     return router.state && entities[router.state.params.id];
+  }
+);
+
+export const getSelectedPostBySlug = createSelector(
+  getPostsEntities,
+  fromRoot.getRouterState,
+  (entities, router) => {
+    const values = Object.values(entities) as Post[];
+    return values.filter(post => post.slug===router.state.params.slug)[0];
   }
 );
 

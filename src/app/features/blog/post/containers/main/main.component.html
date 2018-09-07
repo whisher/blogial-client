@@ -1,0 +1,10 @@
+<div class="section">
+  <ng-container *ngIf="loaded$ | async; else noLoaded">
+    <blog-post-item [post]="post$ | async"></blog-post-item>
+  </ng-container>
+  <ng-template #noLoaded>
+    <div class="d-flex flex-row justify-content-center">
+      <ui-loader></ui-loader>
+    </div>
+  </ng-template>  
+</div>

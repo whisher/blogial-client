@@ -9,9 +9,9 @@ export interface AuthenticationToken {
 }
 
 export interface Account {
+  _id: string;
   avatar: string;
   display_name: string;
   email: string;
-  id: string;
   role: string;
 }

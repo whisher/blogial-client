@@ -15,7 +15,8 @@ const PASSWORD_CONTROL_ACCESSOR = {
 })
 export class UiPasswordComponent  implements ControlValueAccessor {
   @ViewChild('input') input: ElementRef;
-  @Input() tabindex = 1;
+  @Input() tabindex: number = 1;
+  @Input() hasPrepend: boolean = true;
   value: string;
   type= 'password';
   show = false;

@@ -1,11 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminUsersMainComponent } from './containers';
+import { UserPageGuard } from './guards';
+import { UsersGuard } from '../../../shared/features/users/guards';
+import {
+  AdminUsersMainComponent,
+  AdminUsersUserPageComponent
+} from './containers';
 
 export const ROUTES: Routes = [
   {
-    path: '', component: AdminUsersMainComponent, pathMatch: 'full'
+    path: '',
+    component: AdminUsersMainComponent,
+    canActivate: [UsersGuard],
+    pathMatch: 'full'
+  },
+  {
+    path: 'user',
+    canDeactivate: [UserPageGuard],
+    component: AdminUsersUserPageComponent
+  },
+  {
+    path: 'user/:id', component: AdminUsersUserPageComponent
   }
 ];
 

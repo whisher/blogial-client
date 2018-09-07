@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
+import { CanActivate } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 
@@ -13,19 +13,9 @@ import * as fromAuthentication from '../store';
 @Injectable()
 export class AccountGuard implements CanActivate {
   constructor(
-    private router: Router,
-    private store: Store<fromAuthentication.State>) {
-
-  }
+    private store: Store<fromAuthentication.State>) {}
 
   canActivate(): Observable<boolean> {
-    return this.checkStore().pipe(
-      switchMap(() => of(true)),
-      catchError(() => of(false))
-    );
-  }
-
-  checkStore(): Observable<boolean> {
     return this.store.select(fromAuthentication.getAccountLoaded)
       .pipe(
       tap(loaded => {

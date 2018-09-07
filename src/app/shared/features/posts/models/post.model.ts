@@ -8,7 +8,7 @@ export interface Post {
     display_name: string;
   };
   content: string;
-  created?: Date;
+  created?: Number;
   files: any; /* Json */
   imagePath: string,
   isDraft: boolean;
@@ -16,5 +16,5 @@ export interface Post {
   slug: string;
   tags: any, /* Json */
   title: string;
-  updated?: Date;
+  updated?: Number;
 }

@@ -42,7 +42,7 @@
             <input type="text" [attr.tabindex]="2 + i + 1" class="form-control form-control-lg" placeholder="Place name" formControlName="name">
             <div class="input-group-append" (click)="onRemovePlace(place, i)">
               <span class="input-group-text">
-                <icon-minus [cls]="'fa-lg'"></icon-minus>
+                <icon-minus cls="fa-lg"></icon-minus>
               </span>
             </div>
           </div>
@@ -52,7 +52,7 @@
         <div class="d-flex flex-row justify-content-end" (click)="onAddPlace()">
             <span class="text-uppercase pr-2">Add a place not to be missed</span>
             <button type="button" class="c-btn">
-              <icon-plus [cls]="'fa-lg'"></icon-plus>
+              <icon-plus cls="fa-lg"></icon-plus>
             </button>
         </div>
       </div>
@@ -70,11 +70,6 @@
           </label>
         </div>
       </div>
-      <!--
-        *ngIf="_hasSubmited || imagePreview"
-        workaround because after submit
-        frm.get('image').valid is false ^^
-      -->
       <ng-container *ngIf="frm.get('image').valid; else invalidImage">
         <div class="row mb-2" *ngIf="imagePreview">
           <div class="col">
@@ -97,7 +92,7 @@
           type="button"
           class="btn btn-outline-secondary btn-lg c-btn-icon c-btn-uppercase"
           (click)="filePicker.click()">
-            <icon-image [cls]="'fa-lg'"></icon-image>
+            <icon-image cls="fa-lg"></icon-image>
             <span>Pick Image</span>
           </button>
           <input type="file" #filePicker (change)="onImagePicker($event)">
@@ -114,7 +109,7 @@
           type="button"
           class="btn btn-outline-secondary btn-lg c-btn-icon c-btn-uppercase"
           (click)="openGallery()">
-            <icon-images [cls]="'fa-lg'"></icon-images>
+            <icon-images cls="fa-lg"></icon-images>
             <span>Gallery</span>
           </button>
         </div>

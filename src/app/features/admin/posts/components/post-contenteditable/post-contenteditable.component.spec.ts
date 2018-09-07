@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminPostsPostContenteditableComponent } from './post-contenteditable.component';
 
-describe('PostContenteditableComponent', () => {
+describe('AdminPostsPostContenteditableComponent', () => {
   let component: AdminPostsPostContenteditableComponent;
   let fixture: ComponentFixture<AdminPostsPostContenteditableComponent>;
 

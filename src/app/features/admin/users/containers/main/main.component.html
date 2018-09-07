@@ -1,3 +1,14 @@
-<div>
-  USERS
-</div>
+<a class="btn btn-light btn-block btn-lg mt-3 mb-3 c-btn-uppercase" routerLink="/admin/users/user">
+  Add new user
+</a>
+<ng-container *ngIf="loaded$ | async; else noLoaded">
+ <admin-users-user-list
+  [hasUsers]="hasUsers$ | async"
+  [users]="users$ | async"
+  (deleted)="onDelete($event)" (edit)="onEdit($event)"></admin-users-user-list>
+</ng-container>
+<ng-template #noLoaded>
+  <div class="d-flex flex-row justify-content-center">
+    <ui-loader></ui-loader>
+  </div>
+</ng-template>

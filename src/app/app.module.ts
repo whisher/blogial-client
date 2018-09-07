@@ -1,11 +1,11 @@
-/* Core */
+// Core
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-/* Ngrx */
+// Ngrx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import {
@@ -16,16 +16,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CustomRouterStateSerializer } from './store/utils';
 import { effects, reducers, metaReducers } from './store';
 
-/* Externals */
+// Externals
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMdModule } from 'ngx-md';
 
-/* Env */
+// Env
 import { environment } from '../environments/environment';
 
-/* App */
+// App
 import { AuthenticationSharedModule } from './shared/features/authentication/shared.module';
 import { PostsSharedModule } from './shared/features/posts/shared.module';
+import { UsersSharedModule } from './shared/features/users/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { URLS } from './config/config.tokens';
@@ -53,6 +54,7 @@ import { AppComponent } from './app.component';
     NgxMdModule.forRoot(),
     AuthenticationSharedModule.forRoot(),
     PostsSharedModule.forRoot(),
+    UsersSharedModule.forRoot(),
     AppRoutingModule
   ],
   providers: [

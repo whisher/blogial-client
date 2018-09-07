@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Attribute, ChangeDetectionStrategy } from '@angular/core';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -10,6 +10,7 @@ import {
   faEye,
   faEyeSlash,
   faFileUpload,
+  faHome,
   faImage,
   faImages,
   faKey,
@@ -30,6 +31,7 @@ library.add(
   faEye,
   faEyeSlash,
   faFileUpload,
+  faHome,
   faImage,
   faImages,
   faKey,
@@ -50,7 +52,7 @@ library.add(
   }`]
 })
 export class IconAngleDownComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -62,7 +64,7 @@ export class IconAngleDownComponent{
   }`]
 })
 export class IconArrowLeftComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -74,7 +76,7 @@ export class IconArrowLeftComponent {
   }`]
 })
 export class IconBellComponent {
-  @Input() cls: string;
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -86,7 +88,7 @@ export class IconBellComponent {
   }`]
 })
 export class IconEditComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -98,7 +100,7 @@ export class IconEditComponent {
   }`]
 })
 export class IconEnvelopeComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string) { }
 }
 
 @Component({
@@ -110,19 +112,7 @@ export class IconEnvelopeComponent {
   }`]
 })
 export class IconEyeComponent {
-  @Input() cls: string = '';
-}
-
-@Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'icon-file-upload',
-  template: `<fa-icon [className]="cls" [icon]="['fas', 'file-upload']"></fa-icon>`,
-  styles: [`:host {
-    display: inline-block;
-  }`]
-})
-export class IconFileUploadComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -134,8 +124,33 @@ export class IconFileUploadComponent {
   }`]
 })
 export class IconEyeSlashComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-file-upload',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'file-upload']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconFileUploadComponent {
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-home',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'home']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconHomeComponent {
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -146,7 +161,7 @@ export class IconEyeSlashComponent {
   }`]
 })
 export class IconImageComponent {
-  @Input() cls: string;
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -158,7 +173,7 @@ export class IconImageComponent {
   }`]
 })
 export class IconImagesComponent {
-  @Input() cls: string;
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 
@@ -171,7 +186,7 @@ export class IconImagesComponent {
   }`]
 })
 export class IconKeyComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -183,7 +198,7 @@ export class IconKeyComponent {
   }`]
 })
 export class IconMinusComponent {
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -195,7 +210,7 @@ export class IconMinusComponent {
   }`]
 })
 export class IconPlusComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -207,7 +222,7 @@ export class IconPlusComponent{
   }`]
 })
 export class IconSearchComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -219,7 +234,7 @@ export class IconSearchComponent{
   }`]
 })
 export class IconTableComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -231,7 +246,7 @@ export class IconTableComponent{
   }`]
 })
 export class IconThListComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }
 
 @Component({
@@ -243,5 +258,5 @@ export class IconThListComponent{
   }`]
 })
 export class IconTrashComponent{
-  @Input() cls: string = '';
+  constructor(@Attribute('cls') public cls: string = '') { }
 }

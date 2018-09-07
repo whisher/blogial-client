@@ -1,0 +1,31 @@
+<div class="row no-gutters align-items-center">
+  <div class="col-md-2">
+    <img class="img-fluid rounded-circle avatar" [src]="user.avatar ? user.avatar : '/assets/images/avatar.jpg'" [alt]="user.display_name">
+  </div>
+  <div class="col-md-2">
+    {{user.firstname}} {{user.lastname}}
+  </div>
+  <div class="col-md-2">
+    {{user.display_name}}
+  </div>
+  <div class="col-md-2">
+    {{user.created | date:'shortDate'}}
+  </div>
+  <div class="col-md-2">
+    {{user.role}}
+  </div>
+  <div class="col-md-2">
+    <ul class="d-flex flex-row justify-content-end">
+      <li class="pr-1">
+        <ui-fab-button (click)="onEdit()" [cls]="'c-btn-fab--info'">
+          <icon-edit></icon-edit>
+        </ui-fab-button>
+      </li>
+      <li>
+        <ui-fab-button (click)="onDelete()" [cls]="'c-btn-fab--danger'">
+          <icon-trash></icon-trash>
+        </ui-fab-button>
+      </li>
+    </ul>
+  </div>
+</div>

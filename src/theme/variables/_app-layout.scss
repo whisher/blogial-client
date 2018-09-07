@@ -1,13 +1,15 @@
 // Admin
-$admin-header-bar-height: 5rem !default;
+$admin-header-bar-height: 6rem !default;
 $admin-header-nav-height: 3.5rem !default;
 $admin-header-height: $admin-header-bar-height + $admin-header-nav-height !default;
 $admin-footer-height: 3rem !default;
 $admin-padding-top: $admin-header-height + 1rem !default;
 $admin-padding-bottom: 1rem !default;
+$admin-avatar-width: 3rem !default;
 
 // Blog
 $blog-header-height: 7.5rem !default;
+$blog-main-padding-top: $blog-header-height + 2rem !default;
 $blog-footer-height: 3rem !default;
 $blog-padding-top: $blog-header-height + 1rem !default;
 $blog-padding-bottom: 1rem !default;

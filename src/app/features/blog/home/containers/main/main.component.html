@@ -1,0 +1,18 @@
+<div class="section">
+<h1>PIPPO1</h1>
+<a [routerLink]="" fragment="content">go</a>
+</div>
+<div class="section" id="content" name="content">
+<div class="container">
+  <ng-container *ngIf="loaded$ | async; else noLoaded">
+    <blog-home-post-list
+    [hasPosts]="hasPosts$ | async"
+    [posts]="posts$ | async"
+    ></blog-home-post-list>
+  </ng-container>
+  <ng-template #noLoaded>
+    <div class="d-flex flex-row justify-content-center">
+      <ui-loader></ui-loader>
+    </div>
+  </ng-template>
+</div>

@@ -14,7 +14,7 @@ import * as fromRouter from '@ngrx/router-store';
 
 import { environment } from '../../../environments/environment';
 import { RouterStateUrl, customStorage } from '../utils';
-import {AuthenticationActionTypes} from '../../shared/features/authentication/store/actions';
+import { AuthenticationActionTypes } from '../../shared/features/authentication/store/actions';
 
 export interface State {
   router: fromRouter.RouterReducerState<RouterStateUrl>;

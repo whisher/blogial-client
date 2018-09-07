@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminLayoutNavComponent } from './nav.component';
 
-describe('NavComponent', () => {
+describe('AdminLayoutNavComponent', () => {
   let component: AdminLayoutNavComponent;
   let fixture: ComponentFixture<AdminLayoutNavComponent>;
 

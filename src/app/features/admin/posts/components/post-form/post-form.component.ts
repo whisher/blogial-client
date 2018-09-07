@@ -4,10 +4,10 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { atLeastOne, mimeTypeValidator } from '../../../../../shared/validators';
 import { Post } from '../../../../../shared/features/posts/models';
-import { AdminPostsPostGalleryComponent } from '../../modals';
 import { Thumb } from '../../../../../shared/features/posts/models';
+import { atLeastOne, mimeTypeValidator } from '../../../../../shared/validators';
+import { AdminPostsPostGalleryComponent } from '../../modals';
 
 @Component({
   selector: 'admin-posts-post-form',
@@ -26,11 +26,6 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
   @Input()
   set pending(isPending: boolean) {
-    if (isPending) {
-      this.frm.disable();
-    } else {
-      this.frm.enable();
-    }
     this._pending = isPending;
   }
 
@@ -79,7 +74,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       const post = {...this.selectedPost};
       this.postId = post._id;
       const data = {
-        title : post.title,
+        title: post.title,
         content: post.content,
         image: post.imagePath,
         isDraft: post.isDraft,
