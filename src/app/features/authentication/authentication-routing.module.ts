@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginGuard } from '../../shared/features/authentication/guards';
+import { LoginGuard } from '../../core/authentication/guards';
 import { AuthenticationLayoutMainComponent } from './layout/containers';
 import {
   AuthenticationLoginPageComponent,

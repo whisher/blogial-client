@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { Account } from '../../../../../shared/features/authentication/models';
+import { Account } from '../../../../../core/authentication/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

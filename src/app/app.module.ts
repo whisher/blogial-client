@@ -24,7 +24,7 @@ import { NgxMdModule } from 'ngx-md';
 import { environment } from '../environments/environment';
 
 // App
-import { AuthenticationSharedModule } from './shared/features/authentication/shared.module';
+import { CoreAuthenticationModule } from './core/authentication/authentication.module';
 import { PostsSharedModule } from './shared/features/posts/shared.module';
 import { UsersSharedModule } from './shared/features/users/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -52,7 +52,7 @@ import { AppComponent } from './app.component';
     }),
     NgbModule.forRoot(),
     NgxMdModule.forRoot(),
-    AuthenticationSharedModule.forRoot(),
+    CoreAuthenticationModule.forRoot(),
     PostsSharedModule.forRoot(),
     UsersSharedModule.forRoot(),
     AppRoutingModule

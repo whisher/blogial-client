@@ -15,10 +15,10 @@ import { reducers, effects } from './store';
   ]
 })
 
-export class AuthenticationSharedModule {
+export class CoreAuthenticationModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: AuthenticationSharedModule,
+      ngModule: CoreAuthenticationModule,
       providers: [
         ...fromGuards.guards,
         ...fromInterceptors.interceptors,

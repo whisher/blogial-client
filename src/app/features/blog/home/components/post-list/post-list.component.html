@@ -1,10 +1,12 @@
 <ng-container *ngIf="hasPosts; else noPosts">
-  <div class="row">
-    <div class="col-6 col-md-4" *ngFor="let post of posts | keyvalue">
-      <blog-home-post-item
-        [post]="post.value"></blog-home-post-item>
+  <section>
+    <div class="row">
+      <div class="col-6 col-md-4" *ngFor="let post of posts | keyvalue">
+        <blog-home-post-item
+          [post]="post.value"></blog-home-post-item>
+      </div>
     </div>
-  </div>
+  </section>
 </ng-container>
 <ng-template #noPosts>
   <div class="alert alert-info" role="alert">

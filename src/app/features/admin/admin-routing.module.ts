@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {
   AccountGuard,
   AuthenticationGuard
-} from '../../shared/features/authentication/guards';
+} from '../../core/authentication/guards';
 import { AdminLayoutMainComponent } from './layout/containers';
 
 export const ROUTES: Routes = [

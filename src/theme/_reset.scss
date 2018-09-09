@@ -9,13 +9,24 @@ a {
     text-decoration: none;
   }
 }
-
 /* Form */
 [type="file"]{
   display: none;
 }
-.input-group-text {
-  padding: .75rem;
+.btn-primary:not(:disabled){
+  animation: enable .3s linear;
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Dropdown */

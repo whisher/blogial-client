@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
-import { Account } from '../../../../../shared/features/authentication/models';
-import * as fromAuthentication from '../../../../../shared/features/authentication/store';
+import { Account } from '../../../../../core/authentication/models';
+import * as fromAuthentication from '../../../../../core/authentication/store';
 
 @Component({
   selector: 'admin-layout-header',

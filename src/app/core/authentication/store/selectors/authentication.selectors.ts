@@ -6,8 +6,6 @@ import * as fromAuthentication from '../reducers/authentication.reducers';
 import * as fromLoginPage from '../reducers/login-page.reducers';
 import * as fromAccount from '../reducers/account.reducers';
 
-const TOKEN_LATENCY = 300;
-
 export const selectAuthStatusState = createSelector(
   fromFeature.selectAuthenticationState,
   (state: fromFeature.AuthenticationState) => state.status
@@ -33,7 +31,7 @@ export const isValidToken = createSelector(
     }
     const now = new Date();
     const expiredAt = new Date();
-    expiredAt.setSeconds(expiredAt.getSeconds() + token.expiresIn - TOKEN_LATENCY);
+    expiredAt.setSeconds(expiredAt.getSeconds() + token.expiresIn);
     return expiredAt > now;
   }
 );

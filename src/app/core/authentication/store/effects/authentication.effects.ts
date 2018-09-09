@@ -10,7 +10,7 @@ import {
   Authenticate,
   AuthenticationToken,
 } from '../../models';
-import * as RouterActions from '../../../../../store';
+import * as RouterActions from '../../../../store';
 import * as authenticationActions from '../actions';
 import {
   AuthenticationService

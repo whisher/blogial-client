@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { Effect, Actions } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, switchMap, catchError, mergeMap } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 
 import { environment } from '../../../../../../environments/environment';
 
@@ -19,7 +19,8 @@ export class PostsEffects {
   ) {}
 
   @Effect()
-  loadPosts$ = this.actions$.ofType(postsActions.PostsActionTypes.LoadPosts).pipe(
+  loadPosts$ = this.actions$.pipe(
+    ofType(postsActions.PostsActionTypes.LoadPosts),
     switchMap(() => {
       return this.service
         .load()
@@ -31,8 +32,9 @@ export class PostsEffects {
   );
 
   @Effect()
-  addPost$ = this.actions$.ofType(postsActions.PostsActionTypes.AddPost)
+  addPost$ = this.actions$
   .pipe(
+    ofType(postsActions.PostsActionTypes.AddPost),
     map((action: postsActions.AddPost) => action.payload.post),
     switchMap((post: Post) => {
       return this.service
@@ -46,8 +48,8 @@ export class PostsEffects {
 
   @Effect()
   addPostSuccess$ = this.actions$
-    .ofType(postsActions.PostsActionTypes.AddPostSuccess)
     .pipe(
+      ofType(postsActions.PostsActionTypes.AddPostSuccess),
       map((action: postsActions.AddPostSuccess) => action.payload.post),
       mergeMap((post: Post) => {
         const actions = [];
@@ -62,8 +64,9 @@ export class PostsEffects {
     );
 
   @Effect()
-  notificationPost$ = this.actions$.ofType(postsActions.PostsActionTypes.NotificationPost)
+  notificationPost$ = this.actions$
     .pipe(
+      ofType(postsActions.PostsActionTypes.NotificationPost),
       map((action: postsActions.NotificationPost) => action.payload.post),
       switchMap((post: Post) => {
         return this.service
@@ -75,25 +78,26 @@ export class PostsEffects {
       })
     );
 
-  @Effect()
+  @Effect({ dispatch: false })
   notificationPostSuccess$ = this.actions$
-      .ofType(postsActions.PostsActionTypes.NotificationPostSuccess)
       .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostSuccess),
         map((action: postsActions.NotificationPostSuccess) => action.payload.post),
-        map((post: Post) => console.log('Notification success', post)),
+        tap((post: Post) => console.log('Notification success', post)),
       );
 
-  @Effect()
+  @Effect({ dispatch: false })
   notificationPostFail$ = this.actions$
-      .ofType(postsActions.PostsActionTypes.NotificationPostFail)
       .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostFail),
         map((action: postsActions.NotificationPostFail) => action.payload),
-        map((error: any) => console.error('Notification fail', error)),
+        tap((error: any) => console.error('Notification fail', error)),
       );
 
   @Effect()
-  updatePost$ = this.actions$.ofType(postsActions.PostsActionTypes.UpdatePost)
+  updatePost$ = this.actions$
   .pipe(
+    ofType(postsActions.PostsActionTypes.UpdatePost),
     map((action: postsActions.UpdatePost) => action.payload.post),
     switchMap((post: Post) => {
       return this.service
@@ -106,8 +110,9 @@ export class PostsEffects {
   );
 
   @Effect()
-  deletePost$ = this.actions$.ofType(postsActions.PostsActionTypes.DeletePost)
+  deletePost$ = this.actions$
   .pipe(
+    ofType(postsActions.PostsActionTypes.DeletePost),
     map((action: postsActions.DeletePost) => action.payload.id),
     switchMap(id => {
       return this.service
@@ -121,11 +126,11 @@ export class PostsEffects {
 
   @Effect()
   handlePostsSuccess$ = this.actions$
-    .ofType(
-      postsActions.PostsActionTypes.UpdatePostSuccess,
-      postsActions.PostsActionTypes.DeletePostSuccess
-    )
     .pipe(
+      ofType(
+        postsActions.PostsActionTypes.UpdatePostSuccess,
+        postsActions.PostsActionTypes.DeletePostSuccess
+      ),
       map((post: Post) => {
         return new RouterActions.Go({
           path: ['/admin/posts'],

@@ -4,24 +4,27 @@
       Invalid email or password
     </div>
     <div class="form-group">
-      <div class="input-group">
+      <div class="input-group input-group-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
             <icon-envelope></icon-envelope>
           </span>
         </div>
-        <input type="email" tabindex="1" id="email" placeholder="Your Email"
-              class="form-control form-control-lg" formControlName="email">
+        <input
+          type="email"
+          tabindex="1"
+          id="email"
+          placeholder="Your Email"
+          class="form-control" 
+          formControlName="email">
       </div>
     </div>
     <div class="form-group mb-4">
-      <div class="input-group">
-        <ui-password [tabindex]="2" formControlName="password">
-          <icon-key></icon-key>
-          <icon-eyeslash></icon-eyeslash>
-          <icon-eye></icon-eye>
-        </ui-password>
-      </div>
+      <ui-password [tabindex]="2" formControlName="password">
+        <icon-key></icon-key>
+        <icon-eyeslash></icon-eyeslash>
+        <icon-eye></icon-eye>
+      </ui-password>
     </div>
     <div class="row no-gutters align-items-center mb-5">
       <div class="col">
