@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { Effect, Actions } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { map, switchMap, catchError, mergeMap } from 'rxjs/operators';
+import { catchError, map, switchMap, mergeMap } from 'rxjs/operators';
 
 import { User } from '../../models';
 import * as RouterActions from '../../../../store';
@@ -18,42 +18,46 @@ export class UsersEffects {
   ) {}
 
   @Effect()
-  loadUsers$ = this.actions$.ofType(usersActions.UsersActionTypes.LoadUsers).pipe(
-    switchMap(() => {
-      return this.service
-        .load()
-        .pipe(
-          map(users => new usersActions.LoadUsersSuccess({users})),
-          catchError(error => of(new usersActions.LoadUsersFail(error)))
-        );
-    })
-  );
+  loadUsers$ = this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.LoadUsers),
+      switchMap(() => {
+        return this.service
+          .load()
+          .pipe(
+            map(users => new usersActions.LoadUsersSuccess({users})),
+            catchError(error => of(new usersActions.LoadUsersFail(error)))
+          );
+      })
+    );
 
   @Effect()
-  addUser$ = this.actions$.ofType(usersActions.UsersActionTypes.AddUser)
-  .pipe(
-    map((action: usersActions.AddUser) => action.payload.user),
-    switchMap((user: User) => {
-      return this.service
-        .add(user)
-        .pipe(
-          map((user: User) => new usersActions.AddUserSuccess({user})),
-          catchError(error => of(new usersActions.AddUserFail(error)))
-        );
-    })
-  );
+  addUser$ = this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.AddUser),
+      map((action: usersActions.AddUser) => action.payload.user),
+      switchMap((user: User) => {
+        return this.service
+          .add(user)
+          .pipe(
+            map((user: User) => new usersActions.AddUserSuccess({user})),
+            catchError(error => of(new usersActions.AddUserFail(error)))
+          );
+      })
+    );
 
   @Effect()
   addUserSuccess$ = this.actions$
-    .ofType(usersActions.UsersActionTypes.AddUserSuccess)
     .pipe(
+      ofType(usersActions.UsersActionTypes.AddUserSuccess),
       map((action: usersActions.AddUserSuccess) => action.payload.user),
       map((user: User) => new RouterActions.Go({path: ['/admin/users']}))
     );
 
   @Effect()
-  updateUser$ = this.actions$.ofType(usersActions.UsersActionTypes.UpdateUser)
+  updateUser$ = this.actions$
   .pipe(
+    ofType(usersActions.UsersActionTypes.UpdateUser),
     map((action: usersActions.UpdateUser) => action.payload.user),
     switchMap((user: User) => {
       return this.service
@@ -66,23 +70,24 @@ export class UsersEffects {
   );
 
   @Effect()
-  deleteUser$ = this.actions$.ofType(usersActions.UsersActionTypes.DeleteUser)
-  .pipe(
-    map((action: usersActions.DeleteUser) => action.payload.id),
-    switchMap(id => {
-      return this.service
-        .delete(id)
-        .pipe(
-          map(id => new usersActions.DeleteUserSuccess({id})),
-          catchError(error => of(new usersActions.DeleteUserFail(error)))
-        );
-    })
-  );
+  deleteUser$ = this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUser),
+      map((action: usersActions.DeleteUser) => action.payload.id),
+      switchMap(id => {
+        return this.service
+          .delete(id)
+          .pipe(
+            map(id => new usersActions.DeleteUserSuccess({id})),
+            catchError(error => of(new usersActions.DeleteUserFail(error)))
+          );
+      })
+    );
 
   @Effect()
   updateUsersSuccess$ = this.actions$
-    .ofType(usersActions.UsersActionTypes.UpdateUserSuccess)
     .pipe(
+      ofType(usersActions.UsersActionTypes.UpdateUserSuccess),
       map((action: usersActions.UpdateUserSuccess) => action.payload.user),
       mergeMap((user: any) => {
        return [
@@ -92,18 +97,14 @@ export class UsersEffects {
       })
     );
 
-    @Effect()
-    deleteUsersSuccess$ = this.actions$
-      .ofType(usersActions.UsersActionTypes.DeleteUserSuccess)
-      .pipe(
-        map((user: User) => {
-          return new RouterActions.Go({
-            path: ['/admin/users'],
-          });
-        })
-      );
+  @Effect()
+  deleteUsersSuccess$ = this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUserSuccess),
+      map((user: User) => {
+        return new RouterActions.Go({
+          path: ['/admin/users'],
+        });
+      })
+    );
 }
-
-/*
-
-*/

@@ -9,6 +9,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { IconsModule } from '../../../shared/icons/icons.module';
 import { UiButtonsModule } from '../../../shared/ui/buttons/buttons.module';
 import { UiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
+import { UiConfirmModule } from '../../../shared/ui/confirm/confirm.module';
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 import { UiPasswordModule } from '../../../shared/ui/password/password.module';
 
@@ -37,6 +38,7 @@ import * as fromGuards from './guards';
     IconsModule,
     UiButtonsModule,
     UiButtonSpinnerModule,
+    UiConfirmModule,
     UiLoaderModule,
     UiPasswordModule,
     AdminUsersRoutingModule

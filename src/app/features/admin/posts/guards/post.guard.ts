@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate } from '@angular/router';
 
+import { ConfirmService } from '../../../../shared/ui/confirm/confirm.component';
 import { AdminPostsPostPageComponent } from '../containers/post-page/post-page.component';
 
 @Injectable()
 export class PostPageGuard implements CanDeactivate<AdminPostsPostPageComponent> {
-  canDeactivate(component: AdminPostsPostPageComponent) {
+  constructor(private confirmService: ConfirmService) {}
+  canDeactivate(component: AdminPostsPostPageComponent): Promise<boolean> {
     if (!component.isFormPristine) {
-      return window.confirm('Are you sure you want to leave?');
+      return this.confirmService.confirm({ title:'Confirm', message: 'Are you sure you want to leave?' });
     }
-    return true;
+    return Promise.resolve(true);
   }
 }

@@ -33,62 +33,68 @@ export class AuthenticationEffects {
     );
 
   @Effect()
-  accountSuccess$ = this.actions$.pipe(
-    ofType(authenticationActions.AccountActionTypes.AccountSuccess),
-    map(() => new authenticationActions.AccountNoop())
-  );
+  accountSuccess$ = this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountSuccess),
+      map(() => new authenticationActions.AccountNoop())
+    );
 
   @Effect()
-  accountFailure$ = this.actions$.pipe(
-    ofType(authenticationActions.AccountActionTypes.AccountFailure),
-    map(() => new authenticationActions.Logout())
-  );
+  accountFailure$ = this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountFailure),
+      map(() => new authenticationActions.Logout())
+    );
 
   @Effect()
-  login$ = this.actions$.pipe(
-    ofType(authenticationActions.AuthenticationActionTypes.Login),
-    map((action: authenticationActions.Login) => action.payload),
-    exhaustMap((credentials: Authenticate) =>{
-      return this.authenticationService
-        .login(credentials)
-        .pipe(
-          map((token: AuthenticationToken) => new authenticationActions.LoginSuccess({ token })),
-          catchError(error => of(new authenticationActions.LoginFailure(error)))
-        )
-      }
-    )
-  );
+  login$ = this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.Login),
+      map((action: authenticationActions.Login) => action.payload),
+      exhaustMap((credentials: Authenticate) =>{
+        return this.authenticationService
+          .login(credentials)
+          .pipe(
+            map((token: AuthenticationToken) => new authenticationActions.LoginSuccess({ token })),
+            catchError(error => of(new authenticationActions.LoginFailure(error)))
+          )
+        }
+      )
+    );
 
   @Effect()
-  loginSuccess$ = this.actions$.pipe(
-    ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
-    mergeMap((token: AuthenticationToken) =>{
-      return [
-        new authenticationActions.AccountRequested(),
-        new RouterActions.Go({ path: ['/admin'] })
-      ]
-    })
-  );
+  loginSuccess$ = this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
+      mergeMap((token: AuthenticationToken) =>{
+        return [
+          new authenticationActions.AccountRequested(),
+          new RouterActions.Go({ path: ['/admin'] })
+        ]
+      })
+    );
 
   @Effect()
-  loginRedirect$ = this.actions$.pipe(
-    ofType(
-      authenticationActions.AuthenticationActionTypes.LoginRedirect,
-      authenticationActions.AuthenticationActionTypes.Logout,
-      authenticationActions.AccountActionTypes.AccountFailure
-    ),
-    map(authed => {
-      return new RouterActions.Go({ path: ['/auth'] })
-    })
-  );
+  loginRedirect$ = this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginRedirect,
+        authenticationActions.AuthenticationActionTypes.Logout,
+        authenticationActions.AccountActionTypes.AccountFailure
+      ),
+      map(authed => {
+        return new RouterActions.Go({ path: ['/auth'] })
+      })
+    );
 
   @Effect()
-  loginJustLogged$ = this.actions$.pipe(
-    ofType(
-      authenticationActions.AuthenticationActionTypes.LoginJustLogged
-    ),
-    map(authed => new RouterActions.Go({ path: ['/admin'] }))
-  );
+  loginJustLogged$ = this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginJustLogged
+      ),
+      map(authed => new RouterActions.Go({ path: ['/admin'] }))
+    );
 
   constructor(
     private router: Router,

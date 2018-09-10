@@ -19,6 +19,7 @@ import { NgxMdModule } from 'ngx-md';
 import { IconsModule } from '../../../shared/icons/icons.module';
 import { UiButtonsModule } from '../../../shared/ui/buttons/buttons.module';
 import { UiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
+import { UiConfirmModule } from '../../../shared/ui/confirm/confirm.module';
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 
 // Routing
@@ -51,6 +52,7 @@ import * as fromGuards from './guards';
     IconsModule,
     UiButtonsModule,
     UiButtonSpinnerModule,
+    UiConfirmModule,
     UiLoaderModule,
     AdminPostsRoutingModule
   ],

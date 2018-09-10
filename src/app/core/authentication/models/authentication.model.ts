@@ -13,5 +13,8 @@ export interface Account {
   avatar: string;
   display_name: string;
   email: string;
+  firstname: string;
+  lastname: string;
+  last_login: string;
   role: string;
 }
