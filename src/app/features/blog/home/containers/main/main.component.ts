@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
-import * as fromPosts from '../../../../../shared/features/posts/store';
-import { Post } from '../../../../../shared/features/posts/models';
+import * as fromPosts from '../../../../../core/posts/store';
+import { Post } from '../../../../../core/posts/models';
 
 @Component({
   selector: 'blog-home-main',

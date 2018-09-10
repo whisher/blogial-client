@@ -1,10 +1,10 @@
-import { PostsSharedModule } from './shared.module';
+import { CorePostsdModule } from './posts.module';
 
 describe('PostsSharedModule', () => {
-  let sharedModule: PostsSharedModule;
+  let sharedModule: CorePostsdModule;
 
   beforeEach(() => {
-    sharedModule = new PostsSharedModule();
+    sharedModule = new CorePostsdModule();
   });
 
   it('should create an instance', () => {

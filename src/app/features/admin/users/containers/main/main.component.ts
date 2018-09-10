@@ -12,8 +12,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AdminUsersUserDeleteComponent } from '../../modals';
 
 // Store
-import { User } from '../../../../../shared/features/users/models';
-import * as fromUsers from '../../../../../shared/features/users/store';
+import { User } from '../../../../../core/users/models';
+import * as fromUsers from '../../../../../core/users/store';
 
 @Component({
   selector: 'admin-users-main',

@@ -5,9 +5,9 @@ import { of } from 'rxjs';
 import { map, switchMap, catchError, mergeMap } from 'rxjs/operators';
 
 import { User } from '../../models';
-import * as RouterActions from '../../../../../store';
+import * as RouterActions from '../../../../store';
 import * as usersActions from '../actions';
-import * as authenticationActions from '../../../../../core/authentication/store/actions';
+import * as authenticationActions from '../../../../core/authentication/store/actions';
 import * as fromServices from '../../services';
 
 @Injectable()

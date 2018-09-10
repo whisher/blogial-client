@@ -1,6 +1,6 @@
 import { Component, Input, Output, ChangeDetectionStrategy, ViewEncapsulation, EventEmitter } from '@angular/core';
 
-import { User } from '../../../../../shared/features/users/models';
+import { User } from '../../../../../core/users/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

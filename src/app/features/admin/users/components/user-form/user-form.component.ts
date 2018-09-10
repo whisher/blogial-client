@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { Subscription } from 'rxjs';
 
-import { User } from '../../../../../shared/features/users/models';
+import { User } from '../../../../../core/users/models';
 
 import { mimeTypeValidator } from '../../../../../shared/validators';
 

@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
-import { User } from '../../../../../shared/features/users/models';
+import { User } from '../../../../../core/users/models';
 
 @Component({
   selector: 'admin-users-user-delete',

@@ -1,9 +1,9 @@
 import { createSelector } from '@ngrx/store';
 
-import * as fromRoot from '../../../../../store';
+import * as fromRoot from '../../../../store';
 import * as fromFeature from '../reducers';
 import * as fromUsers from '../reducers/users.reducer';
-import * as fromAuthentication from '../../../../../core/authentication/store/reducers';
+import * as fromAuthentication from '../../../../core/authentication/store/reducers';
 import { User } from '../../models';
 
 export const getUserState = createSelector(

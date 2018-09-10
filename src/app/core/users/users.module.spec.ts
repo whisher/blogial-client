@@ -1,10 +1,10 @@
-import { UsersSharedModule } from './shared.module';
+import { CoreUsersModule } from './users.module';
 
 describe('UsersSharedModule', () => {
-  let sharedModule: UsersSharedModule;
+  let sharedModule: CoreUsersModule;
 
   beforeEach(() => {
-    sharedModule = new UsersSharedModule();
+    sharedModule = new CoreUsersModule();
   });
 
   it('should create an instance', () => {

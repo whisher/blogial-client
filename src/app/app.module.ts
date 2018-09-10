@@ -25,13 +25,15 @@ import { environment } from '../environments/environment';
 
 // App
 import { CoreAuthenticationModule } from './core/authentication/authentication.module';
-import { PostsSharedModule } from './shared/features/posts/shared.module';
-import { UsersSharedModule } from './shared/features/users/shared.module';
+import { CorePostsdModule } from './core/posts/posts.module';
+import { CoreUsersModule } from './core/users/users.module';
 import { AppRoutingModule } from './app-routing.module';
 
+// Config
 import { URLS } from './config/config.tokens';
 import { Config_Urls } from './config/config-urls';
 
+// Components
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -53,14 +55,14 @@ import { AppComponent } from './app.component';
     NgbModule.forRoot(),
     NgxMdModule.forRoot(),
     CoreAuthenticationModule.forRoot(),
-    PostsSharedModule.forRoot(),
-    UsersSharedModule.forRoot(),
+    CorePostsdModule.forRoot(),
+    CoreUsersModule.forRoot(),
     AppRoutingModule
   ],
   providers: [
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
     { provide: URLS, useValue: Config_Urls },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

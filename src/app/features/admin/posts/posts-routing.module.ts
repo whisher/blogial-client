@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PostPageGuard } from './guards';
-import { PostsGuard } from '../../../shared/features/posts/guards';
+import { PostsGuard } from '../../../core/posts/guards';
 
 import {
   AdminPostsMainComponent,

@@ -17,8 +17,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AdminPostsPostDeleteComponent } from '../../modals';
 
 // Store
-import { Post } from '../../../../../shared/features/posts/models';
-import * as fromPosts from '../../../../../shared/features/posts/store';
+import { Post } from '../../../../../core/posts/models';
+import * as fromPosts from '../../../../../core/posts/store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { UserPageGuard } from './guards';
-import { UsersGuard } from '../../../shared/features/users/guards';
+import { UsersGuard } from '../../../core/users/guards';
 import {
   AdminUsersMainComponent,
   AdminUsersUserPageComponent

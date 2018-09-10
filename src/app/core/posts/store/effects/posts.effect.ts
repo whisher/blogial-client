@@ -4,10 +4,10 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 
-import { environment } from '../../../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 
 import { Post } from '../../models';
-import * as RouterActions from '../../../../../store';
+import * as RouterActions from '../../../../store';
 import * as postsActions from '../actions/posts.action';
 import * as fromServices from '../../services';
 

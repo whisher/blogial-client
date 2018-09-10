@@ -13,10 +13,10 @@ import * as fromGuards from './guards';
   ]
 })
 
-export class UsersSharedModule {
+export class CoreUsersModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: UsersSharedModule,
+      ngModule: CoreUsersModule,
       providers: [
         ...fromGuards.guards,
         ...fromService.services

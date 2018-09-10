@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 // Store
-import { User } from '../../../../../shared/features/users/models';
-import * as fromUsers from '../../../../../shared/features/users/store';
+import { User } from '../../../../../core/users/models';
+import * as fromUsers from '../../../../../core/users/store';
 
 @Component({
   selector: 'admin-users-user-page',

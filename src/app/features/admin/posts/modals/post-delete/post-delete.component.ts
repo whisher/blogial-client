@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 
 import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
-import { Post } from '../../../../../shared/features/posts/models';
+import { Post } from '../../../../../core/posts/models';
 
 @Component({
   selector: 'admin-posts-post-delete',

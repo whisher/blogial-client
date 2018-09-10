@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { URLS } from '../../../../config/config.tokens';
-import { HttpErrorHandler } from '../../../http/http-error-handler';
+import { URLS } from '../../../config/config.tokens';
+import { HttpErrorHandler } from '../../../shared/http/http-error-handler';
 import { User } from '../models';
 
 @Injectable()

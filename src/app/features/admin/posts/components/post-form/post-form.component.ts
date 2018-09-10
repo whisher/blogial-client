@@ -4,8 +4,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Post } from '../../../../../shared/features/posts/models';
-import { Thumb } from '../../../../../shared/features/posts/models';
+import { Post, Thumb } from '../../../../../core/posts/models';
 import { atLeastOne, mimeTypeValidator } from '../../../../../shared/validators';
 import { AdminPostsPostGalleryComponent } from '../../modals';
 

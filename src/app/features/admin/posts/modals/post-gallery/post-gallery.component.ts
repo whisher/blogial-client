@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Thumb } from '../../../../../shared/features/posts/models';
-import { PostsService } from '../../../../../shared/features/posts/services';
+import { Thumb } from '../../../../../core/posts/models';
+import { PostsService } from '../../../../../core/posts/services';
 
 @Component({
   selector: 'admin-posts-post-gallery',
@@ -32,12 +32,11 @@ export class AdminPostsPostGalleryComponent {
   }
 
   onEditable(evt){
-  console.log(evt);
+    console.log(evt);
   }
 
   onFileInvalids(fileList : Array<File>){
     this.invalidFiles = fileList;
   }
-
 
 }
