@@ -8,6 +8,9 @@ import { Store, select } from '@ngrx/store';
 import { Post } from '../../../../../core/posts/models';
 import * as fromPosts from '../../../../../core/posts/store';
 
+// Confirm Modal
+import { IsPristineAware } from '../../../../../shared/ui/confirm/confirm.component';
+
 @Component({
   selector: 'admin-posts-post-page',
   template: `
@@ -19,17 +22,17 @@ import * as fromPosts from '../../../../../core/posts/store';
     [selectedPost]="selectedPost$ | async"></admin-posts-post-form>
   `
 })
-export class AdminPostsPostPageComponent {
+export class AdminPostsPostPageComponent implements IsPristineAware {
 
   pending$ = this.store.pipe(select(fromPosts.getPostsLoading));
   error$ = this.store.pipe(select(fromPosts.getPostsError));
   selectedPost$ = this.store.pipe(select(fromPosts.getSelectedPost));
-  isFormPristine = true;
+  _isPristine = true;
 
   constructor(private store: Store<fromPosts.State>) { }
 
   onIsPristine($event){
-    this.isFormPristine = $event;
+    this._isPristine = $event;
   }
 
   onSubmit($event: Post) {
@@ -43,4 +46,7 @@ export class AdminPostsPostPageComponent {
     }
   }
 
+  isPristine(): boolean{
+    return this._isPristine;
+  }
 }

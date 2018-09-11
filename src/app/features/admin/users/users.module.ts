@@ -27,9 +27,6 @@ import {
   AdminUsersUserDeleteComponent
 } from './modals';
 
-// Guards
-import * as fromGuards from './guards';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -48,9 +45,7 @@ import * as fromGuards from './guards';
     ...fromContainers.containers,
     ...fromModals.modals
   ],
-  providers: [
-    ...fromGuards.guards
-  ],
+  providers: [],
   entryComponents: [
     AdminUsersUserDeleteComponent
   ]

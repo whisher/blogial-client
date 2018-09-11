@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserPageGuard } from './guards';
 import { UsersGuard } from '../../../core/users/guards';
+import { IsPristineGuard } from '../../../shared/ui/confirm/confirm.guard';
+
 import {
   AdminUsersMainComponent,
   AdminUsersUserPageComponent
@@ -17,7 +18,7 @@ export const ROUTES: Routes = [
   },
   {
     path: 'user',
-    canDeactivate: [UserPageGuard],
+    canDeactivate: [IsPristineGuard],
     component: AdminUsersUserPageComponent
   },
   {

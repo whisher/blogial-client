@@ -2,6 +2,13 @@ import { Component, Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 /**
+ * The guarded Component should implement this interface
+ */
+export interface IsPristineAware {
+  isPristine(): boolean;
+}
+
+/**
  * Options passed when opening a confirmation modal
  */
 interface ConfirmOptions {

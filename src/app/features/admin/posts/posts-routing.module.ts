@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PostPageGuard } from './guards';
 import { PostsGuard } from '../../../core/posts/guards';
+import { IsPristineGuard } from '../../../shared/ui/confirm/confirm.guard';
 
 import {
   AdminPostsMainComponent,
@@ -18,7 +18,7 @@ export const ROUTES: Routes = [
   },
   {
     path: 'post',
-    canDeactivate: [PostPageGuard],
+    canDeactivate: [IsPristineGuard],
     component: AdminPostsPostPageComponent
   },
   {
