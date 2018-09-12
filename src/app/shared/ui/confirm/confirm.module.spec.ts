@@ -1,13 +1,13 @@
-import { UiButtonsModule } from './buttons.module';
+import { UiConfirmModule } from './confirm.module';
 
-describe('UiButtonsModule', () => {
-  let buttonsModule: UiButtonsModule;
+describe('UiConfirmModule', () => {
+  let confirmModule: UiConfirmModule;
 
   beforeEach(() => {
-    buttonsModule = new UiButtonsModule();
+    confirmModule = new UiConfirmModule();
   });
 
   it('should create an instance', () => {
-    expect(buttonsModule).toBeTruthy();
+    expect(confirmModule).toBeTruthy();
   });
 });

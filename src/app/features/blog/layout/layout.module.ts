@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 
 // Modules
 import { IconsModule } from '../../../shared/icons/icons.module';
+import { UiButtonsModule } from '../../../shared/ui/buttons/buttons.module';
+import { UiUtilitiesModule } from '../../../shared/ui/utilities/utilities.module';
 
 // Components
 import * as fromComponents from './components';
@@ -14,7 +16,9 @@ import * as fromContainers from './containers';
   imports: [
     CommonModule,
     RouterModule,
-    IconsModule
+    IconsModule,
+    UiButtonsModule,
+    UiUtilitiesModule
   ],
   declarations: [
     ...fromComponents.components,

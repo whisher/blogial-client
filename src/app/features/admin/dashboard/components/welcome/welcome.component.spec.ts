@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WelcomeComponent } from './welcome.component';
+import { AdminDashboardWelcomeComponent } from './welcome.component';
 
-describe('WelcomeComponent', () => {
-  let component: WelcomeComponent;
-  let fixture: ComponentFixture<WelcomeComponent>;
+describe('AdminDashboardWelcomeComponent', () => {
+  let component: AdminDashboardWelcomeComponent;
+  let fixture: ComponentFixture<AdminDashboardWelcomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WelcomeComponent ]
+      declarations: [ AdminDashboardWelcomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WelcomeComponent);
+    fixture = TestBed.createComponent(AdminDashboardWelcomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

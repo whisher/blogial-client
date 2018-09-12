@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
 
@@ -11,23 +11,18 @@ import { Post } from '../../../../../core/posts/models';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class BlogHomeMainComponent implements OnInit {
+export class BlogHomeMainComponent {
   posts$ = this.store.pipe(select(fromPosts.getPostsEntities));
   loaded$ = this.store.pipe(select(fromPosts.getPostsLoaded));
   hasPosts$ = this.store.pipe(select(fromPosts.getHasPosts));
 
   constructor(
-    private route: ActivatedRoute,
+    private router: Router,
     private store: Store<fromPosts.State>
   ) {}
 
-  ngOnInit() {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        console.log('fragment',fragment);
-        document.querySelector('#' + fragment).scrollIntoView({ behavior: 'smooth' })
-      }
-    })
+  onGotoPosts() {
+    this.router.navigate(['/home'], { fragment: 'content' });
   }
 
 }

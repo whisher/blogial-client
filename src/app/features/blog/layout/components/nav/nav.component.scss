@@ -1,19 +1,44 @@
 @import "theme-variables";
 
-ul {
+:host(.header){
+  ul {
+    display: flex;
+    li{
+      padding-left: $spacer;
+    }
+    a {
+      padding-bottom: $spacer * .25;
+      font-size: 1.2rem;
+      color: $blog-nav-color;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+    }
+    .active{
+      color: $blog-nav-color-active;
+      border-bottom-color: theme-color("primary");
+    }
+  }
+}
+
+:host(.footer){
   display: flex;
-  li{
-    padding-left: $spacer;
-  }
-  a {
-    padding-bottom: $spacer * .25;
-    font-size: 1.2rem;
-    color: $blog-nav-color;
-    text-transform: uppercase;
-    border-bottom: 2px solid transparent;
-  }
-  .active{
-    color: $blog-nav-color-active;
-    border-bottom-color: theme-color("primary");
+  width: 100%;
+  ul {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    background-color: inherit;
+    li{
+      display: flex;
+      flex: 1 0 auto;
+      justify-content: center;
+    }
+    a {
+      color: $blog-nav-color;
+      text-transform: uppercase;
+    }
+    .active{
+      color: $blog-nav-color-active;
+    }
   }
 }

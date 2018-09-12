@@ -1,5 +1,6 @@
 $hover-danger-color: darken($danger, 15%) !default;
 $hover-info-color: darken($info, 15%) !default;
+$hover-info-light: darken($light, 15%) !default;
 
 .c-btn{
   @include base-button;
@@ -21,6 +22,12 @@ $hover-info-color: darken($info, 15%) !default;
   color: theme-color("info");
   &:hover{
     color: $hover-info-color;
+  }
+}
+.c-btn-fab--light{
+  color: theme-color("light");
+  &:hover {
+    color: $hover-info-light;
   }
 }
 .c-btn-dropdown{

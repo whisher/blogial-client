@@ -1,5 +1,6 @@
 import {
   IconAngleDownComponent,
+  IconAngleUpComponent,
   IconArrowLeftComponent,
   IconBellComponent,
   IconEditComponent,
@@ -22,6 +23,7 @@ from './icons/icons.component';
 
 export const components: any[] = [
   IconAngleDownComponent,
+  IconAngleUpComponent,
   IconArrowLeftComponent,
   IconBellComponent,
   IconEditComponent,

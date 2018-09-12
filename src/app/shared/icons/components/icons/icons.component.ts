@@ -3,6 +3,7 @@ import { Component, Attribute, ChangeDetectionStrategy } from '@angular/core';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngleDown,
+  faAngleUp,
   faArrowLeft,
   faBell,
   faEdit,
@@ -24,6 +25,7 @@ import {
 
 library.add(
   faAngleDown,
+  faAngleUp,
   faArrowLeft,
   faBell,
   faEdit,
@@ -52,6 +54,18 @@ library.add(
   }`]
 })
 export class IconAngleDownComponent{
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-angleup',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'angle-up']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconAngleUpComponent{
   constructor(@Attribute('cls') public cls: string = '') { }
 }
 

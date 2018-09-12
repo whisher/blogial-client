@@ -1,18 +1,27 @@
 <div class="section">
-<h1>PIPPO1</h1>
-<a [routerLink]="" fragment="content">go</a>
+  <h1 class="display-4 text-white">Welcome to le Blogial</h1>
+  <h4 class="text-white">Un mélange of something que tu aimes</h4>
+  <div class="go-to-post" (click)="onGotoPosts()">
+    <ui-fab-button [cls]="'c-btn-fab--light'">
+      <icon-angledown cls="fa-2x"></icon-angledown>
+    </ui-fab-button>
+  </div>
 </div>
 <div class="section" id="content" name="content">
-<div class="container">
-  <ng-container *ngIf="loaded$ | async; else noLoaded">
-    <blog-home-post-list
-    [hasPosts]="hasPosts$ | async"
-    [posts]="posts$ | async"
-    ></blog-home-post-list>
-  </ng-container>
-  <ng-template #noLoaded>
-    <div class="d-flex flex-row justify-content-center">
-      <ui-loader></ui-loader>
-    </div>
-  </ng-template>
+  <div class="container">
+    <ng-container *ngIf="loaded$ | async; else noLoaded">
+      <blog-home-post-list
+      [hasPosts]="hasPosts$ | async"
+      [posts]="posts$ | async"
+      ></blog-home-post-list>
+      <div uiGoToTop class="pt-5 pb-3">
+        <blog-home-go-to-top></blog-home-go-to-top>
+      </div>
+    </ng-container>
+    <ng-template #noLoaded>
+      <div class="d-flex flex-row justify-content-center">
+        <ui-loader></ui-loader>
+      </div>
+    </ng-template>
+  </div>
 </div>

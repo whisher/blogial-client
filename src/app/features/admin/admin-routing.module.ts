@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {
   AccountGuard,
-  AuthenticationGuard
+  AuthenticationGuard,
+  RoleGuard
 } from '../../core/authentication/guards';
 import { AdminLayoutMainComponent } from './layout/containers';
 
@@ -31,6 +32,7 @@ export const ROUTES: Routes = [
       },
       {
         path: 'users',
+        canLoad: [RoleGuard],
         loadChildren: './users/users.module#AdminUsersModule'
       }
     ]

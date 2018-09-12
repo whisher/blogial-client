@@ -13,10 +13,11 @@ const routes: Routes = [
 @NgModule({
   providers: [ AppPreloadingStrategy ],
   imports: [ RouterModule.forRoot(routes, {
-    preloadingStrategy: AppPreloadingStrategy,
-    scrollPositionRestoration: 'enabled',
+      preloadingStrategy: AppPreloadingStrategy,
+      scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled'
-    }) ],
+    })
+  ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

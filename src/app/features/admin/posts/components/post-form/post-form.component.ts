@@ -132,7 +132,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   onImagePicker(event: Event){
     const file = (<HTMLInputElement>event.target).files[0];
     this.frm.patchValue({image: file})
-    this.frm.get('image').updateValueAndValidity();
+    //this.frm.get('image').updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result;

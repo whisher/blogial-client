@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UIConfirmComponent } from './confirm.component';
+import { BlogHomeGoToTopComponent } from './go-to-top.component';
 
-describe('UIConfirmComponent', () => {
-  let component: UIConfirmComponent;
-  let fixture: ComponentFixture<UIConfirmComponent>;
+describe('BlogHomeGoToTopComponent', () => {
+  let component: BlogHomeGoToTopComponent;
+  let fixture: ComponentFixture<BlogHomeGoToTopComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UIConfirmComponent ]
+      declarations: [ BlogHomeGoToTopComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UIConfirmComponent);
+    fixture = TestBed.createComponent(BlogHomeGoToTopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

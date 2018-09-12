@@ -73,7 +73,7 @@ export class ConfirmService {
     <h4 class="modal-title">
       {{ options.title}}
     </h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.close(false)">
+    <button type="button" class="close" aria-label="Close" (click)="no()">
         <span aria-hidden="true">&times;</span>
     </button>
   </div>

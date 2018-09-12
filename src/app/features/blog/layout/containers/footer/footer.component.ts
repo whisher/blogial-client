@@ -1,20 +1,28 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
+import { Store, select } from '@ngrx/store';
+
+import * as fromAuthentication from '../../../../../core/authentication/store';
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'blog-layout-footer',
   template: `
   <div>
-    <p class="text-muted m-0">&#169;Blogial - 2018</p>
+    <blog-layout-nav cls="footer" [isLoggedIn]="isValidToken$ | async"></blog-layout-nav>
+    <p class="text-muted text-center my-2">&#169;Blogial - 2018</p>
   </div>`,
   styles: [`
     :host{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       height: 100%;
-      background-color: #fff;
+      background-color: inherit;
     }
   `]
 })
-export class BlogLayoutFooterComponent {}
+export class BlogLayoutFooterComponent {
+  isValidToken$ = this.store.pipe(select(fromAuthentication.isValidToken));
+  constructor(
+    private store: Store<fromAuthentication.State>
+  ) {}
+}
