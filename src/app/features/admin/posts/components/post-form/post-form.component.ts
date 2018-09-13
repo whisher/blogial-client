@@ -85,7 +85,6 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       this.imagePreview = post.imagePath;
       this.files = JSON.parse(post.files);
       this.chips = JSON.parse(post.tags);
-      console.log('this.chips',this.chips);
     }
 
   }
