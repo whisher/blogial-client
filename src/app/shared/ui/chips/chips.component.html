@@ -1,0 +1,20 @@
+<div class="chips">
+  <ul>
+    <li *ngFor="let chip of chips">
+      <div class="chip">
+        <span>{{chip}}</span>
+        <span aria-hidden="true" (click)="onDeleteChip(chip)">&times;</span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="input-group">
+  <input
+  type="text"
+  class="form-control form-control-lg"
+  placeholder="add a tag"
+  [tabindex]="tabindex"
+  #chip
+  (input)="onInput($event)"
+  (keypress)="onKeyPress($event)">
+</div>

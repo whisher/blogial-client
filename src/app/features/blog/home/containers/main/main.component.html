@@ -14,7 +14,7 @@
       [hasPosts]="hasPosts$ | async"
       [posts]="posts$ | async"
       ></blog-home-post-list>
-      <div uiGoToTop class="pt-5 pb-3">
+      <div (click)="goToTop()" class="pt-5 pb-3">
         <blog-home-go-to-top></blog-home-go-to-top>
       </div>
     </ng-container>

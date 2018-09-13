@@ -25,4 +25,8 @@ export class BlogHomeMainComponent {
     this.router.navigate(['/home'], { fragment: 'content' });
   }
 
+  goToTop(){
+    this.router.navigate(['/home']);
+  }
+
 }

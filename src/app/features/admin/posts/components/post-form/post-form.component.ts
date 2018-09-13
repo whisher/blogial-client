@@ -18,6 +18,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   _pending: boolean;
   _isPristine = true;
   _hasSubmited = false;
+  chips: Array<string> = [];
 
   get pending(): boolean {
     return this._pending;
@@ -77,12 +78,14 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         content: post.content,
         image: post.imagePath,
         isDraft: post.isDraft,
-        //tags: JSON.parse(post.tags),
-        places: JSON.parse(post.places)
+        places: JSON.parse(post.places),
+        tags: null
       }
       this.frm.setValue(data);
       this.imagePreview = post.imagePath;
       this.files = JSON.parse(post.files);
+      this.chips = JSON.parse(post.tags);
+      console.log('this.chips',this.chips);
     }
 
   }
@@ -93,7 +96,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       content: ['', [Validators.required]],
       image:[null, [Validators.required], mimeTypeValidator],
       isDraft: [false],
-      //tags: [[],[atLeastOne]],
+      tags: [null],
       places:this.fb.array([this.createPlace()])
     });
   }
@@ -118,14 +121,11 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       this._hasSubmited = true;
       this._isPristine = true;
       this.isPristine.emit(true);
-      /* TODO ngx-chip bug issue */
-      this.frm.value.tags = [{display: 'pippo', value: 'pippo'}];
       this.submitted.emit({
         _id: this.postId,
         files: this.files,
         ...this.frm.value
       });
-
     }
   }
 

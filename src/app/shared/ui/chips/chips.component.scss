@@ -1,0 +1,30 @@
+@import "theme-variables";
+
+.chips{
+  margin-bottom: 1rem;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  li {
+    margin-top: .3rem;
+    margin-right: .5rem;
+    line-height: 1;
+  }
+  .chip{
+    display: flex;
+    align-items: center;
+    padding: .3rem .8rem;
+    border: 1px solid theme-color("light");
+    border-radius: 1.5rem;
+    span{
+      display: inline-block;
+    }
+    span:last-child{
+      padding-left: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
