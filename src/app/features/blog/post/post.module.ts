@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 // Markdown
 import { NgxMdModule } from 'ngx-md';
 
+// Ng-bootstrap
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 // Modules
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 import { BlogPostRoutingModule } from './post-routing.module';
@@ -16,6 +19,7 @@ import * as fromContainers from './containers';
   imports: [
     CommonModule,
     NgxMdModule,
+    NgbCarouselModule,
     UiLoaderModule,
     BlogPostRoutingModule
   ],

@@ -1,0 +1,693 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>blogial-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">blogial-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>UsersEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/users/store/effects/users.effect.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addUser$">addUser$</a>
+                            </li>
+                            <li>
+                                <a href="#addUserSuccess$">addUserSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUser$">deleteUser$</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUsersSuccess$">deleteUsersSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#loadUsers$">loadUsers$</a>
+                            </li>
+                            <li>
+                                <a href="#updateUser$">updateUser$</a>
+                            </li>
+                            <li>
+                                <a href="#updateUsersSuccess$">updateUsersSuccess$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions$: <a href="../undefineds/Actions.html">Actions</a>, service: <a href="../injectables/UsersService.html">fromServices.UsersService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Actions" target="_self" >Actions</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/UsersService.html" target="_self" >fromServices.UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addUser$"></a>
+                        <span class="name">
+                            <b>
+                            addUser$
+                            </b>
+                            <a href="#addUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>addUser$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.AddUser),
+      map((action: usersActions.AddUser) &#x3D;&gt; action.payload.user),
+      switchMap((user: User) &#x3D;&gt; {
+        return this.service
+          .add(user)
+          .pipe(
+            map((user: User) &#x3D;&gt; new usersActions.AddUserSuccess({user})),
+            catchError(error &#x3D;&gt; of(new usersActions.AddUserFail(error)))
+          );
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addUserSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            addUserSuccess$
+                            </b>
+                            <a href="#addUserSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>addUserSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.AddUserSuccess),
+      map((action: usersActions.AddUserSuccess) &#x3D;&gt; action.payload.user),
+      map((user: User) &#x3D;&gt; new RouterActions.Go({path: [&#x27;/admin/users&#x27;]}))
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteUser$"></a>
+                        <span class="name">
+                            <b>
+                            deleteUser$
+                            </b>
+                            <a href="#deleteUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>deleteUser$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUser),
+      map((action: usersActions.DeleteUser) &#x3D;&gt; action.payload.id),
+      switchMap(id &#x3D;&gt; {
+        return this.service
+          .delete(id)
+          .pipe(
+            map(id &#x3D;&gt; new usersActions.DeleteUserSuccess({id})),
+            catchError(error &#x3D;&gt; of(new usersActions.DeleteUserFail(error)))
+          );
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteUsersSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            deleteUsersSuccess$
+                            </b>
+                            <a href="#deleteUsersSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>deleteUsersSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUserSuccess),
+      map((user: User) &#x3D;&gt; {
+        return new RouterActions.Go({
+          path: [&#x27;/admin/users&#x27;],
+        });
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:101</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadUsers$"></a>
+                        <span class="name">
+                            <b>
+                            loadUsers$
+                            </b>
+                            <a href="#loadUsers$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loadUsers$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.LoadUsers),
+      switchMap(() &#x3D;&gt; {
+        return this.service
+          .load()
+          .pipe(
+            map(users &#x3D;&gt; new usersActions.LoadUsersSuccess({users})),
+            catchError(error &#x3D;&gt; of(new usersActions.LoadUsersFail(error)))
+          );
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateUser$"></a>
+                        <span class="name">
+                            <b>
+                            updateUser$
+                            </b>
+                            <a href="#updateUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>updateUser$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+  .pipe(
+    ofType(usersActions.UsersActionTypes.UpdateUser),
+    map((action: usersActions.UpdateUser) &#x3D;&gt; action.payload.user),
+    switchMap((user: User) &#x3D;&gt; {
+      return this.service
+        .update(user._id, user)
+        .pipe(
+          map(user &#x3D;&gt; new usersActions.UpdateUserSuccess({user})),
+          catchError(error &#x3D;&gt; of(new usersActions.UpdateUserFail(error)))
+        );
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateUsersSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            updateUsersSuccess$
+                            </b>
+                            <a href="#updateUsersSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>updateUsersSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.UpdateUserSuccess),
+      map((action: usersActions.UpdateUserSuccess) &#x3D;&gt; action.payload.user),
+      mergeMap((user: any) &#x3D;&gt; {
+       return [
+          new authenticationActions.AccountUpdate({account:user}),
+          new RouterActions.Go({path: [&#x27;/admin/users&#x27;]})
+        ]
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/core/users/store/effects/users.effect.ts:88</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Actions, Effect, ofType } from &#x27;@ngrx/effects&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { catchError, map, switchMap, mergeMap } from &#x27;rxjs/operators&#x27;;
+
+import { User } from &#x27;../../models&#x27;;
+import * as RouterActions from &#x27;../../../../store&#x27;;
+import * as usersActions from &#x27;../actions&#x27;;
+import * as authenticationActions from &#x27;../../../../core/authentication/store/actions&#x27;;
+import * as fromServices from &#x27;../../services&#x27;;
+
+@Injectable()
+export class UsersEffects {
+  constructor(
+    private actions$: Actions,
+    private service: fromServices.UsersService
+  ) {}
+
+  @Effect()
+  loadUsers$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.LoadUsers),
+      switchMap(() &#x3D;&gt; {
+        return this.service
+          .load()
+          .pipe(
+            map(users &#x3D;&gt; new usersActions.LoadUsersSuccess({users})),
+            catchError(error &#x3D;&gt; of(new usersActions.LoadUsersFail(error)))
+          );
+      })
+    );
+
+  @Effect()
+  addUser$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.AddUser),
+      map((action: usersActions.AddUser) &#x3D;&gt; action.payload.user),
+      switchMap((user: User) &#x3D;&gt; {
+        return this.service
+          .add(user)
+          .pipe(
+            map((user: User) &#x3D;&gt; new usersActions.AddUserSuccess({user})),
+            catchError(error &#x3D;&gt; of(new usersActions.AddUserFail(error)))
+          );
+      })
+    );
+
+  @Effect()
+  addUserSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.AddUserSuccess),
+      map((action: usersActions.AddUserSuccess) &#x3D;&gt; action.payload.user),
+      map((user: User) &#x3D;&gt; new RouterActions.Go({path: [&#x27;/admin/users&#x27;]}))
+    );
+
+  @Effect()
+  updateUser$ &#x3D; this.actions$
+  .pipe(
+    ofType(usersActions.UsersActionTypes.UpdateUser),
+    map((action: usersActions.UpdateUser) &#x3D;&gt; action.payload.user),
+    switchMap((user: User) &#x3D;&gt; {
+      return this.service
+        .update(user._id, user)
+        .pipe(
+          map(user &#x3D;&gt; new usersActions.UpdateUserSuccess({user})),
+          catchError(error &#x3D;&gt; of(new usersActions.UpdateUserFail(error)))
+        );
+    })
+  );
+
+  @Effect()
+  deleteUser$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUser),
+      map((action: usersActions.DeleteUser) &#x3D;&gt; action.payload.id),
+      switchMap(id &#x3D;&gt; {
+        return this.service
+          .delete(id)
+          .pipe(
+            map(id &#x3D;&gt; new usersActions.DeleteUserSuccess({id})),
+            catchError(error &#x3D;&gt; of(new usersActions.DeleteUserFail(error)))
+          );
+      })
+    );
+
+  @Effect()
+  updateUsersSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.UpdateUserSuccess),
+      map((action: usersActions.UpdateUserSuccess) &#x3D;&gt; action.payload.user),
+      mergeMap((user: any) &#x3D;&gt; {
+       return [
+          new authenticationActions.AccountUpdate({account:user}),
+          new RouterActions.Go({path: [&#x27;/admin/users&#x27;]})
+        ]
+      })
+    );
+
+  @Effect()
+  deleteUsersSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(usersActions.UsersActionTypes.DeleteUserSuccess),
+      map((user: User) &#x3D;&gt; {
+        return new RouterActions.Go({
+          path: [&#x27;/admin/users&#x27;],
+        });
+      })
+    );
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsersEffects.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

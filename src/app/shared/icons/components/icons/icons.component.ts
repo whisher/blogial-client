@@ -23,6 +23,12 @@ import {
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
+import {
+  faFacebook,
+  faGooglePlusG,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+
 library.add(
   faAngleDown,
   faAngleUp,
@@ -143,6 +149,19 @@ export class IconEyeSlashComponent {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-facebook',
+  template: `<fa-icon [className]="cls" [icon]="faFacebook"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconFacebookComponent {
+  faFacebook = faFacebook;
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'icon-file-upload',
   template: `<fa-icon [className]="cls" [icon]="['fas', 'file-upload']"></fa-icon>`,
   styles: [`:host {
@@ -150,6 +169,19 @@ export class IconEyeSlashComponent {
   }`]
 })
 export class IconFileUploadComponent {
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-google-plus',
+  template: `<fa-icon [className]="cls" [icon]="faGooglePlusG"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconGooglePlusComponent {
+  faGooglePlusG = faGooglePlusG;
   constructor(@Attribute('cls') public cls: string = '') { }
 }
 
@@ -272,5 +304,18 @@ export class IconThListComponent{
   }`]
 })
 export class IconTrashComponent{
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-twitter',
+  template: `<fa-icon [className]="cls" [icon]="faTwitter"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconTwitterComponent{
+  faTwitter = faTwitter;
   constructor(@Attribute('cls') public cls: string = '') { }
 }

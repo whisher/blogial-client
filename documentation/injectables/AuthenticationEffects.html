@@ -1,0 +1,689 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>blogial-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">blogial-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>AuthenticationEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/authentication/store/effects/authentication.effects.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account$">account$</a>
+                            </li>
+                            <li>
+                                <a href="#accountFailure$">accountFailure$</a>
+                            </li>
+                            <li>
+                                <a href="#accountSuccess$">accountSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#login$">login$</a>
+                            </li>
+                            <li>
+                                <a href="#loginJustLogged$">loginJustLogged$</a>
+                            </li>
+                            <li>
+                                <a href="#loginRedirect$">loginRedirect$</a>
+                            </li>
+                            <li>
+                                <a href="#loginSuccess$">loginSuccess$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, actions$: <a href="../undefineds/Actions.html">Actions</a>, authenticationService: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:97</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Actions" target="_self" >Actions</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authenticationService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account$"></a>
+                        <span class="name">
+                            <b>
+                            account$
+                            </b>
+                            <a href="#account$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>account$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountRequested),
+      switchMap(() &#x3D;&gt; {
+        return this.authenticationService.account()
+          .pipe(
+            map((account: Account) &#x3D;&gt; new authenticationActions.AccountSuccess({ account })),
+            catchError(error &#x3D;&gt; of(new authenticationActions.AccountFailure(error)))
+          )
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accountFailure$"></a>
+                        <span class="name">
+                            <b>
+                            accountFailure$
+                            </b>
+                            <a href="#accountFailure$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>accountFailure$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountFailure),
+      map(() &#x3D;&gt; new authenticationActions.Logout())
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accountSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            accountSuccess$
+                            </b>
+                            <a href="#accountSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>accountSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountSuccess),
+      map(() &#x3D;&gt; new authenticationActions.AccountNoop())
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="login$"></a>
+                        <span class="name">
+                            <b>
+                            login$
+                            </b>
+                            <a href="#login$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>login$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.Login),
+      map((action: authenticationActions.Login) &#x3D;&gt; action.payload),
+      exhaustMap((credentials: Authenticate) &#x3D;&gt;{
+        return this.authenticationService
+          .login(credentials)
+          .pipe(
+            map((token: AuthenticationToken) &#x3D;&gt; new authenticationActions.LoginSuccess({ token })),
+            catchError(error &#x3D;&gt; of(new authenticationActions.LoginFailure(error)))
+          )
+        }
+      )
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginJustLogged$"></a>
+                        <span class="name">
+                            <b>
+                            loginJustLogged$
+                            </b>
+                            <a href="#loginJustLogged$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loginJustLogged$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginJustLogged
+      ),
+      map(authed &#x3D;&gt; new RouterActions.Go({ path: [&#x27;/admin&#x27;] }))
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:91</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginRedirect$"></a>
+                        <span class="name">
+                            <b>
+                            loginRedirect$
+                            </b>
+                            <a href="#loginRedirect$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loginRedirect$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginRedirect,
+        authenticationActions.AuthenticationActionTypes.Logout,
+        authenticationActions.AccountActionTypes.AccountFailure
+      ),
+      map(authed &#x3D;&gt; {
+        return new RouterActions.Go({ path: [&#x27;/auth&#x27;] })
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:78</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            loginSuccess$
+                            </b>
+                            <a href="#loginSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loginSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
+      mergeMap((token: AuthenticationToken) &#x3D;&gt;{
+        return [
+          new authenticationActions.AccountRequested(),
+          new RouterActions.Go({ path: [&#x27;/admin&#x27;] })
+        ]
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/core/authentication/store/effects/authentication.effects.ts:66</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { Actions, Effect, ofType } from &#x27;@ngrx/effects&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { tap, map, exhaustMap, catchError, mergeMap, switchMap } from &#x27;rxjs/operators&#x27;;
+
+import {
+  Account,
+  Authenticate,
+  AuthenticationToken,
+} from &#x27;../../models&#x27;;
+import * as RouterActions from &#x27;../../../../store&#x27;;
+import * as authenticationActions from &#x27;../actions&#x27;;
+import {
+  AuthenticationService
+} from &#x27;../../services/authentication.service&#x27;;
+
+@Injectable()
+export class AuthenticationEffects {
+
+  @Effect()
+  account$ &#x3D; this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountRequested),
+      switchMap(() &#x3D;&gt; {
+        return this.authenticationService.account()
+          .pipe(
+            map((account: Account) &#x3D;&gt; new authenticationActions.AccountSuccess({ account })),
+            catchError(error &#x3D;&gt; of(new authenticationActions.AccountFailure(error)))
+          )
+      })
+    );
+
+  @Effect()
+  accountSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountSuccess),
+      map(() &#x3D;&gt; new authenticationActions.AccountNoop())
+    );
+
+  @Effect()
+  accountFailure$ &#x3D; this.actions$
+    .pipe(
+      ofType(authenticationActions.AccountActionTypes.AccountFailure),
+      map(() &#x3D;&gt; new authenticationActions.Logout())
+    );
+
+  @Effect()
+  login$ &#x3D; this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.Login),
+      map((action: authenticationActions.Login) &#x3D;&gt; action.payload),
+      exhaustMap((credentials: Authenticate) &#x3D;&gt;{
+        return this.authenticationService
+          .login(credentials)
+          .pipe(
+            map((token: AuthenticationToken) &#x3D;&gt; new authenticationActions.LoginSuccess({ token })),
+            catchError(error &#x3D;&gt; of(new authenticationActions.LoginFailure(error)))
+          )
+        }
+      )
+    );
+
+  @Effect()
+  loginSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
+      mergeMap((token: AuthenticationToken) &#x3D;&gt;{
+        return [
+          new authenticationActions.AccountRequested(),
+          new RouterActions.Go({ path: [&#x27;/admin&#x27;] })
+        ]
+      })
+    );
+
+  @Effect()
+  loginRedirect$ &#x3D; this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginRedirect,
+        authenticationActions.AuthenticationActionTypes.Logout,
+        authenticationActions.AccountActionTypes.AccountFailure
+      ),
+      map(authed &#x3D;&gt; {
+        return new RouterActions.Go({ path: [&#x27;/auth&#x27;] })
+      })
+    );
+
+  @Effect()
+  loginJustLogged$ &#x3D; this.actions$
+    .pipe(
+      ofType(
+        authenticationActions.AuthenticationActionTypes.LoginJustLogged
+      ),
+      map(authed &#x3D;&gt; new RouterActions.Go({ path: [&#x27;/admin&#x27;] }))
+    );
+
+  constructor(
+    private router: Router,
+    private actions$: Actions,
+    private authenticationService: AuthenticationService
+  ) {
+
+}
+
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthenticationEffects.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

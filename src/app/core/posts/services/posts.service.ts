@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 import { URLS } from '../../../config/config.tokens';
 import { HttpErrorHandler } from '../../../shared/http/http-error-handler';
-import { Post, Thumb } from '../models';
+import { Post, Thumb, Image } from '../models';
 
 @Injectable()
 export class PostsService {
@@ -36,10 +36,10 @@ export class PostsService {
    );
   }
 
-  gallery(file, name): Observable<Thumb> {
+  gallery(file, name): Observable<Image> {
     const postData = new FormData();
     postData.append('gallery', file, name);
-    return this.http.post<Thumb>(`${this.postsUrl}/gallery`, postData)
+    return this.http.post<Image>(`${this.postsUrl}/gallery`, postData)
    .pipe(catchError((error: any) => HttpErrorHandler.handle(error)));
  }
 

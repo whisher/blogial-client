@@ -1,0 +1,828 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>blogial-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">blogial-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>PostsEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/posts/store/effects/posts.effect.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPost$">addPost$</a>
+                            </li>
+                            <li>
+                                <a href="#addPostSuccess$">addPostSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#deletePost$">deletePost$</a>
+                            </li>
+                            <li>
+                                <a href="#handlePostsSuccess$">handlePostsSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#loadPosts$">loadPosts$</a>
+                            </li>
+                            <li>
+                                <a href="#notificationPost$">notificationPost$</a>
+                            </li>
+                            <li>
+                                <a href="#notificationPostFail$">notificationPostFail$</a>
+                            </li>
+                            <li>
+                                <a href="#notificationPostSuccess$">notificationPostSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#updatePost$">updatePost$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions$: <a href="../undefineds/Actions.html">Actions</a>, service: <a href="../injectables/PostsService.html">fromServices.PostsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/typealiases.html#Actions" target="_self" >Actions</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/PostsService.html" target="_self" >fromServices.PostsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addPost$"></a>
+                        <span class="name">
+                            <b>
+                            addPost$
+                            </b>
+                            <a href="#addPost$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>addPost$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.AddPost),
+    map((action: postsActions.AddPost) &#x3D;&gt; action.payload.post),
+    switchMap((post: Post) &#x3D;&gt; {
+      return this.service
+        .add(post)
+        .pipe(
+          map((post: Post) &#x3D;&gt; new postsActions.AddPostSuccess({post})),
+          catchError(error &#x3D;&gt; of(new postsActions.AddPostFail(error)))
+        );
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addPostSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            addPostSuccess$
+                            </b>
+                            <a href="#addPostSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>addPostSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(postsActions.PostsActionTypes.AddPostSuccess),
+      map((action: postsActions.AddPostSuccess) &#x3D;&gt; action.payload.post),
+      mergeMap((post: Post) &#x3D;&gt; {
+        const actions &#x3D; [];
+        if(environment.production &amp;&amp; !post.isDraft){
+          actions.push(new postsActions.NotificationPost({post}))
+        }
+        actions.push(new RouterActions.Go({
+          path: [&#x27;/admin/posts&#x27;],
+        }));
+        return actions;
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deletePost$"></a>
+                        <span class="name">
+                            <b>
+                            deletePost$
+                            </b>
+                            <a href="#deletePost$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>deletePost$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.DeletePost),
+    map((action: postsActions.DeletePost) &#x3D;&gt; action.payload.id),
+    switchMap(id &#x3D;&gt; {
+      return this.service
+        .delete(id)
+        .pipe(
+          map(id &#x3D;&gt; new postsActions.DeletePostSuccess({id})),
+          catchError(error &#x3D;&gt; of(new postsActions.DeletePostFail(error)))
+        );
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:113</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="handlePostsSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            handlePostsSuccess$
+                            </b>
+                            <a href="#handlePostsSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>handlePostsSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(
+        postsActions.PostsActionTypes.UpdatePostSuccess,
+        postsActions.PostsActionTypes.DeletePostSuccess
+      ),
+      map((post: Post) &#x3D;&gt; {
+        return new RouterActions.Go({
+          path: [&#x27;/admin/posts&#x27;],
+        });
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:128</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadPosts$"></a>
+                        <span class="name">
+                            <b>
+                            loadPosts$
+                            </b>
+                            <a href="#loadPosts$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loadPosts$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$.pipe(
+    ofType(postsActions.PostsActionTypes.LoadPosts),
+    switchMap(() &#x3D;&gt; {
+      return this.service
+        .load()
+        .pipe(
+          map(posts &#x3D;&gt; new postsActions.LoadPostsSuccess({posts})),
+          catchError(error &#x3D;&gt; of(new postsActions.LoadPostsFail(error)))
+        );
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationPost$"></a>
+                        <span class="name">
+                            <b>
+                            notificationPost$
+                            </b>
+                            <a href="#notificationPost$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>notificationPost$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+    .pipe(
+      ofType(postsActions.PostsActionTypes.NotificationPost),
+      map((action: postsActions.NotificationPost) &#x3D;&gt; action.payload.post),
+      switchMap((post: Post) &#x3D;&gt; {
+        return this.service
+          .notification(post)
+          .pipe(
+            map((post: Post) &#x3D;&gt; new postsActions.NotificationPostSuccess({post})),
+            catchError(error &#x3D;&gt; of(new postsActions.NotificationPostFail(error)))
+          );
+      })
+    )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:67</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationPostFail$"></a>
+                        <span class="name">
+                            <b>
+                            notificationPostFail$
+                            </b>
+                            <a href="#notificationPostFail$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>notificationPostFail$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+      .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostFail),
+        map((action: postsActions.NotificationPostFail) &#x3D;&gt; action.payload),
+        tap((error: any) &#x3D;&gt; console.error(&#x27;Notification fail&#x27;, error)),
+      )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:90</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationPostSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            notificationPostSuccess$
+                            </b>
+                            <a href="#notificationPostSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>notificationPostSuccess$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+      .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostSuccess),
+        map((action: postsActions.NotificationPostSuccess) &#x3D;&gt; action.payload.post),
+        tap((post: Post) &#x3D;&gt; console.log(&#x27;Notification success&#x27;, post)),
+      )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updatePost$"></a>
+                        <span class="name">
+                            <b>
+                            updatePost$
+                            </b>
+                            <a href="#updatePost$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>updatePost$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.UpdatePost),
+    map((action: postsActions.UpdatePost) &#x3D;&gt; action.payload.post),
+    switchMap((post: Post) &#x3D;&gt; {
+      return this.service
+        .update(post._id, post)
+        .pipe(
+          map(post &#x3D;&gt; new postsActions.UpdatePostSuccess({post})),
+          catchError(error &#x3D;&gt; of(new postsActions.UpdatePostFail(error)))
+        );
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Decorators : </i><code>Effect</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/core/posts/store/effects/posts.effect.ts:98</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Actions, Effect, ofType } from &#x27;@ngrx/effects&#x27;;
+import { of } from &#x27;rxjs&#x27;;
+import { catchError, map, mergeMap, switchMap, tap } from &#x27;rxjs/operators&#x27;;
+
+import { environment } from &#x27;../../../../../environments/environment&#x27;;
+
+import { Post } from &#x27;../../models&#x27;;
+import * as RouterActions from &#x27;../../../../store&#x27;;
+import * as postsActions from &#x27;../actions/posts.action&#x27;;
+import * as fromServices from &#x27;../../services&#x27;;
+
+@Injectable()
+export class PostsEffects {
+  constructor(
+    private actions$: Actions,
+    private service: fromServices.PostsService
+  ) {}
+
+  @Effect()
+  loadPosts$ &#x3D; this.actions$.pipe(
+    ofType(postsActions.PostsActionTypes.LoadPosts),
+    switchMap(() &#x3D;&gt; {
+      return this.service
+        .load()
+        .pipe(
+          map(posts &#x3D;&gt; new postsActions.LoadPostsSuccess({posts})),
+          catchError(error &#x3D;&gt; of(new postsActions.LoadPostsFail(error)))
+        );
+    })
+  );
+
+  @Effect()
+  addPost$ &#x3D; this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.AddPost),
+    map((action: postsActions.AddPost) &#x3D;&gt; action.payload.post),
+    switchMap((post: Post) &#x3D;&gt; {
+      return this.service
+        .add(post)
+        .pipe(
+          map((post: Post) &#x3D;&gt; new postsActions.AddPostSuccess({post})),
+          catchError(error &#x3D;&gt; of(new postsActions.AddPostFail(error)))
+        );
+    })
+  );
+
+  @Effect()
+  addPostSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(postsActions.PostsActionTypes.AddPostSuccess),
+      map((action: postsActions.AddPostSuccess) &#x3D;&gt; action.payload.post),
+      mergeMap((post: Post) &#x3D;&gt; {
+        const actions &#x3D; [];
+        if(environment.production &amp;&amp; !post.isDraft){
+          actions.push(new postsActions.NotificationPost({post}))
+        }
+        actions.push(new RouterActions.Go({
+          path: [&#x27;/admin/posts&#x27;],
+        }));
+        return actions;
+      })
+    );
+
+  @Effect()
+  notificationPost$ &#x3D; this.actions$
+    .pipe(
+      ofType(postsActions.PostsActionTypes.NotificationPost),
+      map((action: postsActions.NotificationPost) &#x3D;&gt; action.payload.post),
+      switchMap((post: Post) &#x3D;&gt; {
+        return this.service
+          .notification(post)
+          .pipe(
+            map((post: Post) &#x3D;&gt; new postsActions.NotificationPostSuccess({post})),
+            catchError(error &#x3D;&gt; of(new postsActions.NotificationPostFail(error)))
+          );
+      })
+    );
+
+  @Effect({ dispatch: false })
+  notificationPostSuccess$ &#x3D; this.actions$
+      .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostSuccess),
+        map((action: postsActions.NotificationPostSuccess) &#x3D;&gt; action.payload.post),
+        tap((post: Post) &#x3D;&gt; console.log(&#x27;Notification success&#x27;, post)),
+      );
+
+  @Effect({ dispatch: false })
+  notificationPostFail$ &#x3D; this.actions$
+      .pipe(
+        ofType(postsActions.PostsActionTypes.NotificationPostFail),
+        map((action: postsActions.NotificationPostFail) &#x3D;&gt; action.payload),
+        tap((error: any) &#x3D;&gt; console.error(&#x27;Notification fail&#x27;, error)),
+      );
+
+  @Effect()
+  updatePost$ &#x3D; this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.UpdatePost),
+    map((action: postsActions.UpdatePost) &#x3D;&gt; action.payload.post),
+    switchMap((post: Post) &#x3D;&gt; {
+      return this.service
+        .update(post._id, post)
+        .pipe(
+          map(post &#x3D;&gt; new postsActions.UpdatePostSuccess({post})),
+          catchError(error &#x3D;&gt; of(new postsActions.UpdatePostFail(error)))
+        );
+    })
+  );
+
+  @Effect()
+  deletePost$ &#x3D; this.actions$
+  .pipe(
+    ofType(postsActions.PostsActionTypes.DeletePost),
+    map((action: postsActions.DeletePost) &#x3D;&gt; action.payload.id),
+    switchMap(id &#x3D;&gt; {
+      return this.service
+        .delete(id)
+        .pipe(
+          map(id &#x3D;&gt; new postsActions.DeletePostSuccess({id})),
+          catchError(error &#x3D;&gt; of(new postsActions.DeletePostFail(error)))
+        );
+    })
+  );
+
+  @Effect()
+  handlePostsSuccess$ &#x3D; this.actions$
+    .pipe(
+      ofType(
+        postsActions.PostsActionTypes.UpdatePostSuccess,
+        postsActions.PostsActionTypes.DeletePostSuccess
+      ),
+      map((post: Post) &#x3D;&gt; {
+        return new RouterActions.Go({
+          path: [&#x27;/admin/posts&#x27;],
+        });
+      })
+    );
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PostsEffects.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

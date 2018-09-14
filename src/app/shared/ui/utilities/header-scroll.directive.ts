@@ -1,10 +1,17 @@
 import {Directive, Inject, HostBinding, HostListener} from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import {
+  animate,
+  style,
+  state,
+  transition,
+  trigger } from '@angular/animations';
+
+import { of } from 'rxjs';
 
 import { WINDOW } from './window.service';
 
 @Directive({
-  selector: '[uiHeaderScroll]'
+  selector: '[uiHeaderScroll]',
 })
 export class UiHeaderScrollDirective {
     @HostBinding('class') private cls = 'isBgHeaderDefault';
@@ -12,10 +19,9 @@ export class UiHeaderScrollDirective {
     onScroll(){
       const windowScroll = this.window.pageYOffset;
       const isScrolled = windowScroll > 16;
-      this.cls = isScrolled ? 'isBgHeaderScrolled' : 'isBgHeaderDefault';
+      this.cls = isScrolled ? 'isBgHeaderScrolled o-container-fixed' : 'isBgHeaderDefault';
     }
     constructor(
-      @Inject(DOCUMENT) private document: Document,
       @Inject(WINDOW) private window
     ) { }
 }

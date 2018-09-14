@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Thumb } from '../../../../../core/posts/models';
+import { Image } from '../../../../../core/posts/models';
 import { PostsService } from '../../../../../core/posts/services';
 
 @Component({
@@ -12,7 +12,7 @@ import { PostsService } from '../../../../../core/posts/services';
 })
 export class AdminPostsPostGalleryComponent {
   private invalidFiles : Array<File> = [];
-  @Input() files: Array<Thumb>;
+  @Input() files: Array<Image>;
 
   constructor(
     public activeModal: NgbActiveModal,

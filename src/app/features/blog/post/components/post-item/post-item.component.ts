@@ -1,15 +1,23 @@
-import { Component, Input, Output, ChangeDetectionStrategy, ViewEncapsulation, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
 
-import { Post } from '../../../../../core/posts/models';
+import { Post, Image } from '../../../../../core/posts/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'blog-post-item',
   templateUrl: './post-item.component.html',
-  host:{
-    class:''
-  }
 })
-export class BlogPostItemComponent {
+export class BlogPostItemComponent implements OnInit{
   @Input() post: Post;
+  images: Image[] = [];
+  
+  ngOnInit(){
+    this.images = JSON.parse(this.post.files);
+  }
+
 }

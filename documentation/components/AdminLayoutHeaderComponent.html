@@ -1,0 +1,614 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>blogial-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">blogial-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AdminLayoutHeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/admin/layout/containers/header/header.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>admin-layout-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>header.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account">account</a>
+                            </li>
+                            <li>
+                                <a href="#account$">account$</a>
+                            </li>
+                            <li>
+                                <a href="#subscription">subscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onLogout">onLogout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, store: <a href="../interfaces/State.html">Store<fromAuthentication.State></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/State.html" target="_self" >Store&lt;fromAuthentication.State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onLogout"></a>
+                        <span class="name">
+                            <b>
+                            onLogout
+                            </b>
+                            <a href="#onLogout"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onLogout()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account"></a>
+                        <span class="name">
+                            <b>
+                            account
+                            </b>
+                            <a href="#account"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>account:     <code><a href="../interfaces/Account.html" target="_self" >Account</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Account.html" target="_self" >Account</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account$"></a>
+                        <span class="name">
+                            <b>
+                            account$
+                            </b>
+                            <a href="#account$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>account$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.store.pipe(select(fromAuthentication.getAccount))</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscription"></a>
+                        <span class="name">
+                            <b>
+                            subscription
+                            </b>
+                            <a href="#subscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>subscription:     <code>Subscription</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/features/admin/layout/containers/header/header.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { Subscription } from &#x27;rxjs&#x27;;
+import { Store, select } from &#x27;@ngrx/store&#x27;;
+
+import { Account } from &#x27;../../../../../core/authentication/models&#x27;;
+import * as fromAuthentication from &#x27;../../../../../core/authentication/store&#x27;;
+
+@Component({
+  selector: &#x27;admin-layout-header&#x27;,
+  templateUrl: &#x27;./header.component.html&#x27;,
+  styleUrls: [&#x27;./header.component.scss&#x27;]
+})
+export class AdminLayoutHeaderComponent implements OnInit, OnDestroy{
+  account$ &#x3D; this.store.pipe(select(fromAuthentication.getAccount));
+  account: Account;
+  subscription: Subscription;
+  constructor(
+    private router: Router,
+    private store: Store&lt;fromAuthentication.State&gt;
+  ) {}
+
+  onLogout(){
+    this.router.navigateByUrl(&#x27;/auth/logout&#x27;);
+  }
+
+  ngOnInit() {
+    this.subscription &#x3D; this.account$
+    .subscribe(account &#x3D;&gt; {
+      this.account &#x3D; account;
+    })
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;bar d-flex flex-row align-items-center justify-content-between border-bottom&quot;&gt;
+  &lt;admin-layout-brand&gt;&lt;/admin-layout-brand&gt;
+  &lt;admin-layout-masthead&gt;&lt;/admin-layout-masthead&gt;
+  &lt;admin-layout-bar
+      [account]&#x3D;&quot;account&quot;
+      (logout)&#x3D;&quot;onLogout()&quot;&gt;
+  &lt;/admin-layout-bar&gt;
+&lt;/div&gt;
+&lt;nav class&#x3D;&quot;nav d-flex flex-row align-items-center justify-content-start&quot;&gt;
+  &lt;admin-layout-nav [account]&#x3D;&quot;account&quot;&gt;&lt;/admin-layout-nav&gt;
+&lt;/nav&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="bar d-flex flex-row align-items-center justify-content-between border-bottom">  <admin-layout-brand></admin-layout-brand>  <admin-layout-masthead></admin-layout-masthead>  <admin-layout-bar      [account]="account"      (logout)="onLogout()">  </admin-layout-bar></div><nav class="nav d-flex flex-row align-items-center justify-content-start">  <admin-layout-nav [account]="account"></admin-layout-nav></nav></div>'
+    var COMPONENTS = [{'name': 'AdminDashboardMainComponent', 'selector': 'admin-dashboard-main'},{'name': 'AdminDashboardWelcomeComponent', 'selector': 'admin-dashboard-welcome'},{'name': 'AdminLayoutBarComponent', 'selector': 'admin-layout-bar'},{'name': 'AdminLayoutBrandComponent', 'selector': 'admin-layout-brand'},{'name': 'AdminLayoutFooterComponent', 'selector': 'admin-layout-footer'},{'name': 'AdminLayoutHeaderComponent', 'selector': 'admin-layout-header'},{'name': 'AdminLayoutMainComponent', 'selector': 'admin-layout-main'},{'name': 'AdminLayoutMastheadComponent', 'selector': 'admin-layout-masthead'},{'name': 'AdminLayoutNavComponent', 'selector': 'admin-layout-nav'},{'name': 'AdminMediaMainComponent', 'selector': 'admin-media-main'},{'name': 'AdminPostsMainComponent', 'selector': 'admin-posts-main'},{'name': 'AdminPostsPostBoxComponent', 'selector': 'admin-posts-post-box'},{'name': 'AdminPostsPostContenteditableComponent', 'selector': 'admin-posts-post-item-content'},{'name': 'AdminPostsPostDeleteComponent', 'selector': 'admin-posts-post-delete'},{'name': 'AdminPostsPostFormComponent', 'selector': 'admin-posts-post-form'},{'name': 'AdminPostsPostGalleryComponent', 'selector': 'admin-posts-post-gallery'},{'name': 'AdminPostsPostItemComponent', 'selector': 'admin-posts-post-item'},{'name': 'AdminPostsPostListComponent', 'selector': 'admin-posts-post-list'},{'name': 'AdminPostsPostPageComponent', 'selector': 'admin-posts-post-page'},{'name': 'AdminUsersMainComponent', 'selector': 'admin-users-main'},{'name': 'AdminUsersUserDeleteComponent', 'selector': 'admin-users-user-delete'},{'name': 'AdminUsersUserFormComponent', 'selector': 'admin-users-user-form'},{'name': 'AdminUsersUserItemComponent', 'selector': 'admin-users-user-item'},{'name': 'AdminUsersUserListComponent', 'selector': 'admin-users-user-list'},{'name': 'AdminUsersUserPageComponent', 'selector': 'admin-users-user-page'},{'name': 'AppComponent', 'selector': 'iwdf-root'},{'name': 'AuthenticationLayoutFooterComponent', 'selector': 'authentication-layout-footer'},{'name': 'AuthenticationLayoutHeaderComponent', 'selector': 'authentication-layout-header'},{'name': 'AuthenticationLayoutMainComponent', 'selector': 'authentication-layout-main'},{'name': 'AuthenticationLoginFormComponent', 'selector': 'authentication-login-form'},{'name': 'AuthenticationLoginPageComponent', 'selector': 'authentication-login-page'},{'name': 'AuthenticationLogoutComponent', 'selector': 'authentication-logout'},{'name': 'BlogAboutMainComponent', 'selector': 'blog-about-main'},{'name': 'BlogContactMainComponent', 'selector': 'blog-contact-main'},{'name': 'BlogHomeGoToTopComponent', 'selector': 'blog-home-go-to-top'},{'name': 'BlogHomeMainComponent', 'selector': 'blog-home-main'},{'name': 'BlogHomePostItemComponent', 'selector': 'blog-home-post-item'},{'name': 'BlogHomePostListComponent', 'selector': 'blog-home-post-list'},{'name': 'BlogLayoutBrandComponent', 'selector': 'blog-layout-brand'},{'name': 'BlogLayoutFooterComponent', 'selector': 'blog-layout-footer'},{'name': 'BlogLayoutHeaderComponent', 'selector': 'blog-layout-header'},{'name': 'BlogLayoutMainComponent', 'selector': 'blog-layout-main'},{'name': 'BlogLayoutMastheadComponent', 'selector': 'blog-layout-masthead'},{'name': 'BlogLayoutNavComponent', 'selector': 'blog-layout-nav'},{'name': 'BlogPostItemComponent', 'selector': 'blog-post-item'},{'name': 'BlogPostMainComponent', 'selector': 'blog-post-main'},{'name': 'IconAngleDownComponent', 'selector': 'icon-angledown'},{'name': 'IconAngleUpComponent', 'selector': 'icon-angleup'},{'name': 'IconArrowLeftComponent', 'selector': 'icon-arrowleft'},{'name': 'IconBellComponent', 'selector': 'icon-bell'},{'name': 'IconEditComponent', 'selector': 'icon-edit'},{'name': 'IconEnvelopeComponent', 'selector': 'icon-envelope'},{'name': 'IconEyeComponent', 'selector': 'icon-eye'},{'name': 'IconEyeSlashComponent', 'selector': 'icon-eyeslash'},{'name': 'IconFacebookComponent', 'selector': 'icon-facebook'},{'name': 'IconFileUploadComponent', 'selector': 'icon-file-upload'},{'name': 'IconGooglePlusComponent', 'selector': 'icon-google-plus'},{'name': 'IconHomeComponent', 'selector': 'icon-home'},{'name': 'IconImageComponent', 'selector': 'icon-image'},{'name': 'IconImagesComponent', 'selector': 'icon-images'},{'name': 'IconKeyComponent', 'selector': 'icon-key'},{'name': 'IconMinusComponent', 'selector': 'icon-minus'},{'name': 'IconPlusComponent', 'selector': 'icon-plus'},{'name': 'IconSearchComponent', 'selector': 'icon-search'},{'name': 'IconTableComponent', 'selector': 'icon-table'},{'name': 'IconThListComponent', 'selector': 'icon-th-list'},{'name': 'IconTrashComponent', 'selector': 'icon-trash'},{'name': 'IconTwitterComponent', 'selector': 'icon-twitter'},{'name': 'UIConfirmComponent', 'selector': 'ui-confirm'},{'name': 'UiButtonSpinnerComponent', 'selector': 'ui-button-spinner'},{'name': 'UiChipsComponent', 'selector': 'ui-chips'},{'name': 'UiFabButtonComponent', 'selector': 'ui-fab-button'},{'name': 'UiLoaderComponent', 'selector': 'ui-loader'},{'name': 'UiPasswordComponent', 'selector': 'ui-password'},{'name': 'UiStickyHeaderComponent', 'selector': 'ui-sticky-header'}];
+    var DIRECTIVES = [{'name': 'AdminPostGalleryDirective', 'selector': '[adminPostGallery]'},{'name': 'UiGoToTopDirective', 'selector': '[uiGoToTop]'},{'name': 'UiHeaderScrollDirective', 'selector': '[uiHeaderScroll]'},{'name': 'UiRoleDirective', 'selector': '[uiRole]'},{'name': 'UiSubscribeDirective', 'selector': '[uiSubscribe]'}];
+    var ACTUAL_COMPONENT = {'name': 'AdminLayoutHeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminLayoutHeaderComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
