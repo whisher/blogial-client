@@ -14,7 +14,7 @@ export interface Post {
   isDraft: boolean;
   places: any; // Json
   slug: string;
-  tags: any, // Json 
+  tags: any, // Json
   title: string;
   updated?: Number;
 }

@@ -21,7 +21,7 @@ export class AdminPostsPostGalleryComponent {
 
   onFilesChange(fileList : Array<File>){
     const file = fileList[0];
-    const name =  file.name.split('.')[0];
+    const name = file.name.split('.')[0];
     this.service.gallery(file, name)
     .subscribe(
       (file) => {

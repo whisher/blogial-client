@@ -21,11 +21,11 @@
     </div>
     <div class="dropzope__gallery mt-3" *ngIf="files.length > 0">
       <div class="row">
-        <div class="col-6 col-md-4" *ngFor="let file of files">
+        <div class="col-6 col-md-3 align-self-center" *ngFor="let file of files">
           <div class="card">
-            <img class="img-fluid card-img-top" [src]="file.src" [alt]="file.name">
+            <img class="img-fluid card-img-top" [src]="file[0].src" [alt]="file[0].name">
             <div class="card__body">
-              <admin-posts-post-item-content [model]="file.name" (input)=onEditable($event)></admin-posts-post-item-content>
+              <admin-posts-post-item-content [model]="file[0].name" (input)=onEditable($event)></admin-posts-post-item-content>
             </div>
             <div class="o-thumb__actions">
               <ui-fab-button (click)="onDelete()" [cls]="'c-btn-fab--danger'">

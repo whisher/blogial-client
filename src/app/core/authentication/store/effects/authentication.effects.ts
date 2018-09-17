@@ -83,7 +83,7 @@ export class AuthenticationEffects {
         authenticationActions.AccountActionTypes.AccountFailure
       ),
       map(authed => {
-        return new RouterActions.Go({ path: ['/auth'] })
+        return new RouterActions.Go({ path: ['/auth'], extras: { replaceUrl: true } })
       })
     );
 
