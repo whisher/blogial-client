@@ -13,21 +13,6 @@ a {
 [type="file"]{
   display: none;
 }
-.btn-primary:not(:disabled){
-  animation: enable .3s linear;
-}
-
-@keyframes enable {
-  0% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(1.05, 1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 /* Dropdown */
 .dropdown-toggle::after {

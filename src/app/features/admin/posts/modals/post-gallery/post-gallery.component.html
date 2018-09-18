@@ -2,7 +2,7 @@
   <h4 class="modal-title" id="modal-basic-title">
     Gallery
   </h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.close(files)">
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close(images)">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
@@ -19,15 +19,15 @@
         <span class="text-muted text-uppercase">Drag your image here.</span>
       </div>
     </div>
-    <div class="dropzope__gallery mt-3" *ngIf="files.length > 0">
+    <div class="dropzope__gallery mt-3" *ngIf="images.length > 0">
       <div class="row">
-        <div class="col-6 col-md-3 align-self-center" *ngFor="let file of files">
-          <div class="card">
-            <img class="img-fluid card-img-top" [src]="file[0].src" [alt]="file[0].name">
-            <div class="card__body">
-              <admin-posts-post-item-content [model]="file[0].name" (input)=onEditable($event)></admin-posts-post-item-content>
+        <div class="col-6 col-md-3" *ngFor="let image of images">
+          <div class="card mb-2">
+            <img class="card-img-top a-image" [src]="image[0].src" [alt]="image[0].name">
+            <div class="card__body p-2">
+              <admin-posts-post-item-content [model]="image[0].name" (input)=onEditable($event)></admin-posts-post-item-content>
             </div>
-            <div class="o-thumb__actions">
+            <div class="p-2">
               <ui-fab-button (click)="onDelete()" [cls]="'c-btn-fab--danger'">
                 <icon-trash></icon-trash>
               </ui-fab-button>
@@ -41,7 +41,7 @@
 <div class="modal-footer">
   <ul class="d-flex flex-row justify-content-end">
     <li class="pr-1">
-      <button type="button" class="btn btn-secondary" (click)="activeModal.close(files)">Close</button>
+      <button type="button" class="btn btn-secondary" (click)="activeModal.close(images)">Close</button>
     </li>
   </ul>
 </div>

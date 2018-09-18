@@ -5,7 +5,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 // Rxjs
 import { Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 
 // Ngrx
 import { Store, select } from '@ngrx/store';
@@ -23,14 +30,16 @@ import * as fromPosts from '../../../../../core/posts/store';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'admin-posts-main',
-  templateUrl: './main.component.html'
+  templateUrl: './main.component.html',
+  styles: ['.input-group-text { font-weight: normal; }']
 })
 export class AdminPostsMainComponent implements OnDestroy {
   posts$ = this.store.pipe(select(fromPosts.getPostsEntities))
   loaded$ = this.store.pipe(select(fromPosts.getPostsLoaded));
   hasPosts$ = this.store.pipe(select(fromPosts.getHasPosts));
-  subscriptions : Array<Subscription>
-  frm: FormGroup
+  subscriptions : Array<Subscription>;
+  frm: FormGroup;
+  showTimes = false;
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
@@ -41,7 +50,7 @@ export class AdminPostsMainComponent implements OnDestroy {
   ngOnInit() {
     this.frm = this.formBuilder.group({
       status: 'all',
-      search: null
+      search: ''
     });
 
     const statusSubscription = this.frm.get('status')
@@ -54,6 +63,7 @@ export class AdminPostsMainComponent implements OnDestroy {
     const titleSubscription = this.frm.get('search')
     .valueChanges.
     pipe(
+      tap(search => this.showTimes = search.length > 0),
       debounceTime(500),
       distinctUntilChanged()
     )
@@ -85,6 +95,10 @@ export class AdminPostsMainComponent implements OnDestroy {
     }, (reason) => {});
   }
 
+  onResetSearch(){
+    this.showTimes = false;
+    this.frm.patchValue({search: ''});
+  }
   ngOnDestroy(){
     this.subscriptions.forEach(subscription => subscription.unsubscribe())
   }

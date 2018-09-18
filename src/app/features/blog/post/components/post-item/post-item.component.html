@@ -16,13 +16,5 @@
       </div>
     </div>
   </div>
-  <div class="row mb-3">
-    <div class="col">
-      <ngb-carousel *ngIf="images">
-        <ng-template *ngFor="let image of images" ngbSlide>
-          <img [src]="image.src" [alt]="image.name">
-        </ng-template>
-      </ngb-carousel>
-    </div>
-  </div>
+  <blog-post-gallery [images]="images"></blog-post-gallery>
 </div>

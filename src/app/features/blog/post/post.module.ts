@@ -14,6 +14,7 @@ import { BlogPostRoutingModule } from './post-routing.module';
 // Components
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
+import * as fromModals from './modals';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import * as fromContainers from './containers';
   ],
   declarations: [
     ...fromComponents.components,
-    ...fromContainers.containers
+    ...fromContainers.containers,
+    ...fromModals.modals
   ]
 })
 export class BlogPostModule { }

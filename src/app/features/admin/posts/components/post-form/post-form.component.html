@@ -98,9 +98,9 @@
           <input type="file" #filePicker (change)="onImagePicker($event)">
         </div>
       </div>
-      <div class="row no-gutters mb-2" *ngIf="files.length > 0">
-        <div class="col-12 col-md-2 pr-1" *ngFor="let file of files">
-          <img class="img-fluid card-img-top" [src]="file[0].src" alt="file[0].name">
+      <div class="row no-gutters mb-2" *ngIf="images.length > 0">
+        <div class="col-12 col-md-2 pr-1" *ngFor="let image of images">
+          <img class="img-fluid card-img-top" [src]="image[0].src" alt="image[0].name">
         </div>
       </div>
       <div class="row mb-2">

@@ -19,6 +19,7 @@ import {
   IconSearchComponent,
   IconTableComponent,
   IconThListComponent,
+  IconTimesComponent,
   IconTrashComponent,
   IconTwitterComponent
 }
@@ -45,6 +46,7 @@ export const components: any[] = [
   IconSearchComponent,
   IconTableComponent,
   IconThListComponent,
+  IconTimesComponent,
   IconTrashComponent,
   IconTwitterComponent
 ];

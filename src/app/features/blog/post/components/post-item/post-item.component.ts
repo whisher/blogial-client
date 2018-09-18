@@ -15,9 +15,9 @@ import { Post, Image } from '../../../../../core/posts/models';
 export class BlogPostItemComponent implements OnInit{
   @Input() post: Post;
   images: Image[] = [];
-  
+
   ngOnInit(){
-    this.images = JSON.parse(this.post.files);
+    this.images = JSON.parse(this.post.images);
   }
 
 }

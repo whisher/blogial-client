@@ -2,30 +2,46 @@
   Add new post
 </a>
 <ng-container *ngIf="loaded$ | async; else noLoaded">
-  <form class="d-flex justify-content-between" [formGroup]="frm" *ngIf="hasPosts$ | async">
-    <div class="form-group">
-      <div class="input-group">
-        <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="status">
-          <label ngbButtonLabel class="btn-lg btn-warning">
-            <input ngbButton type="radio" value="all"> All
-          </label>
-          <label ngbButtonLabel class="btn-lg btn-warning">
-            <input ngbButton type="radio" value="publisher"> Publisher
-          </label>
-          <label ngbButtonLabel class="btn-lg btn-warning">
-            <input ngbButton type="radio" value="draft"> Draft
-          </label>
+  <form [formGroup]="frm">
+    <div class="row">
+      <div class="col-12 col-md-6" [ngClass]="{'invisible': !(hasPosts$ | async)}">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="status">
+              <label ngbButtonLabel class="btn-lg btn-warning">
+                <input ngbButton type="radio" value="all"> All
+              </label>
+              <label ngbButtonLabel class="btn-lg btn-warning">
+                <input ngbButton type="radio" value="publisher"> Publisher
+              </label>
+              <label ngbButtonLabel class="btn-lg btn-warning">
+                <input ngbButton type="radio" value="draft"> Draft
+              </label>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <icon-search></icon-search>
-          </span>
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <icon-search></icon-search>
+              </span>
+            </div>
+            <input
+            type="text"
+            tabindex="1"
+            id="search"
+            class="form-control"
+            placeholder="Post title" [ngClass]="{'border-right-0': showTimes}" formControlName="search">
+            <div class="input-group-append" *ngIf="showTimes" (click)="onResetSearch()">
+              <span class="input-group-text bg-white">
+                <icon-times cls="a-times"></icon-times>
+              </span>
+            </div>
+          </div>
         </div>
-        <input type="text" tabindex="1" id="search" class="form-control form-control-lg" placeholder="Post title" formControlName="search">
       </div>
     </div>
   </form>

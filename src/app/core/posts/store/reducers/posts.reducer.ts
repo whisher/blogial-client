@@ -135,7 +135,7 @@ export function reducer(
       const search = action.payload.search;
       const entities = { ...state.entities};
       const ids = Object.keys(entities).filter(id => {
-        return entities[id].title.indexOf(search) !== -1;
+        return entities[id].title.includes(search);
       });
       return {
         ...state,

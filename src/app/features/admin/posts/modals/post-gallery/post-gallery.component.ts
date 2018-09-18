@@ -12,7 +12,7 @@ import { PostsService } from '../../../../../core/posts/services';
 })
 export class AdminPostsPostGalleryComponent {
   private invalidFiles : Array<File> = [];
-  @Input() files: Array<Image>;
+  @Input() images: Array<Image>;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -25,7 +25,7 @@ export class AdminPostsPostGalleryComponent {
     this.service.gallery(file, name)
     .subscribe(
       (file) => {
-        this.files.push(file);
+        this.images.push(file);
       },
       console.error
     )

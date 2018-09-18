@@ -20,6 +20,7 @@ import {
   faSearch,
   faTable,
   faThList,
+  faTimes,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -48,6 +49,7 @@ library.add(
   faSearch,
   faTable,
   faThList,
+  faTimes,
   faTrash
 );
 
@@ -292,6 +294,18 @@ export class IconTableComponent{
   }`]
 })
 export class IconThListComponent{
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-times',
+  template: `<fa-icon [className]="cls" [icon]="['fas', 'times']"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconTimesComponent{
   constructor(@Attribute('cls') public cls: string = '') { }
 }
 

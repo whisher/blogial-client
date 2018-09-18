@@ -101,7 +101,7 @@ export class UsersEffects {
   deleteUsersSuccess$ = this.actions$
     .pipe(
       ofType(usersActions.UsersActionTypes.DeleteUserSuccess),
-      map((user: User) => {
+      map((action: usersActions.DeleteUserSuccess) => {
         return new RouterActions.Go({
           path: ['/admin/users'],
         });

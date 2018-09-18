@@ -37,7 +37,6 @@ export class AdminPostsPostPageComponent implements IsPristineAware {
 
   onSubmit($event: Post) {
     const post = $event;
-    console.log('post',post);
     if(post._id){
       this.store.dispatch(new fromPosts.UpdatePost({post}))
     }

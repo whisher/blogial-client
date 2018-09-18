@@ -41,7 +41,7 @@ export const getAllPosts = createSelector(
 export const getHasPosts = createSelector(
   getPostsEntities,
   entities => {
-  return Object.keys(entities).length;
+  return !!Object.keys(entities).length;
 });
 
 export const getPostsLoaded = createSelector(

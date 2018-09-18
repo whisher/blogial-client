@@ -131,7 +131,7 @@ export class PostsEffects {
         postsActions.PostsActionTypes.UpdatePostSuccess,
         postsActions.PostsActionTypes.DeletePostSuccess
       ),
-      map((post: Post) => {
+      map((action: postsActions.UpdatePostSuccess | postsActions.DeletePostSuccess) => {
         return new RouterActions.Go({
           path: ['/admin/posts'],
         });

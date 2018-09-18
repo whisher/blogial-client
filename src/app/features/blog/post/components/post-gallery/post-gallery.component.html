@@ -1,0 +1,5 @@
+<div class="gallery" *ngIf="images.length > 0" (click)="openCarousel()">
+  <div class="gallery-thumb" *ngFor="let image of images">
+    <img [src]="image[0].src" [alt]="image[0].name"/>
+  </div>
+</div>

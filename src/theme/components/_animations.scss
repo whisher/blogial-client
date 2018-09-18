@@ -1,0 +1,29 @@
+.a-times{
+  animation: show-times .3s linear;
+}
+
+@keyframes show-times {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    font-size: 2rem;
+    opacity: .8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.a-image{
+  animation: show-image .3s linear;
+}
+
+@keyframes show-image {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

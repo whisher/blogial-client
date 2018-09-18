@@ -21,12 +21,12 @@ export class PostsService {
   }
 
   add(data): Observable<Post> {
-    const { content, files, image, isDraft, places, title, tags } = data;
+    const { content, image, images, isDraft, places, title, tags } = data;
     const postData = new FormData();
     postData.append('content', content);
-    postData.append('files', JSON.stringify(files));
-    postData.append('isDraft', isDraft);
     postData.append('image', image, title);
+    postData.append('images', JSON.stringify(images));
+    postData.append('isDraft', isDraft);
     postData.append('places', JSON.stringify(places));
     postData.append('tags', JSON.stringify(tags));
     postData.append('title', title);
@@ -54,12 +54,12 @@ export class PostsService {
   }
 
   update(id: string, data): Observable<Post> {
-    const { content, files, image, isDraft, places, title, tags } = data;
+    const { content, image, images, isDraft, places, title, tags } = data;
     const postData = new FormData();
     postData.append('content', content);
-    postData.append('files', JSON.stringify(files));
-    postData.append('isDraft', isDraft);
     postData.append('image', image, title);
+    postData.append('images', JSON.stringify(images));
+    postData.append('isDraft', isDraft);
     postData.append('places', JSON.stringify(places));
     postData.append('tags', JSON.stringify(tags));
     postData.append('title', title);

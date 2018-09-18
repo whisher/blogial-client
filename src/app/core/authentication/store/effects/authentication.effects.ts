@@ -66,7 +66,7 @@ export class AuthenticationEffects {
   loginSuccess$ = this.actions$
     .pipe(
       ofType(authenticationActions.AuthenticationActionTypes.LoginSuccess),
-      mergeMap((token: AuthenticationToken) =>{
+      mergeMap((action: authenticationActions.LoginSuccess) => {
         return [
           new authenticationActions.AccountRequested(),
           new RouterActions.Go({ path: ['/admin'] })

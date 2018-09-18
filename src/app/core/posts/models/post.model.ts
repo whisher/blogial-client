@@ -9,7 +9,7 @@ export interface Post {
   };
   content: string;
   created?: Number;
-  files: any; // Json
+  images: any; // Json
   imagePath: string,
   isDraft: boolean;
   places: any; // Json

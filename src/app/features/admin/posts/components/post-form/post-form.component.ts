@@ -48,11 +48,12 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
   imagePreview: string;
 
   // Gallery
-  files: any = [];
+  images: any = [];
 
   get places() {
     return this.frm.get('places') as FormArray;
   }
+
   constructor(
     private fb: FormBuilder,
     private modalService: NgbModal
@@ -83,7 +84,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       }
       this.frm.setValue(data);
       this.imagePreview = post.imagePath;
-      this.files = JSON.parse(post.files);
+      this.images = JSON.parse(post.images);
       this.chips = JSON.parse(post.tags);
     }
 
@@ -122,7 +123,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       this.isPristine.emit(true);
       this.submitted.emit({
         _id: this.postId,
-        files: this.files,
+        images: this.images,
         ...this.frm.value
       });
     }
@@ -130,7 +131,7 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
 
   onImagePicker(event: Event){
     const file = (<HTMLInputElement>event.target).files[0];
-    this.frm.patchValue({image: file})
+    this.frm.patchValue({image: file});
     //this.frm.get('image').updateValueAndValidity();
     const reader = new FileReader();
     reader.onload = () => {
@@ -147,10 +148,10 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       size: 'lg',
       centered: true
     })
-    modalRef.componentInstance.files = this.files;
+    modalRef.componentInstance.images = this.images;
     modalRef.result.then((result) => {
       if(result) {
-        this.files = [...result];
+        this.images = [...result];
       }
     }, (reason) => {});
   }
