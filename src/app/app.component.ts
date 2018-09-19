@@ -44,7 +44,7 @@ export class AppComponent {
     pwaInstallService: PwaInstallService,
     pwaNotificationService: PwaNotificationService
   ){
-    //pwaInstallService.checkForUpdate();
+    pwaInstallService.checkForUpdate();
     //pwaNotificationService.askForPermission();
   }
   getAnimationData(outlet: RouterOutlet) {
