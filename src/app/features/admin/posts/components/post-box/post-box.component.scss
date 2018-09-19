@@ -1,0 +1,85 @@
+@import "theme-variables";
+
+:host{
+  display: block;
+}
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  &__metadata{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacer * .5;
+    padding-bottom: $spacer * .5;
+  }
+  &__author{
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  &__created{
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  &__object{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__thumb{
+    flex: 0 0 20%;
+    max-width: 20%;
+    img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: $card-border-radius;
+    }
+  }
+  &__header{
+    max-width: 100%;
+    margin-bottom: $spacer;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  &__content{
+    flex: 0 0 80%;
+    max-width: 80%;
+    padding-right: $spacer;
+    padding-left: $spacer;
+    margin-bottom: $spacer;
+  }
+  &__places{
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-top: 1px solid $card-border-color;
+  }
+  &__tags{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    border-top: 1px solid $card-border-color;
+    .tag{
+      display: flex;
+      align-items: center;
+      padding: .3rem .8rem;
+      margin-right: .5rem;
+      border: 1px solid theme-color("light");
+      border-radius: 1.5rem;
+    }
+  }
+  &__actions{
+    display: flex;
+    justify-content: flex-end;
+    ul{
+      display: flex;
+      justify-content: space-between;
+    }
+    li{
+      margin-left: .5rem;
+    }
+  }
+}

@@ -79,10 +79,14 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
         content: post.content,
         image: post.imagePath,
         isDraft: post.isDraft,
-        places: JSON.parse(post.places),
-        tags: null
+        tags: ''
       }
-      this.frm.setValue(data);
+      const places = JSON.parse(post.places);
+      places.forEach(place=>{
+        this.places.push(this.createPlace(place.name));
+      });
+      this.places.removeAt(0);
+      this.frm.patchValue(data);
       this.imagePreview = post.imagePath;
       this.images = JSON.parse(post.images);
       this.chips = JSON.parse(post.tags);
@@ -96,19 +100,19 @@ export class AdminPostsPostFormComponent implements OnInit, OnDestroy {
       content: ['', [Validators.required]],
       image:[null, [Validators.required], mimeTypeValidator],
       isDraft: [false],
-      tags: [null],
-      places:this.fb.array([this.createPlace()])
+      tags: [''],
+      places:this.fb.array([this.createPlace('')])
     });
   }
 
-  createPlace(): FormGroup {
+  createPlace(value): FormGroup {
     return this.fb.group({
-      name: ['', [Validators.required]]
+      name: [value, [Validators.required]]
     });
   }
 
   onAddPlace(): void {
-    this.places.push(this.createPlace());
+    this.places.push(this.createPlace(''));
   }
 
   onRemovePlace({ group, index }: { group: FormGroup, index: number }){

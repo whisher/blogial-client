@@ -35,9 +35,8 @@
             </a>
           </div>
       </div>
-      <div formArrayName="places"
-        *ngFor="let place of places.controls; let i = index;">
-        <div class="form-group" [formGroupName]="i">
+      <div formArrayName="places">
+        <div class="form-group" [formGroupName]="i" *ngFor="let place of places.controls; index as i;">
           <div class="input-group">
             <input type="text" [attr.tabindex]="2 + i + 1" class="form-control form-control-lg" placeholder="Place name" formControlName="name">
             <div class="input-group-append" (click)="onRemovePlace(place, i)">

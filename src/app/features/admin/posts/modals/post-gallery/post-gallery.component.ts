@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Image } from '../../../../../core/posts/models';
 import { PostsService } from '../../../../../core/posts/services';

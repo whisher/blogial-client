@@ -1,20 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div class="card">
-        <img class="img-fluid card-img-top" [src]="post.imagePath" [alt]="post.title">
-        <div class="card-body">
-          <h2 class="card-title">
-            {{post.title}}
-          </h2>
-          <ngx-md>
-            {{post.content}}
-          </ngx-md>
-          <h6 class="card-subtitle mb-2 text-muted">{{post.author.display_name}}</h6>
-          <p class="card-text">{{post.updated | date:'shortDate'}}</p>
+      <div class="post">
+        <div class="post__metadata">
+          <div class="post__author">
+            Author: {{post.author.display_name}}
+          </div>
+          <div class="post__created">
+            Created: {{post.created | date:'mediumDate'}}
+          </div>
+        </div>
+        <div class="post__object">
+          <div class="post__thumb">
+            <img [src]="post.imagePath" [alt]="post.title" />
+          </div>
+          <div class="post__content">
+            <h2 class="post__header">{{post.title}}</h2>
+            <ngx-md>
+              {{post.content}}
+            </ngx-md>
+          </div>
+        </div>
+        <div class="post__places">
+          {{places}}
+        </div>
+        <div class="post__tags">
+          <div class="tag" *ngFor="let tag of tags">
+            <span>{{tag}}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <blog-post-gallery [images]="images"></blog-post-gallery>
+  <div class="row">
+    <div class="col">
+      <blog-post-gallery [title]="post.title" [images]="images"></blog-post-gallery>
+    </div>
+  </div>
 </div>
