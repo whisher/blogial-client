@@ -3,10 +3,10 @@ import {Component, AfterViewInit, Input, ViewChild} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarousel,NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
-import { Image } from '../../../../../core/posts/models';
+import { Image } from '../../models/image';
 
 @Component({
-  selector: 'blog-post-carousel',
+  selector: 'ui-carousel',
   template: `
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">
@@ -32,7 +32,7 @@ import { Image } from '../../../../../core/posts/models';
     }
   `]
 })
-export class BlogPostCarouselComponent implements AfterViewInit {
+export class UiCarouselComponent implements AfterViewInit {
   @Input() id: string;
   @Input() title: string;
   @Input() images: Image[];

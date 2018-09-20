@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogPostCarouselComponent } from './post-carousel.component';
+import { UiGalleryComponent } from './gallery.component';
 
-describe('BlogPostCarouselComponent', () => {
-  let component: BlogPostCarouselComponent;
-  let fixture: ComponentFixture<BlogPostCarouselComponent>;
+describe('UiGalleryComponent', () => {
+  let component: UiGalleryComponent;
+  let fixture: ComponentFixture<UiGalleryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogPostCarouselComponent ]
+      declarations: [ UiGalleryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogPostCarouselComponent);
+    fixture = TestBed.createComponent(UiGalleryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

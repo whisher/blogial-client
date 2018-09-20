@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   animate,
@@ -39,13 +39,14 @@ import {
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   constructor(
-    pwaInstallService: PwaInstallService,
-    pwaNotificationService: PwaNotificationService
-  ){
-    pwaInstallService.checkForUpdate();
-    //pwaNotificationService.askForPermission();
+    private pwaInstallService: PwaInstallService,
+    private pwaNotificationService: PwaNotificationService
+  ){}
+  ngOnInit() {
+    this.pwaInstallService.checkForUpdate();
+    this.pwaNotificationService.askForPermission();
   }
   getAnimationData(outlet: RouterOutlet) {
     const routeData = outlet.activatedRouteData['animation'];

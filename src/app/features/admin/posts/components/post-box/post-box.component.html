@@ -40,35 +40,7 @@
       </li>
     </ul>
   </div>
-</div>
-<!--
-<div class="row">
-  <div class="col-md-12">
-    <div class="o-card mb-3">
-      <div class="o-card__header">
-        <img [src]="post.imagePath" [alt]="post.title">
-        <h2>{{post.title}}</h2>
-      </div>
-      <div class="o-card__body">
-        <ngx-md>
-          {{post.content}}
-        </ngx-md>
-      </div>
-      <div class="o-card__footer">
-        <ul class="w-100 d-flex flex-row justify-content-end">
-          <li class="pr-1">
-            <ui-fab-button (click)="onEdit()" [cls]="'c-btn-fab--info'">
-              <icon-edit></icon-edit>
-            </ui-fab-button>
-          </li>
-          <li>
-            <ui-fab-button (click)="onDelete()" [cls]="'c-btn-fab--danger'">
-              <icon-trash></icon-trash>
-            </ui-fab-button>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <div class="post__gallery">
+    <ui-gallery [title]="post.title" [images]="images"></ui-gallery>
   </div>
 </div>
--->

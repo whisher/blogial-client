@@ -27,7 +27,8 @@ import {
 import {
   faFacebook,
   faGooglePlusG,
-  faTwitter
+  faTwitter,
+  faMarkdown
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -234,6 +235,19 @@ export class IconImagesComponent {
   }`]
 })
 export class IconKeyComponent {
+  constructor(@Attribute('cls') public cls: string = '') { }
+}
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'icon-markdown',
+  template: `<fa-icon [className]="cls" [icon]="faMarkdown"></fa-icon>`,
+  styles: [`:host {
+    display: inline-block;
+  }`]
+})
+export class IconMarkdownComponent{
+  faMarkdown = faMarkdown;
   constructor(@Attribute('cls') public cls: string = '') { }
 }
 

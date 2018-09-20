@@ -23,6 +23,7 @@ export class PwaNotificationService {
   }
 
   askForPermission() {
+    console.log('askForPermission');
     if (environment.production && this.swPush.isEnabled) {
       this.swPush
         .requestSubscription({

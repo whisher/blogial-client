@@ -19,6 +19,7 @@ import { UiButtonsModule } from '../../../shared/ui/buttons/buttons.module';
 import { UiButtonSpinnerModule } from '../../../shared/ui/button-spinner/button-spinner.module';
 import { UiChipsModule } from '../../../shared/ui/chips/chips.module';
 import { UiConfirmModule } from '../../../shared/ui/confirm/confirm.module';
+import { UiGalleryModule } from '../../../shared/ui/gallery/gallery.module';
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 
 // Routing
@@ -49,6 +50,7 @@ import {
     UiButtonSpinnerModule,
     UiChipsModule,
     UiConfirmModule,
+    UiGalleryModule,
     UiLoaderModule,
     AdminPostsRoutingModule
   ],

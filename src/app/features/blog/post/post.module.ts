@@ -10,14 +10,14 @@ import {
   NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Modules
+import { UiGalleryModule } from '../../../shared/ui/gallery/gallery.module';
 import { UiLoaderModule } from '../../../shared/ui/loader/loader.module';
 import { BlogPostRoutingModule } from './post-routing.module';
 
 // Components
 import * as fromComponents from './components';
 import * as fromContainers from './containers';
-import * as fromModals from './modals';
-import { BlogPostCarouselComponent } from './modals/post-carousel/post-carousel.component';
+
 
 @NgModule({
   imports: [
@@ -25,16 +25,13 @@ import { BlogPostCarouselComponent } from './modals/post-carousel/post-carousel.
     NgxMdModule,
     NgbCarouselModule,
     NgbModalModule,
+    UiGalleryModule,
     UiLoaderModule,
     BlogPostRoutingModule
   ],
   declarations: [
-    ...fromModals.modals,
     ...fromComponents.components,
     ...fromContainers.containers,
-  ],
-  entryComponents: [
-    ...fromModals.modals
   ]
 })
 export class BlogPostModule { }

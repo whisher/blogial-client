@@ -7,7 +7,7 @@ import {
   ViewEncapsulation,
   EventEmitter } from '@angular/core';
 
-import { Post } from '../../../../../core/posts/models';
+import { Post, Image } from '../../../../../core/posts/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,11 +21,14 @@ export class AdminPostsPostBoxComponent implements OnInit {
   @Output() edit = new EventEmitter<Post>();
   places: string;
   tags: [string];
+  images: Image[];
+  
   ngOnInit(){
     this.places = JSON.parse(this.post.places)
     .map(place => place.name)
     .join(' ,');
     this.tags = JSON.parse(this.post.tags);
+    this.images = JSON.parse(this.post.images);
   }
 
   onEdit() {

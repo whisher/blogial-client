@@ -26,6 +26,7 @@ export class PwaInstallService {
   }
 
   checkForUpdate(){
+    console.log('checkForUpdate');
     if(environment.production){
       this.swUpdate.available.subscribe(event =>  {
         console.log('current version is', event.current);

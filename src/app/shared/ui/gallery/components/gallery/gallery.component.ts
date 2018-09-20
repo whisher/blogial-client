@@ -6,17 +6,17 @@ import {
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { BlogPostCarouselComponent } from '../../modals/post-carousel/post-carousel.component';
+import { UiCarouselComponent } from '../carousel/carousel.component';
 
 import { Image } from '../../../../../core/posts/models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'blog-post-gallery',
-  templateUrl: './post-gallery.component.html',
-  styleUrls: ['./post-gallery.component.scss']
+  selector: 'ui-gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss']
 })
-export class BlogPostGalleryComponent {
+export class UiGalleryComponent {
   @Input() title: string;
   @Input() images: Image[];
   constructor(
@@ -24,7 +24,7 @@ export class BlogPostGalleryComponent {
   ) {}
 
   openCarousel(index) {
-    const modalRef = this.modalService.open(BlogPostCarouselComponent, {
+    const modalRef = this.modalService.open(UiCarouselComponent, {
       backdropClass: 'backdrop-primary',
       ariaLabelledBy: 'modal-post-gallery',
       windowClass: 'modal-container',
